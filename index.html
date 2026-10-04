@@ -52,6 +52,7 @@ html.liberado .esconder{display:block!important}
 .btn:active{transform:translateY(1px)}
 @keyframes pu{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
 @media (prefers-reduced-motion:reduce){.btn,.aviso i{animation:none}}
+.dica{font-size:13.5px;color:#D6D3CC;margin:0 0 4px}.dica b{color:var(--tx)}
 .seg{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin-top:12px;font-size:12.5px;color:var(--mu)}
 .seg span::before{content:"✓ ";color:var(--ok);font-weight:900}
 section{padding:30px 0 4px}
@@ -112,7 +113,7 @@ footer a{color:var(--mu)}
   <div class="cta-box" id="cta1">
    <div class="preco"><small>Marmorista Pro completo, hoje por</small><b>R$ 49,90<span>/mês</span></b></div>
    <div class="aviso"><i></i>Valor de lançamento. Pode subir a qualquer momento.</div>
-   <a class="btn" data-cta href="https://marmoristapro.online/?v=vsl">Quero criar minha conta<small>Veja se o valor de R$ 49,90 ainda está liberado</small></a>
+   <p class="dica">Toque em <b>"Quero criar minha conta"</b> e veja se o valor de R$ 49,90 ainda está liberado.</p>
    <div class="seg"><span>Cancele quando quiser</span><span>Garantia de 7 dias</span><span>Pagamento seguro</span></div>
   </div>
 
@@ -196,7 +197,10 @@ var PITCH = 500; // 8:20
  var H=document.documentElement,K='mp_viu';
  // leva as marcações do anúncio (utm, fbclid…) para o app, para saber de onde veio cada conta
  var q=location.search.replace(/^\?/,'');
- if(q){[].forEach.call(document.querySelectorAll('[data-cta]'),function(a){a.href+=(a.href.indexOf('?')<0?'?':'&')+q;});}
+ function utm(a){if(!q||a.dataset.utm)return;a.dataset.utm='1';a.href+=(a.href.indexOf('?')<0?'?':'&')+q;}
+ [].forEach.call(document.querySelectorAll('[data-cta]'),utm);
+ // botão do VTurb (aparece no pitch): recebe as mesmas marcações do anúncio
+ if(q&&'MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
  function liberar(){if(H.classList.contains('liberado'))return;H.classList.add('liberado');try{localStorage.setItem(K,'1');}catch(e){}fixo();}
  var viu=false;try{viu=localStorage.getItem(K)==='1';}catch(e){}
  if(PITCH<=0||viu||/[?&]ver=1/.test(location.search)){liberar();}
@@ -215,7 +219,7 @@ var PITCH = 500; // 8:20
  }
  // botão fixo embaixo: aparece depois do pitch, some quando um botão grande está na tela
  function fixo(){var f=document.getElementById('fixo');if(!f||!('IntersectionObserver' in window))return;
-  var vis=[],bt=document.querySelectorAll('.cta-box,#vsl');
+  var vis=[],bt=document.querySelectorAll('.fim .cta-box,#vsl');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){var i=vis.indexOf(e.target);if(e.isIntersecting&&i<0)vis.push(e.target);if(!e.isIntersecting&&i>=0)vis.splice(i,1);});f.classList.toggle('on',!vis.length);});
   [].forEach.call(bt,function(b){io.observe(b);});}
 })();
