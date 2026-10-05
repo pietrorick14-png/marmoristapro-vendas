@@ -42,7 +42,7 @@ h1 em{font-style:normal;color:var(--au)}
 .vsl{position:relative;width:100%;max-width:400px;margin:4px auto 0;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(245,184,0,.28),0 20px 60px rgba(0,0,0,.6)}
 .vsl-ph{aspect-ratio:9/16;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(120% 70% at 50% 30%,#2A2410,#0B0D0F 70%);color:var(--mu);font-size:14px;text-align:center;padding:24px}
 .vsl-ph i{width:76px;height:76px;border-radius:50%;background:var(--au);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(245,184,0,.15)}
-.som{margin:12px auto 0;text-align:center;font-size:13.5px;color:var(--mu)}.som b{color:var(--tx)}
+.som{margin:12px auto 24px;text-align:center;font-size:13.5px;color:var(--mu)}.som b{color:var(--tx)}
 /* tudo que só aparece no pitch */
 .esconder{display:none}
 html.liberado .esconder{display:block!important}
@@ -114,121 +114,17 @@ footer a{color:var(--mu)}
  </div>
  <p class="som">🔊 <b>Ligue o som</b> e assista até o final</p>
 
- <!-- ====== TUDO ABAIXO SÓ APARECE NO MOMENTO DO PITCH ====== -->
- <div class="esconder" id="oferta">
-
-  <div class="cta-box" id="cta1">
-   <div class="preco"><small>Marmorista Pro completo, hoje por</small><b>R$ 49,90<span>/mês</span></b></div>
-   <div class="aviso"><i></i>Valor de lançamento. Pode subir a qualquer momento.</div>
-   <p class="dica">Toque em <b>"Quero criar minha conta"</b> e veja se o valor de R$ 49,90 ainda está liberado.</p>
-   <div class="seg"><span>Cancele quando quiser</span><span>Garantia de 7 dias</span><span>Pagamento seguro</span></div>
-  </div>
-
-  <section>
-   <h2>Você se reconhece em <em>alguma dessas?</em></h2>
-   <div class="dor">
-    <p>O cliente pede o orçamento e você só consegue mandar no dia seguinte. Aí ele já fechou com outro.</p>
-    <p>Passa a noite na calculadora somando metro, borda, recorte e frete.</p>
-    <p>O cliente não entende o desenho no papel e fica "vou pensar".</p>
-    <p>Compra chapa a mais (ou a menos) porque não deu tempo de planejar o corte.</p>
-    <p>Retalho bom encostado no pátio, virando entulho.</p>
-   </div>
-  </section>
-
-  <section>
-   <h2>Tudo que a marmoraria precisa, <em>num app só</em></h2>
-   <div class="fs">
-    <div class="f"><i><svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></i><div><b>Projeto em 3D na hora</b><span>220 modelos prontos: pia, bancada em L, ilha, lavatório, escada, soleira, nicho, lareira e mais. Muda a medida, a pedra e a borda na frente do cliente.</span></div></div>
-    <div class="f"><i><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg></i><div><b>Orçamento profissional no WhatsApp</b><span>Com a sua tabela de preços. O cliente abre o link, gira o projeto em 3D, escolhe a pedra e aprova pelo celular.</span></div></div>
-    <div class="f"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 10h11v11M14 3v7"/></svg></i><div><b>Plano de corte</b><span>O app encaixa as peças na chapa e diz quantas chapas comprar. Sem desperdício e sem faltar pedra.</span></div></div>
-    <div class="f"><i><svg viewBox="0 0 24 24"><path d="M4 20h16M6 16l4-10 4 6 2-3 3 7"/></svg></i><div><b>Retalhos que viram dinheiro</b><span>Controle das sobras e aviso de onde cada retalho serve no próximo serviço.</span></div></div>
-    <div class="f"><i><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></i><div><b>Desenho de produção e obras</b><span>Cada peça com as medidas, os recortes e os furos para a equipe cortar certo. Acompanhe a obra por foto.</span></div></div>
-    <div class="f"><i><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M17 11l2 2 4-4"/></svg></i><div><b>Clientes e pós-venda</b><span>Lembra de cobrar o saldo, pedir indicação e oferecer manutenção. Cliente que volta a comprar.</span></div></div>
-   </div>
-  </section>
-
-  <section>
-   <h2>Comece a usar <em>hoje</em></h2>
-   <div class="pass">
-    <p><b>Crie sua conta</b>Leva 1 minuto. Só nome, e-mail e senha.</p>
-    <p><b>Coloque os seus preços</b>Ajuste a tabela com o preço da sua pedra, da borda e da mão de obra.</p>
-    <p><b>Mande o primeiro orçamento</b>Escolha o modelo, ajuste a medida e envie no WhatsApp do cliente.</p>
-   </div>
-  </section>
-
-  <section>
-   <h2>Quanto custa <em>perder uma obra?</em></h2>
-   <p class="lead">Uma pia de granito simples já passa de R$ 1.000. Fechar <b>um serviço a mais por mês</b> paga o app muitas vezes.</p>
-   <div class="conta">
-    <div><span>Uma obra perdida por demora</span><span>R$ 1.000+</span></div>
-    <div><span>Chapa comprada a mais</span><span>R$ 600+</span></div>
-    <div><span>Marmorista Pro por mês</span><span>R$ 49,90</span></div>
-   </div>
-  </section>
-
-  <section>
-   <h2>Perguntas frequentes</h2>
-   <details><summary>Eu não sou bom com tecnologia. Vou conseguir usar?</summary><p>Vai. O app foi feito para o dono de marmoraria, com as palavras que você usa (rodabanca, frontão, saia, cuba, chapa). Tem vídeos curtos de "Comece aqui" e suporte pelo WhatsApp.</p></details>
-   <details><summary>Funciona no celular?</summary><p>Funciona no celular e no computador. Dá para colocar o ícone na tela de início do celular, igual a um aplicativo, sem ocupar espaço.</p></details>
-   <details><summary>O valor de R$ 49,90 vai continuar?</summary><p>Não dá para garantir. É o valor de lançamento e pode mudar a qualquer momento. Quem assina enquanto ele está liberado continua pagando esse valor.</p></details>
-   <details><summary>Tem fidelidade? Posso cancelar?</summary><p>Não tem fidelidade. Você cancela quando quiser, sem multa e sem precisar ligar para ninguém.</p></details>
-   <details><summary>E se eu não gostar?</summary><p>Você tem garantia de 7 dias. Se não gostar, chama no WhatsApp do suporte e devolvemos o seu dinheiro.</p></details>
-   <details><summary>Meus orçamentos ficam salvos?</summary><p>Ficam salvos na sua conta. Se trocar de celular, é só entrar com o seu e-mail que está tudo lá.</p></details>
-   <details><summary>Como é o pagamento?</summary><p>No cartão de crédito, pela Stripe, a mesma plataforma de pagamento usada por grandes empresas no mundo todo. A cobrança é mensal e renova sozinha.</p></details>
-  </section>
-
-  <section class="fim">
-   <div class="cta-box">
-    <div class="preco"><small>Enquanto o valor de lançamento estiver liberado</small><b>R$ 49,90<span>/mês</span></b></div>
-    <div class="aviso"><i></i>Pode mudar sem aviso. Garanta o seu agora.</div>
-    <a class="btn" data-cta href="https://marmoristapro.online/?v=vsl&checkout=1">Quero o Marmorista Pro<small>Criar minha conta agora</small></a>
-    <div class="seg"><span>Cancele quando quiser</span><span>Garantia de 7 dias</span><span>Suporte no WhatsApp</span></div>
-   </div>
-  </section>
- </div>
 </main>
 
-<footer class="w">
- Marmorista Pro · O app do dono de marmoraria
-</footer>
 
-<div class="fixo esconder" id="fixo"><a class="btn" data-cta href="https://marmoristapro.online/?v=vsl&checkout=1">Quero criar minha conta</a></div>
 
 <script>
-/* ===== AJUSTE AQUI =====
-   PITCH = segundo do vídeo em que você fala a oferta (ex.: 8 min 30 s = 510).
-   Enquanto não tiver VSL, deixe 0: a página mostra tudo direto. */
-var PITCH = 500; // 8:20
-
+/* Único botão da página: o do VTurb (aparece no pitch, configurado no painel do VTurb).
+   Aqui só garantimos que ele leve as marcações do anúncio (utm) e o checkout=1 (para o pixel contar o IC). */
 (function(){
- var H=document.documentElement,K='mp_viu';
- // leva as marcações do anúncio (utm, fbclid…) para o app, para saber de onde veio cada conta
  var q=location.search.replace(/^\?/,'');
  function utm(a){if(a.dataset.utm)return;a.dataset.utm='1';if(a.href.indexOf('checkout=')<0)a.href+=(a.href.indexOf('?')<0?'?':'&')+'checkout=1';if(q)a.href+='&'+q;}
- [].forEach.call(document.querySelectorAll('[data-cta]'),utm);
- // botão do VTurb (aparece no pitch): recebe as mesmas marcações do anúncio
  if('MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
- function liberar(){if(H.classList.contains('liberado'))return;H.classList.add('liberado');try{localStorage.setItem(K,'1');}catch(e){}fixo();}
- var viu=false;try{viu=localStorage.getItem(K)==='1';}catch(e){}
- if(PITCH<=0||viu||/[?&]ver=1/.test(location.search)){liberar();}
- else{
-  // VTurb: mostra a oferta no segundo PITCH (e lembra quem já viu)
-  var n=0,t=setInterval(function(){var p=document.querySelector('vturb-smartplayer');
-   if(!p){if(++n>40){clearInterval(t);}return;}clearInterval(t);
-   p.addEventListener('player:ready',function(){
-    if(p.displayHiddenElements){p.displayHiddenElements(PITCH,['.esconder'],{persist:true});}
-    var vid=p.querySelector('video')||(p.shadowRoot&&p.shadowRoot.querySelector('video'));
-    if(vid)vid.addEventListener('timeupdate',function(){if(vid.currentTime>=PITCH)liberar();});
-    var obs=new MutationObserver(function(){var o=document.getElementById('oferta');if(o&&o.style.display&&o.style.display!=='none')liberar();});
-    obs.observe(document.getElementById('oferta'),{attributes:true,attributeFilter:['style']});
-   });
-  },250);
- }
- // botão fixo embaixo: aparece depois do pitch, some quando um botão grande está na tela
- function fixo(){var f=document.getElementById('fixo');if(!f||!('IntersectionObserver' in window))return;
-  var vis=[],bt=document.querySelectorAll('.fim .cta-box,#vsl');
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){var i=vis.indexOf(e.target);if(e.isIntersecting&&i<0)vis.push(e.target);if(!e.isIntersecting&&i>=0)vis.splice(i,1);});f.classList.toggle('on',!vis.length);});
-  [].forEach.call(bt,function(b){io.observe(b);});}
 })();
 </script>
 </body>
