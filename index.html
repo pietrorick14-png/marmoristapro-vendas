@@ -180,7 +180,7 @@ footer a{color:var(--mu)}
    <div class="cta-box">
     <div class="preco"><small>Enquanto o valor de lançamento estiver liberado</small><b>R$ 49,90<span>/mês</span></b></div>
     <div class="aviso"><i></i>Pode mudar sem aviso. Garanta o seu agora.</div>
-    <a class="btn" data-cta href="https://marmoristapro.online/?v=vsl">Quero o Marmorista Pro<small>Criar minha conta agora</small></a>
+    <a class="btn" data-cta href="https://marmoristapro.online/?v=vsl&checkout=1">Quero o Marmorista Pro<small>Criar minha conta agora</small></a>
     <div class="seg"><span>Cancele quando quiser</span><span>Garantia de 7 dias</span><span>Suporte no WhatsApp</span></div>
    </div>
   </section>
@@ -191,7 +191,7 @@ footer a{color:var(--mu)}
  Marmorista Pro · O app do dono de marmoraria
 </footer>
 
-<div class="fixo esconder" id="fixo"><a class="btn" data-cta href="https://marmoristapro.online/?v=vsl">Quero criar minha conta</a></div>
+<div class="fixo esconder" id="fixo"><a class="btn" data-cta href="https://marmoristapro.online/?v=vsl&checkout=1">Quero criar minha conta</a></div>
 
 <script>
 /* ===== AJUSTE AQUI =====
@@ -203,10 +203,10 @@ var PITCH = 500; // 8:20
  var H=document.documentElement,K='mp_viu';
  // leva as marcações do anúncio (utm, fbclid…) para o app, para saber de onde veio cada conta
  var q=location.search.replace(/^\?/,'');
- function utm(a){if(!q||a.dataset.utm)return;a.dataset.utm='1';a.href+=(a.href.indexOf('?')<0?'?':'&')+q;}
+ function utm(a){if(a.dataset.utm)return;a.dataset.utm='1';if(a.href.indexOf('checkout=')<0)a.href+=(a.href.indexOf('?')<0?'?':'&')+'checkout=1';if(q)a.href+='&'+q;}
  [].forEach.call(document.querySelectorAll('[data-cta]'),utm);
  // botão do VTurb (aparece no pitch): recebe as mesmas marcações do anúncio
- if(q&&'MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
+ if('MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
  function liberar(){if(H.classList.contains('liberado'))return;H.classList.add('liberado');try{localStorage.setItem(K,'1');}catch(e){}fixo();}
  var viu=false;try{viu=localStorage.getItem(K)==='1';}catch(e){}
  if(PITCH<=0||viu||/[?&]ver=1/.test(location.search)){liberar();}
