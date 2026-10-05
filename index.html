@@ -10,10 +10,11 @@
 <meta property="og:description" content="Mostre a bancada em 3D e mande o orçamento no WhatsApp em minutos, pelo celular.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1113'/%3E%3Cpath d='M7 22V10l9 7 9-7v12' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
-<!-- VTurb: código de velocidade (teste A/B "MINI GANCHO/MG + TURBO") -->
+<!-- VTurb: código de velocidade (vídeo vencedor do teste A/B: "Cópia de VSL Marmorista Pro", velocidade normal, sem Turbo) -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/a45314cd-f856-4966-8ff2-54d1c7e8fca2/ab-test/6ac3434b1507090c7e94b932/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/a45314cd-f856-4966-8ff2-54d1c7e8fca2/players/6ac343a4e59803f794badcd3/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/a45314cd-f856-4966-8ff2-54d1c7e8fca2/6ac20f78965fbdd354923d98/main.m3u8" as="fetch">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
@@ -109,8 +110,8 @@ footer a{color:var(--mu)}
  <!-- ====== VSL ======
   Player do VTurb (vídeo vertical). Para trocar de vídeo, cole aqui o novo código "JavaScript" do VTurb. -->
  <div class="vsl" id="vsl">
-  <!-- teste A/B do VTurb (vídeo normal x Turbo 1.2x). Para voltar ao vídeo único, use o código do vídeo "VSL Marmorista Pro". -->
-  <vturb-smartplayer id="ab-6ac3434b1507090c7e94b932" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/a45314cd-f856-4966-8ff2-54d1c7e8fca2/ab-test/6ac3434b1507090c7e94b932/player.js", s.async=!0,document.head.appendChild(s); </script>
+  <!-- vídeo vencedor do teste A/B (normal, sem Turbo). Para trocar de vídeo, cole aqui o novo código "JavaScript" do VTurb. -->
+  <vturb-smartplayer id="vid-6ac343a4e59803f794badcd3" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/a45314cd-f856-4966-8ff2-54d1c7e8fca2/players/6ac343a4e59803f794badcd3/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
  </div>
  <p class="som">🔊 <b>Ligue o som</b> e assista até o final</p>
 
@@ -119,11 +120,13 @@ footer a{color:var(--mu)}
 
 
 <script>
-/* Único botão da página: o do VTurb (aparece no pitch, configurado no painel do VTurb).
-   Aqui só garantimos que ele leve as marcações do anúncio (utm) e o checkout=1 (para o pixel contar o IC). */
+/* Único botão da página: o do VTurb (aparece no pitch; texto e link ficam no painel do VTurb).
+   Aqui só garantimos o checkout=1 (para o pixel da Utmify contar o IC) e, quando o link é do app,
+   as marcações do anúncio (utm). Link de WhatsApp não leva as utm: a mensagem pronta fica limpa. */
 (function(){
  var q=location.search.replace(/^\?/,'');
- function utm(a){if(a.dataset.utm)return;a.dataset.utm='1';if(a.href.indexOf('checkout=')<0)a.href+=(a.href.indexOf('?')<0?'?':'&')+'checkout=1';if(q)a.href+='&'+q;}
+ function utm(a){if(a.dataset.utm)return;a.dataset.utm='1';var wa=/(^|\.)(wa\.me|whatsapp\.com)$/i.test(a.hostname||'');
+  if(a.href.indexOf('checkout=')<0)a.href+=(a.href.indexOf('?')<0?'?':'&')+'checkout=1';if(q&&!wa)a.href+='&'+q;}
  if('MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
 })();
 </script>
