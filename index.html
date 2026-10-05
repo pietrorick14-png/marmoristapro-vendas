@@ -119,7 +119,7 @@ footer a{color:var(--mu)}
   <div class="cta-box" id="cta1">
    <div class="preco"><small>Marmorista Pro completo, hoje por</small><b>R$ 49,90<span>/mês</span></b></div>
    <div class="aviso"><i></i>Valor de lançamento. Pode subir a qualquer momento.</div>
-   <p class="dica">Toque em <b>"Quero criar minha conta"</b> e veja se o valor de R$ 49,90 ainda está liberado.</p>
+   <p class="dica">Toque no botão, fale comigo no WhatsApp e veja se o valor de R$ 49,90 ainda está liberado.</p>
    <div class="seg"><span>Cancele quando quiser</span><span>Garantia de 7 dias</span><span>Pagamento seguro</span></div>
   </div>
 
@@ -180,7 +180,7 @@ footer a{color:var(--mu)}
    <div class="cta-box">
     <div class="preco"><small>Enquanto o valor de lançamento estiver liberado</small><b>R$ 49,90<span>/mês</span></b></div>
     <div class="aviso"><i></i>Pode mudar sem aviso. Garanta o seu agora.</div>
-    <a class="btn" data-cta href="https://marmoristapro.online/?v=vsl">Quero o Marmorista Pro<small>Criar minha conta agora</small></a>
+    <a class="btn" data-cta href="#">Quero o Marmorista Pro<small>Falar no WhatsApp agora</small></a>
     <div class="seg"><span>Cancele quando quiser</span><span>Garantia de 7 dias</span><span>Suporte no WhatsApp</span></div>
    </div>
   </section>
@@ -191,22 +191,26 @@ footer a{color:var(--mu)}
  Marmorista Pro · O app do dono de marmoraria
 </footer>
 
-<div class="fixo esconder" id="fixo"><a class="btn" data-cta href="https://marmoristapro.online/?v=vsl">Quero criar minha conta</a></div>
+<div class="fixo esconder" id="fixo"><a class="btn" data-cta href="#">Falar no WhatsApp</a></div>
 
 <script>
 /* ===== AJUSTE AQUI =====
    PITCH = segundo do vídeo em que você fala a oferta (ex.: 8 min 30 s = 510).
    Enquanto não tiver VSL, deixe 0: a página mostra tudo direto. */
 var PITCH = 500; // 8:20
+/* WhatsApp de vendas: todos os botões (inclusive o do VTurb) abrem a conversa com a mensagem pronta */
+var WA_NUM = '5511998291694';
+var WA_MSG = 'Olá! Assisti ao vídeo do Marmorista Pro e quero saber se o valor de R$ 49,90 ainda está liberado.';
 
 (function(){
  var H=document.documentElement,K='mp_viu';
  // leva as marcações do anúncio (utm, fbclid…) para o app, para saber de onde veio cada conta
  var q=location.search.replace(/^\?/,'');
- function utm(a){if(!q||a.dataset.utm)return;a.dataset.utm='1';a.href+=(a.href.indexOf('?')<0?'?':'&')+q;}
+ var WA='https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(WA_MSG);
+ function utm(a){if(a.dataset.wa)return;a.dataset.wa='1';a.href=WA;a.removeAttribute('target');}
  [].forEach.call(document.querySelectorAll('[data-cta]'),utm);
  // botão do VTurb (aparece no pitch): recebe as mesmas marcações do anúncio
- if(q&&'MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
+ if('MutationObserver' in window){new MutationObserver(function(){[].forEach.call(document.querySelectorAll('.smartplayer-anchor-button'),utm);}).observe(document.body,{childList:true,subtree:true});}
  function liberar(){if(H.classList.contains('liberado'))return;H.classList.add('liberado');try{localStorage.setItem(K,'1');}catch(e){}fixo();}
  var viu=false;try{viu=localStorage.getItem(K)==='1';}catch(e){}
  if(PITCH<=0||viu||/[?&]ver=1/.test(location.search)){liberar();}
