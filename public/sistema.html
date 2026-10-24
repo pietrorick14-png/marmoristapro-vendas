@@ -64,6 +64,8 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .nav .btn{padding:10px 18px;font-size:14px;border-radius:11px}
 .logo{white-space:nowrap}
 @media(max-width:720px){.nav nav .lk{display:none}}
+/* celular: sem vidro embaçado no topo fixo (pesa na rolagem e faz a página tremer em aparelho mais simples) */
+@media(max-width:720px){.nav{background:#0B0D0F;backdrop-filter:none;-webkit-backdrop-filter:none}}
 @media(max-width:420px){.nav nav{gap:14px}.nav .btn{padding:9px 13px;font-size:13px}.nav .logo{font-size:15px;gap:8px}.nav .logo i{width:28px;height:28px}}
 
 /* hero */
@@ -83,6 +85,8 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .ph-in iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}
 .ph-in iframe.on{opacity:1}
 .dm-host{position:absolute;inset:0}
+.dm-film{position:absolute;inset:11px;z-index:2;border-radius:36px;-webkit-tap-highlight-color:transparent}
+@media(max-width:480px){.dm-film{inset:7px;border-radius:28px}}
 .ph-in.on .ph-ld{display:none}
 .ph-ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mu);font-size:14px}
 .spin{width:30px;height:30px;border:3px solid rgba(245,184,0,.2);border-top-color:var(--au);border-radius:50%;animation:sp 1s linear infinite}
@@ -180,6 +184,13 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .op .pj td{text-align:left!important;font-family:inherit!important;background:#F1EDE3;font-weight:800;color:#555;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
 .op-f{display:flex;flex-wrap:wrap;gap:6px;padding:12px 16px 16px;border-top:1px solid #E6E2D8}
 .op-f span{font-size:11.5px;font-weight:700;padding:5px 9px;border-radius:999px;background:#F1EDE3;color:#555}
+.oc{max-width:380px;margin:0 auto}
+.oc-v{overflow:hidden;border-radius:14px;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.5);aspect-ratio:940/1660}
+.oc-tr{display:flex;height:100%;transition:transform .6s ease}
+.oc-tr img{flex:0 0 100%;width:100%;height:100%;object-fit:contain;background:#fff}
+.oc-dots{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.oc-dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--s3);cursor:pointer;padding:0}
+.oc-dots button[aria-current="true"]{background:var(--au);width:26px;border-radius:6px}
 @media(max-width:900px){.corte{grid-template-columns:1fr}}
 @media(max-width:480px){.ch-card{padding:14px}.ch-st b{font-size:16px}.op td,.op th{padding-left:12px;padding-right:12px}}
 /* fluxo */
@@ -404,7 +415,16 @@ footer a:hover{color:var(--tx)}
           <li class="ck">Peça maior que a chapa? O app avisa e divide com emenda</li>
           <li class="ck">Usa os retalhos que você já tem antes de abrir chapa nova</li>
         </ul>
-        <div class="op">
+        <!-- carrossel com as páginas da ordem de produção (img/ordem-1..3.jpg, na ordem do Pietro); sem as fotos, fica a folha abaixo -->
+        <div class="oc" id="oc" hidden>
+          <div class="oc-v"><div class="oc-tr" id="oc-tr">
+            <img src="img/ordem-1.jpg" alt="Ordem de produção: desenho, medidas, fotos do 3D e QR code" loading="lazy">
+            <img src="img/ordem-2.jpg" alt="Ordem de produção: desenho de cima com as medidas" loading="lazy">
+            <img src="img/ordem-3.jpg" alt="Ordem de produção: plano de corte da chapa e sobras" loading="lazy">
+          </div></div>
+          <div class="oc-dots" id="oc-dots"><button type="button" aria-label="Página 1" aria-current="true"></button><button type="button" aria-label="Página 2"></button><button type="button" aria-label="Página 3"></button></div>
+        </div>
+        <div class="op" id="op">
           <div class="op-h"><b>ORDEM DE PRODUÇÃO</b><span>#214 · Maria Oliveira</span></div>
           <table><tr><th>Nº</th><th>Peça</th><th>cm</th></tr><tr class="pj"><td colspan="3">Cozinha em L</td></tr><tr><td>1</td><td>Tampo principal</td><td>240 × 60</td></tr><tr><td>2</td><td>Tampo lado esquerdo</td><td>100 × 60</td></tr><tr><td>7</td><td>Balcão alto</td><td>273 × 35</td></tr><tr><td>14</td><td>Montante</td><td>90 × 60</td></tr><tr class="pj"><td colspan="3">Pia com vão para fogão</td></tr><tr><td>16</td><td>Tampo da pia</td><td>157 × 60</td></tr><tr><td>17</td><td>Tampo depois do fogão</td><td>65,6 × 60</td></tr><tr><td>R</td><td>Rodabanca (2 partes, com emenda)</td><td>298,6 × 10</td></tr></table>
           <div class="op-f"><span>Desenho de cima com as medidas</span><span>Fotos do 3D</span><span>QR code para a equipe</span><span>Arquivo para a máquina (DXF)</span><span>Sem nenhum valor</span></div>
@@ -472,12 +492,11 @@ footer a:hover{color:var(--tx)}
 
     <div class="hd rv" style="margin-bottom:40px"><h2>Planos</h2><p class="sub">Sem fidelidade. Pague com cartão ou Pix.</p></div>
     <div class="plans">
-      <div class="plan top rv">
-        <span class="bdg">MAIS ESCOLHIDO</span>
+      <div class="plan rv">
         <h3>PRO</h3>
         <p class="ds">Para o dono que orça e vende.</p>
-        <div class="pr"><b>R$ 49,90</b><span>/30 dias</span></div>
-        <p class="eq">Menos de R$ 1,70 por dia.</p>
+        <div class="pr"><b>R$ 89,90</b><span>/30 dias</span></div>
+        <p class="eq">Cerca de R$ 3 por dia.</p>
         <ul>
           <li class="ck">287 projetos prontos + montar do zero</li>
           <li class="ck">Projeto em 3D com a pedra escolhida</li>
@@ -490,12 +509,13 @@ footer a:hover{color:var(--tx)}
           <li class="ck">1 celular + 1 computador</li>
           <li class="ck">Suporte por WhatsApp</li>
         </ul>
-        <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o PRO</a>
+        <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o PRO</a>
       </div>
-      <div class="plan rv">
+      <div class="plan top rv">
+        <span class="bdg">MAIS ESCOLHIDO</span>
         <h3>PRO Equipe</h3>
         <p class="ds">Para a marmoraria com funcionários.</p>
-        <div class="pr"><b>R$ 79,90</b><span>/30 dias</span></div>
+        <div class="pr"><b>R$ 119,90</b><span>/30 dias</span></div>
         <p class="eq">Toda a equipe no mesmo app.</p>
         <ul>
           <li class="ck">Tudo do plano PRO</li>
@@ -505,7 +525,7 @@ footer a:hover{color:var(--tx)}
           <li class="ck">Ordem de produção para a oficina</li>
           <li class="ck">Suporte por WhatsApp</li>
         </ul>
-        <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o Equipe</a>
+        <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o Equipe</a>
       </div>
     </div>
     <p class="ps rv">A escolha da maioria das marmorarias que assinam.</p>
@@ -529,7 +549,7 @@ footer a:hover{color:var(--tx)}
   <div class="w">
     <div class="hd rv"><h2>Perguntas frequentes</h2><p class="sub">O que os marmoristas mais perguntam antes de assinar.</p></div>
     <div class="faq rv">
-      <details open><summary>Qual o melhor app para marmoraria?</summary><p>O que calcula do jeito que a sua marmoraria trabalha. Um bom app para marmoraria mostra o projeto em 3D, faz o orçamento pelo m², pelo metro linear ou pela chapa, monta o plano de corte e funciona no celular, na obra. O Marmorista Pro faz tudo isso por R$ 49,90 a cada 30 dias, sem fidelidade.</p></details>
+      <details open><summary>Qual o melhor app para marmoraria?</summary><p>O que calcula do jeito que a sua marmoraria trabalha. Um bom app para marmoraria mostra o projeto em 3D, faz o orçamento pelo m², pelo metro linear ou pela chapa, monta o plano de corte e funciona no celular, na obra. O Marmorista Pro faz tudo isso por R$ 89,90 a cada 30 dias (PRO) ou R$ 119,90 com a equipe, sem fidelidade.</p></details>
       <details><summary>Preciso instalar alguma coisa?</summary><p>Não. Ele abre no navegador do celular e do computador. Se quiser, dá para colocar o ícone na tela inicial do celular, como um aplicativo.</p></details>
       <details><summary>Serve para o tipo de serviço que eu faço?</summary><p>São 287 projetos prontos em 26 categorias: bancadas reta, L e U, ilhas, balcões, lavatórios, cubas, escadas, soleiras, peitoris, nichos, churrasqueiras, lareiras e muito mais. E tem o "Montar do zero" para o formato que o cliente pedir.</p></details>
       <details><summary>Posso usar as minhas pedras e os meus preços?</summary><p>Pode. Você cadastra as suas pedras com o seu preço, e até pela foto da chapa. O orçamento sai com os seus valores e a sua margem.</p></details>
@@ -549,8 +569,8 @@ footer a:hover{color:var(--tx)}
     <h2>Pronto para fechar<br><span class="au">mais bancadas</span>?</h2>
     <p class="sub">Faça o seu primeiro projeto em 3D ainda hoje. Se não gostar, a garantia de 7 dias devolve o seu dinheiro.</p>
     <div class="cta">
-      <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o PRO · R$ 49,90</a>
-      <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o Equipe · R$ 79,90</a>
+      <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o Equipe · R$ 119,90</a>
+      <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o PRO · R$ 89,90</a>
     </div>
     <p class="note">Acesso liberado na hora. Sem fidelidade.</p>
   </div>
@@ -569,7 +589,7 @@ footer a:hover{color:var(--tx)}
   </div>
 </footer>
 
-<div class="stk" id="stk"><a class="btn btn-au js-cta" href="#planos">Quero assinar · R$ 49,90</a></div>
+<div class="stk" id="stk"><a class="btn btn-au js-cta" href="#planos">Quero assinar</a></div>
 
 <script>
 document.body.classList.remove('no-js');
@@ -598,9 +618,31 @@ document.body.classList.remove('no-js');
     dif=document.createElement('iframe');dif.title='Orçamento de demonstração do Marmorista Pro';dif.allow='fullscreen';
     dif.addEventListener('load',function(){dif.classList.add('on');box.classList.add('on')});dif.src=DEMO_URL;sr.appendChild(dif);box.appendChild(host);}
   if(document.readyState==='complete')setTimeout(abre,300);else window.addEventListener('load',function(){setTimeout(abre,300)});
+  // celular: película da própria página por cima do orçamento. O navegador não passa a rolagem de dentro do iframe para a
+  // página; com a película o dedo rola a página normal (lisa) e o toque é repassado para o botão/pedra que está embaixo.
+  // Com o 3D ligado ('3d-on') a película sai e o dedo gira o projeto; '3d-off' (Pronto, tocou fora, rolou) volta.
+  var film=null;
+  if(matchMedia('(pointer:coarse)').matches){film=document.createElement('div');film.className='dm-film';document.querySelector('#demo .ph').appendChild(film);
+    // toque = encostou e soltou quase sem mexer (reconhecido aqui: depois de uma rolagem com embalo o navegador às vezes não manda o clique)
+    var tq=null,ult=0;function repassa(x,y){if(!dif)return;var d=dif.contentDocument;if(!d)return;var r=dif.getBoundingClientRect(),el=d.elementFromPoint(x-r.left,y-r.top);
+      if(el){var b=el.closest('button,a,[data-dmst],[data-cvi],[data-clt],[data-fundo]')||el;b.click();}}
+    film.addEventListener('touchstart',function(e){var t=e.touches[0];tq=e.touches.length===1?{x:t.clientX,y:t.clientY,s:t.screenY,h:Date.now()}:null;},{passive:true});
+    film.addEventListener('touchmove',function(e){var t=e.touches[0];if(tq&&Math.abs(t.screenY-tq.s)+Math.abs(t.clientX-tq.x)>10)tq=null;},{passive:true});
+    film.addEventListener('touchend',function(){if(tq&&Date.now()-tq.h<600){ult=Date.now();repassa(tq.x,tq.y);}tq=null;},{passive:true});
+    film.addEventListener('click',function(e){if(Date.now()-ult<800)return;repassa(e.clientX,e.clientY);});}
   window.addEventListener('message',function(e){if(e.origin!==location.origin)return;
+    if(film&&e.data&&e.data.mpDemo==='3d-on'){film.style.display='none';return;}
+    if(film&&e.data&&e.data.mpDemo==='3d-off'){film.style.display='';return;}
     if(e.data&&e.data.mpDemo==='h'&&+e.data.h>200){var ph=document.querySelector('#demo .ph'),pd=window.innerWidth<=480?14:22;ph.style.height=Math.min(1400,+e.data.h)+pd+'px';return;}
     if(e.data&&e.data.mpDemo==='aprovou'){dok.classList.add('on');setTimeout(function(){dok.classList.remove('on')},9000);}});
+
+  // carrossel da ordem de produção: passa sozinho a cada 3 s; só aparece se as 3 fotos carregarem (senão fica a folha)
+  (function(){var oc=$('oc'),tr=$('oc-tr');if(!oc)return;var ims=tr.querySelectorAll('img'),dots=$('oc-dots').querySelectorAll('button'),i=0,ok=0,t=null;
+    function vai(n){i=(n+ims.length)%ims.length;tr.style.transform='translateX('+(-100*i)+'%)';dots.forEach(function(d,k){d.setAttribute('aria-current',k===i)});}
+    function roda(){clearInterval(t);t=setInterval(function(){vai(i+1)},3000);}
+    function pronto(){if(++ok<ims.length)return;oc.hidden=false;$('op').hidden=true;roda();}
+    ims.forEach(function(im){im.loading='eager';if(im.complete&&im.naturalWidth)pronto();else{im.addEventListener('load',pronto);im.addEventListener('error',function(){ok=-99;})}});
+    dots.forEach(function(d,k){d.addEventListener('click',function(){vai(k);roda();})});})();
 
   // revelar ao rolar
   var els=document.querySelectorAll('.rv');

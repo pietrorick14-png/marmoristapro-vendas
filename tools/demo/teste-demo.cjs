@@ -11,7 +11,7 @@ const OUT = require('os').tmpdir() + '/';
     await p.goto(URL, { waitUntil: 'load' });
     const fr = async () => { for (let i = 0; i < 60; i++) { const f = p.frames().find(x => /\/demo\//.test(x.url())); if (f && await f.$('#dm-st').catch(() => null)) return f; await p.waitForTimeout(500); } throw new Error('demo não abriu'); };
     const f = await fr(); await p.waitForTimeout(2500); r.navs = r.navs || {}; r.navs[modo] = navs;
-    await p.evaluate(() => { document.querySelectorAll('.rv').forEach(e => { e.style.transition = 'none'; e.classList.add('on'); });  });
+    await p.evaluate(() => { document.querySelectorAll('.rv').forEach(e => { e.style.transition = 'none'; e.classList.add('on'); }); document.documentElement.style.scrollBehavior = 'auto';  });
     const ph = await p.$('#demo .ph');
     await p.evaluate(() => scrollTo(0, document.querySelector('#demo .ph').getBoundingClientRect().top + scrollY - 40));
     await p.waitForTimeout(400);
@@ -27,7 +27,7 @@ const OUT = require('os').tmpdir() + '/';
       let c = await box3d(); let y0 = await p.evaluate(() => scrollY);
       await arrasta(c.x, c.y, 150); R.arrastarNo3dDesligado = (await p.evaluate(() => scrollY)) - y0 + ' px de página';
       await p.evaluate(() => scrollTo(0, document.querySelector('#demo .ph').getBoundingClientRect().top + scrollY - 40)); await p.waitForTimeout(400);
-      c = await box3d(); await p.touchscreen.tap(c.x, c.y); await p.waitForTimeout(500);
+      await p.waitForTimeout(1500); c = await box3d(); await p.touchscreen.tap(c.x, c.y); await p.waitForTimeout(500);
       R.depoisDeTocar = await f.evaluate(() => ({ ligado: document.getElementById('cv-3d').classList.contains('dm-on'), pronto: !document.querySelector('.dm-ok').hidden }));
       y0 = await p.evaluate(() => scrollY); c = await box3d();
       await arrasta(c.x - 60, c.y, 0); await arrasta(c.x, c.y, 120); R.arrastarNo3dLigado = (await p.evaluate(() => scrollY)) - y0 + ' px de página (tem que ser 0)';
@@ -47,6 +47,11 @@ const OUT = require('os').tmpdir() + '/';
       const c = await box3d(); const y0 = await p.evaluate(() => scrollY);
       await p.mouse.move(c.x, c.y); await p.mouse.wheel(0, 300); await p.waitForTimeout(500); R.rodaNo3d = (await p.evaluate(() => scrollY)) - y0 + ' px de página';
     }
+    // Medidas: liga e desliga, sem abrir a lista
+    const md = await f.evaluate(() => { const b = document.querySelector('[data-clt="cotas"]'); b.click(); const a1 = b.getAttribute('aria-pressed'); const menu = document.querySelector('.cg-menu'); const vis = menu && getComputedStyle(menu).display !== 'none' && !menu.hidden; b.click(); return { ligou: a1, desligou: b.getAttribute('aria-pressed'), listaAparece: !!vis, texto: b.textContent }; });
+    R.medidas = md;
+    // sobra embaixo das pedras (moldura x fim das pedras)
+    R.sobraEmbaixo = await p.evaluate(async () => 0) + await f.evaluate(() => Math.round(innerHeight - document.getElementById('dm-st').getBoundingClientRect().bottom)) + ' px';
     R.erros = []; r[modo] = R; await ctx.close();
   }
   console.log(JSON.stringify(r, null, 1)); await b.close();
