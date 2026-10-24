@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Marmorista Pro · O app do dono de marmoraria</title>
+<meta name="description" content="Projeto em 3D, orçamento profissional no WhatsApp, plano de corte, desenho técnico e retalhos. O app feito para o dono de marmoraria, no celular e no computador.">
+<meta name="theme-color" content="#0B0D0F">
+<meta property="og:title" content="Marmorista Pro · O app do dono de marmoraria">
+<meta property="og:description" content="Mostre a bancada em 3D e mande o orçamento no WhatsApp antes do concorrente.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1113'/%3E%3Cpath d='M7 22V10l9 7 9-7v12' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Utmify: rastreamento de UTMs e pixel (mesmos da página da VSL) -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+<script>window.pixelId = "6a4750b8418bb67e9bf863db";</script>
+<script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer></script>
+<style>
+:root{
+  --bg:#0B0D0F;--bg2:#101316;--s1:#15191C;--s2:#1C2125;--s3:#242A2F;
+  --ln:rgba(255,255,255,.08);--ln2:rgba(245,184,0,.28);
+  --tx:#F4F1EA;--mu:#A4A7A5;--mu2:#7C807F;
+  --au:#F5B800;--au2:#FFD35A;--au3:#B88A00;--ok:#3DBE7A;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--bg);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.w{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.au{color:var(--au)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--ln2);border-radius:999px;background:rgba(245,184,0,.07);color:var(--au2);font-size:13px;font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:14px;font-weight:700;font-size:16px;transition:transform .15s,box-shadow .2s,background .2s;cursor:pointer;border:0;font-family:inherit}
+.btn-au{background:linear-gradient(180deg,var(--au2),var(--au));color:#1A1400;box-shadow:0 8px 30px rgba(245,184,0,.25),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-au:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(245,184,0,.35)}
+.btn-gh{background:var(--s2);color:var(--tx);border:1px solid var(--ln)}
+.btn-gh:hover{background:var(--s3)}
+.btn svg{width:18px;height:18px}
+h1,h2,h3{letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
+.sub{color:var(--mu);font-size:clamp(16px,2vw,18px);max-width:640px}
+.sec{padding:88px 0}
+.hd{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:48px}
+.ck{display:inline-flex;align-items:center;gap:8px;color:var(--mu);font-size:14px}
+.ck::before{content:"";width:18px;height:18px;border-radius:50%;background:rgba(245,184,0,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat;flex:none}
+
+/* revelar ao rolar */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+/* topo */
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,13,15,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.sc{border-color:var(--ln)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px}
+.logo i{width:32px;height:32px;border-radius:9px;background:#0E1113;border:1px solid var(--ln2);display:grid;place-items:center}
+.logo b{color:var(--au)}
+.nav nav{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--mu)}
+.nav nav a:hover{color:var(--tx)}
+.nav .btn{padding:10px 18px;font-size:14px;border-radius:11px}
+.logo{white-space:nowrap}
+@media(max-width:720px){.nav nav .lk{display:none}}
+@media(max-width:420px){.nav nav{gap:14px}.nav .btn{padding:9px 13px;font-size:13px}.nav .logo{font-size:15px;gap:8px}.nav .logo i{width:28px;height:28px}}
+
+/* hero */
+.hero{position:relative;padding:64px 0 0;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:radial-gradient(ellipse 60% 55% at 50% 30%,rgba(245,184,0,.16),transparent 70%);pointer-events:none}
+.hero .w{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero h1{font-size:clamp(36px,7vw,72px);font-weight:800;max-width:900px}
+.hero h1 span{background:linear-gradient(90deg,var(--au2),var(--au) 60%,#E09A00);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{max-width:620px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.hero .cks{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:center}
+
+/* orçamento de demonstração: a página do cliente de verdade (o app), num iframe */
+.demo{position:relative;width:100%;max-width:1040px;margin:40px auto 0;display:grid;grid-template-columns:1fr 390px 1fr;gap:28px;align-items:center}
+.ph{position:relative;width:390px;height:780px;background:#0A0C0E;border:1px solid #2A3036;border-radius:46px;padding:11px;box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 0 1px rgba(245,184,0,.08),0 0 90px rgba(245,184,0,.1)}
+.ph-in{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#0E1113}
+.ph-in iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}
+.ph-in iframe.on{opacity:1}
+.ph-in.on .ph-ld{display:none}
+.ph-ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mu);font-size:14px}
+.spin{width:30px;height:30px;border:3px solid rgba(245,184,0,.2);border-top-color:var(--au);border-radius:50%;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.tips{display:flex;flex-direction:column;gap:14px;text-align:left}
+.tip{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--s1);border:1px solid var(--ln);border-radius:16px}
+.tip i{flex:none;width:34px;height:34px;border-radius:10px;background:rgba(245,184,0,.1);border:1px solid var(--ln2);display:grid;place-items:center;color:var(--au);font-style:normal;font-weight:800}
+.tip b{display:block;font-size:15px;margin-bottom:2px}.tip span{color:var(--mu);font-size:13.5px;line-height:1.45}
+.demo-cap{grid-column:1/-1;text-align:center;color:var(--mu);font-size:14px}
+.demo-ok{position:absolute;left:50%;bottom:-18px;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.4s;z-index:3;width:max-content;max-width:calc(100% - 16px);display:flex;align-items:center;gap:12px;padding:12px 14px 12px 18px;border-radius:16px;background:var(--s2);border:1px solid var(--ln2);box-shadow:0 20px 50px rgba(0,0,0,.6);font-size:14px;text-align:left}
+.demo-ok.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.demo-ok .btn{padding:10px 14px;font-size:14px;border-radius:11px;white-space:nowrap}
+@media(max-width:980px){
+  .demo{grid-template-columns:1fr;justify-items:center;gap:16px}
+  .ph{order:-1}.tips{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:560px}
+}
+@media(max-width:480px){
+  .ph{width:100%;height:min(760px,80vh);border-radius:34px;padding:7px}.ph-in{border-radius:28px}
+  .tip{padding:12px;flex-direction:column;gap:8px}.tip span{font-size:12.5px}
+}
+/* recursos principais */
+.f4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fc{background:linear-gradient(180deg,var(--s1),var(--bg2));border:1px solid var(--ln);border-radius:var(--r);padding:26px 22px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.fc:hover{border-color:var(--ln2);transform:translateY(-3px)}
+.ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(245,184,0,.1);border:1px solid var(--ln2);color:var(--au)}
+.ic svg{width:22px;height:22px}
+.fc h3{font-size:18px}
+.fc p{color:var(--mu);font-size:15px}
+@media(max-width:960px){.f4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.f4{grid-template-columns:1fr}}
+.cen{text-align:center;margin-top:40px}
+
+/* simulador */
+.sim{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.box{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:26px}
+.box h3{font-size:18px;margin-bottom:4px}
+.box .mut{color:var(--mu);font-size:14px;margin-bottom:18px}
+.seg{display:flex;gap:6px;background:var(--bg);padding:5px;border-radius:12px;margin-bottom:18px;border:1px solid var(--ln)}
+.seg button{flex:1;padding:9px 6px;border-radius:9px;border:0;background:none;color:var(--mu);font:600 14px inherit;font-family:inherit;cursor:pointer}
+.seg button.on{background:var(--s3);color:var(--au2)}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fl label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--mu);font-weight:600}
+.fl input{width:100%;background:var(--bg);border:1px solid var(--ln);border-radius:11px;padding:12px;color:var(--tx);font:600 16px inherit;font-family:inherit;outline:none}
+.fl input:focus{border-color:var(--au)}
+.fl .full{grid-column:1/-1}
+.fl label[hidden]{display:none}
+.pc{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.pc .ln{display:flex;justify-content:space-between;gap:10px;padding:11px 14px;background:var(--bg);border:1px solid var(--ln);border-radius:11px;font-size:14px}
+.pc .ln span{color:var(--mu)}
+.tot{padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(245,184,0,.14),rgba(245,184,0,.04));border:1px solid var(--ln2);display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.tot p{color:var(--mu);font-size:13px}.tot b{font-size:32px;color:var(--au2);letter-spacing:-.02em}
+.note{font-size:12.5px;color:var(--mu2);margin-top:12px}
+@media(max-width:860px){.sim{grid-template-columns:1fr}}
+
+/* categorias */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--ln);aspect-ratio:4/3;background:#000}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cat:hover img{transform:scale(1.06)}
+.cat span{position:absolute;inset:auto 0 0;padding:22px 10px 8px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:13px;font-weight:700}
+@media(max-width:960px){.cats{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.cats{grid-template-columns:repeat(2,1fr)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
+.chip{padding:8px 14px;border-radius:999px;background:var(--s1);border:1px solid var(--ln);font-size:14px;color:var(--mu)}
+.chip.au{color:var(--au2);border-color:var(--ln2)}
+
+/* pedras */
+.stones{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.stone{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;color:var(--mu);width:92px;text-align:center}
+.stone img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--s3);box-shadow:0 6px 20px rgba(0,0,0,.5)}
+
+/* orçamento PDF */
+.pdf{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.docs{position:relative;height:500px}
+.doc{position:absolute;width:300px;background:#FBFAF7;color:#1B1B1B;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.55);overflow:hidden;font-size:9.5px;line-height:1.4}
+.doc .dh{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.doc .dh b{font-size:13px}
+.doc .db{padding:12px 16px;display:flex;flex-direction:column;gap:7px}
+.doc .db img{border-radius:6px;aspect-ratio:16/9;object-fit:cover}
+.doc .row{display:flex;justify-content:space-between;border-bottom:1px solid #E6E2D8;padding-bottom:4px}
+.doc .row span{color:#6B6B6B}
+.doc .dt{display:flex;justify-content:space-between;align-items:center;margin-top:4px;padding:8px 10px;border-radius:6px;font-weight:800;font-size:12px}
+.doc .sg{margin-top:10px;border-top:1px solid #999;padding-top:3px;text-align:center;color:#777;width:60%;align-self:center}
+.d1{left:0;top:40px;transform:rotate(-6deg)}
+.d1 .dh{background:#1B1F23}.d1 .dt{background:#F5B800;color:#1A1400}
+.d2{left:50%;top:0;transform:translateX(-50%);z-index:2}
+.d2 .dh{background:linear-gradient(90deg,#B88A00,#F5B800);color:#1A1400}.d2 .dt{background:#1B1F23;color:#F5B800}
+.d3{right:0;top:52px;transform:rotate(6deg)}
+.d3 .dh{background:#3A4148}.d3 .dt{background:#E9E4D6}
+.lst{display:flex;flex-direction:column;gap:12px;margin:22px 0 28px}
+.lst li{list-style:none}
+.pdf h2{text-align:left}
+@media(max-width:900px){.pdf{grid-template-columns:1fr}.docs{height:430px;order:2}.d1,.d3{display:none}.d2{width:min(320px,100%)}}
+
+/* fluxo */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.step{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:24px 20px;position:relative}
+.step .n{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--au);color:#1A1400;font-weight:800;margin-bottom:14px;box-shadow:0 0 0 6px rgba(245,184,0,.12)}
+.step h3{font-size:17px;margin-bottom:6px}
+.step p{color:var(--mu);font-size:14.5px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.mi{display:flex;gap:12px;padding:18px;background:var(--bg2);border:1px solid var(--ln);border-radius:14px}
+.mi .ic{width:38px;height:38px;border-radius:11px;flex:none}.mi .ic svg{width:18px;height:18px}
+.mi h4{font-size:15px;margin-bottom:2px}.mi p{font-size:13px;color:var(--mu)}
+@media(max-width:960px){.mini{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.mini{grid-template-columns:1fr}}
+.dd{text-align:center;color:var(--mu);margin:44px 0 0;font-weight:600}
+
+/* depoimentos */
+.deps{columns:2;column-gap:16px}
+.dep{break-inside:avoid;margin-bottom:16px;background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:24px}
+.dep .stars{color:var(--au);letter-spacing:2px;margin-bottom:10px}
+.dep p{color:#DCDAD3}
+.dep .who{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:14px}
+.dep .who i{width:40px;height:40px;border-radius:50%;background:var(--s3);display:grid;place-items:center;font-style:normal;font-weight:800;color:var(--au2)}
+.dep .who span{color:var(--mu);font-size:12.5px;display:block}
+.dep.ph{border-style:dashed;border-color:var(--ln2)}
+@media(max-width:760px){.deps{columns:1}}
+
+/* oferta e planos */
+.urg{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding:56px 22px;border-radius:26px;background:radial-gradient(ellipse at top,rgba(245,184,0,.14),transparent 70%),var(--s1);border:1px solid var(--ln2);margin-bottom:64px}
+.urg .cks{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:center}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
+.plan{background:var(--s1);border:1px solid var(--ln);border-radius:24px;padding:30px 26px;display:flex;flex-direction:column;gap:14px;position:relative}
+.plan.top{border-color:var(--au);background:linear-gradient(180deg,rgba(245,184,0,.08),var(--s1) 40%);box-shadow:0 20px 60px rgba(245,184,0,.1)}
+.plan .bdg{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--au);color:#1A1400;font-size:12px;font-weight:800;padding:5px 14px;border-radius:999px;white-space:nowrap}
+.plan h3{font-size:22px}
+.plan .ds{color:var(--mu);font-size:14px}
+.pr{display:flex;align-items:baseline;gap:6px}
+.pr b{font-size:44px;letter-spacing:-.03em}
+.pr span{color:var(--mu)}
+.plan .eq{font-size:13.5px;color:var(--au2)}
+.plan ul{display:flex;flex-direction:column;gap:9px;margin:6px 0 10px;flex:1}
+.plan li{list-style:none;font-size:14.5px}
+.plan li.ck{color:var(--tx)}
+.plan .btn{width:100%}
+.ps{text-align:center;color:var(--mu);margin-top:22px;font-size:14px}
+@media(max-width:760px){.plans{grid-template-columns:1fr}.plan.top{order:-1}}
+
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:72px}
+@media(max-width:760px){.how{grid-template-columns:1fr}}
+.gar{display:flex;align-items:center;gap:22px;max-width:760px;margin:40px auto 0;padding:26px;border-radius:20px;background:var(--s1);border:1px solid var(--ln)}
+.gar .sl{flex:none;width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(245,184,0,.25),rgba(245,184,0,.05));border:2px solid var(--au);font-weight:800;font-size:13px;text-align:center;line-height:1.1;color:var(--au2)}
+.gar .sl b{font-size:26px;display:block}
+.gar h3{font-size:19px;margin-bottom:4px}.gar p{color:var(--mu);font-size:15px}
+@media(max-width:560px){.gar{flex-direction:column;text-align:center}}
+
+/* perguntas */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--s1);border:1px solid var(--ln);border-radius:14px;overflow:hidden}
+.faq details[open]{border-color:var(--ln2)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--au);font-weight:500;transition:transform .2s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 20px 18px;color:var(--mu)}
+
+.fin{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.fin .cta{display:flex;flex-direction:column;gap:10px;width:100%;max-width:400px}
+.fin .cta .btn{width:100%}
+
+footer{border-top:1px solid var(--ln);padding:36px 0 110px;color:var(--mu2);font-size:13.5px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer a:hover{color:var(--tx)}
+
+/* botão fixo no celular */
+.stk{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none;transform:translateY(120%);transition:transform .3s}
+.stk.on{transform:none}
+.stk .btn{width:100%;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+@media(max-width:720px){.stk{display:block}}
+</style>
+</head>
+<body class="no-js">
+
+<header class="nav" id="nav">
+  <div class="w">
+    <a href="#" class="logo"><i><svg width="18" height="18" viewBox="0 0 32 32"><path d="M7 22V10l9 7 9-7v12" fill="none" stroke="#F5B800" stroke-width="3.4" stroke-linejoin="round"/></svg></i><span>Marmorista <b>Pro</b></span></a>
+    <nav>
+      <a class="lk" href="#planos">Planos</a>
+      <a class="lk" href="#duvidas">Dúvidas</a>
+      <a href="https://marmoristapro.online">Entrar</a>
+      <a class="btn btn-au js-cta" href="#planos">Assinar agora</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="w">
+    <span class="pill rv">287 projetos prontos em 26 categorias</span>
+    <h1 class="rv">Mostre a bancada em 3D e <span>feche a venda na hora</span>.</h1>
+    <p class="sub rv">Projeto em 3D, orçamento com a sua logo no WhatsApp, plano de corte da chapa e desenho técnico. Do primeiro contato até a obra, num app só.</p>
+    <div class="cta rv">
+      <a class="btn btn-au js-cta" href="#planos">Quero assinar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-gh" href="#recursos">Ver o que ele faz</a>
+    </div>
+    <div class="cks rv">
+      <span class="ck">Bancada, lavatório, ilha, escada e mais</span>
+      <span class="ck">Orçamento em minutos</span>
+      <span class="ck">No celular e no computador</span>
+    </div>
+
+    <div class="demo rv" id="demo">
+      <div class="tips">
+        <div class="tip"><i>1</i><div><b>Arraste o 3D</b><span>Gire a bancada com o dedo ou com o mouse.</span></div></div>
+        <div class="tip"><i>2</i><div><b>Troque a pedra</b><span>São Gabriel, Café Imperial ou Quartzo. O 3D e o preço mudam na hora.</span></div></div>
+      </div>
+      <div class="ph">
+        <div class="ph-in">
+          <div class="ph-ld"><div class="spin"></div>Abrindo o orçamento…</div>
+        </div>
+        <div class="demo-ok" id="demo-ok"><span>Viu? O cliente aprova sozinho pelo link.</span><a class="btn btn-au js-cta" href="#planos">Quero o meu</a></div>
+      </div>
+      <div class="tips">
+        <div class="tip"><i>3</i><div><b>3 projetos num orçamento</b><span>Cozinha em L, pia com vão e lavatório.</span></div></div>
+        <div class="tip"><i>4</i><div><b>Medidas e peças</b><span>Ligue as medidas, separe as peças e aprove.</span></div></div>
+      </div>
+      <p class="demo-cap">Este é o orçamento que o seu cliente recebe no WhatsApp. Pode mexer à vontade: é uma demonstração.</p>
+    </div>
+</section>
+
+<!-- RECURSOS -->
+<section class="sec" id="recursos">
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">O app de marmoraria completo</span>
+      <h2>Orçamento rápido, bonito<br>e com o <span class="au">projeto pronto</span></h2>
+      <p class="sub">Escolha o projeto, coloque a medida e a pedra. O app monta as peças, o 3D e o preço.</p>
+    </div>
+    <div class="f4">
+      <div class="fc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></div><h3>Projeto em 3D</h3><p>O cliente vê a bancada com a pedra escolhida, a cuba e o frontão antes de fechar.</p></div>
+      <div class="fc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Orçamento em minutos</h3><p>Projeto → medida → pedra → enviar. Mande o orçamento antes do concorrente responder.</p></div>
+      <div class="fc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Do seu jeito de cobrar</h3><p>Pelo m², pelo metro linear ou pela chapa, com o preço das suas pedras e a sua margem.</p></div>
+      <div class="fc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><h3>Orçamento com a sua marca</h3><p>Sua logo, os dados do cliente, a foto do projeto e o total. Pronto para o WhatsApp.</p></div>
+    </div>
+    <div class="cen rv"><a class="btn btn-au js-cta" href="#planos">Começar agora</a></div>
+  </div>
+</section>
+
+<!-- SIMULADOR -->
+<section class="sec" style="background:linear-gradient(180deg,transparent,var(--bg2) 20%,var(--bg2) 80%,transparent)">
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">Teste aqui</span>
+      <h2>Digite a medida.<br><span class="au">O Marmorista Pro calcula o resto.</span></h2>
+      <p class="sub">Uma prova rápida de como fica o orçamento de uma bancada. No app, entram também os recortes, os acabamentos e o seu jeito de cobrar.</p>
+    </div>
+    <div class="sim rv">
+      <div class="box">
+        <h3>Sua bancada</h3>
+        <p class="mut">Medidas em centímetros.</p>
+        <div class="seg" id="fmt">
+          <button type="button" class="on" data-f="reta">Reta</button>
+          <button type="button" data-f="L">Em L</button>
+          <button type="button" data-f="U">Em U</button>
+        </div>
+        <div class="fl">
+          <label>Comprimento<input id="c1" type="number" inputmode="decimal" value="220" min="0" step="0.25"></label>
+          <label>Profundidade<input id="pf" type="number" inputmode="decimal" value="60" min="0" step="0.25"></label>
+          <label id="l2" hidden>Lado 2<input id="c2" type="number" inputmode="decimal" value="160" min="0" step="0.25"></label>
+          <label id="l3" hidden>Lado 3<input id="c3" type="number" inputmode="decimal" value="120" min="0" step="0.25"></label>
+          <label>Saia (altura)<input id="sa" type="number" inputmode="decimal" value="4" min="0" step="0.25"></label>
+          <label>Rodabanca (altura)<input id="rb" type="number" inputmode="decimal" value="10" min="0" step="0.25"></label>
+          <label class="full">Preço da pedra (R$ por m²)<input id="pm" type="number" inputmode="decimal" value="650" min="0" step="1"></label>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Peças e valor</h3>
+        <p class="mut">Calculado na hora, enquanto você digita.</p>
+        <div class="pc" id="pecas"></div>
+        <div class="tot"><div><p>Área total</p><b id="m2" style="font-size:20px;color:var(--tx)">0 m²</b></div><div style="text-align:right"><p>Valor da pedra</p><b id="vl">R$ 0</b></div></div>
+        <p class="note">Simulação simples, só da pedra. No app você vê a bancada em 3D, o plano de corte na chapa e manda o orçamento pronto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="sec">
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">Projetos prontos</span>
+      <h2>287 projetos em <span class="au">26 categorias</span></h2>
+      <p class="sub">É só escolher, mudar a medida e a pedra. Ou monte do zero, no formato que o cliente pediu.</p>
+    </div>
+    <div class="cats rv" id="cats"></div>
+    <div class="chips rv">
+      <span class="chip">Reta</span><span class="chip">Em L</span><span class="chip">Em U</span><span class="chip">Ilha</span><span class="chip">Península</span><span class="chip">Balcão</span><span class="chip">Cuba esculpida</span><span class="chip">Meia-esquadria</span><span class="chip">Frontão e saia</span><span class="chip au">+ Montar do zero</span>
+    </div>
+  </div>
+</section>
+
+<!-- PEDRAS -->
+<section class="sec" style="padding-top:20px">
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">Pedras de verdade</span>
+      <h2>O cliente vê <span class="au">a pedra que ele escolheu</span></h2>
+      <p class="sub">Granitos, mármores, quartzitos e quartzos com textura real no 3D. E você ainda cadastra as suas pela foto da chapa.</p>
+    </div>
+    <div class="stones rv" id="stones"></div>
+  </div>
+</section>
+
+<!-- PDF -->
+<section class="sec">
+  <div class="w pdf">
+    <div class="docs rv">
+      <div class="doc d1"><div class="dh"><b>SUA MARMORARIA</b><span>Orçamento #0218</span></div><div class="db"><img src="img/cat-bancadas.webp" alt=""><div class="row"><span>Bancada em L</span><b>R$ 2.940</b></div><div class="row"><span>Rodabanca 10 cm</span><b>R$ 310</b></div><div class="dt"><span>Total</span><span>R$ 3.250,00</span></div></div></div>
+      <div class="doc d2"><div class="dh"><b>SUA MARMORARIA</b><span>Orçamento #0219</span></div><div class="db"><img src="img/cat-gourmet.webp" alt=""><div class="row"><span>Cliente</span><b>João Silva</b></div><div class="row"><span>Bancada gourmet · São Gabriel</span><b>R$ 4.120</b></div><div class="row"><span>Recorte de cooktop</span><b>R$ 180</b></div><div class="row"><span>Saia 4 cm meia-esquadria</span><b>R$ 460</b></div><div class="row"><span>Pagamento</span><b>Entrada + 2x</b></div><div class="dt"><span>Total</span><span>R$ 4.760,00</span></div><div class="sg">Assinatura do cliente</div></div></div>
+      <div class="doc d3"><div class="dh"><b>SUA MARMORARIA</b><span>Orçamento #0220</span></div><div class="db"><img src="img/cat-lavatorios.webp" alt=""><div class="row"><span>Lavatório</span><b>R$ 1.180</b></div><div class="row"><span>Cuba esculpida</span><b>R$ 420</b></div><div class="dt"><span>Total</span><span>R$ 1.600,00</span></div></div></div>
+    </div>
+    <div class="rv">
+      <span class="pill">Orçamento com a sua marca</span>
+      <h2 style="margin-top:16px">Mande um orçamento com <span class="au">cara de empresa grande</span></h2>
+      <p class="sub" style="margin-top:14px">Coloque a sua logo e os seus dados uma vez. Todo orçamento já sai pronto para imprimir ou mandar no WhatsApp, com a foto do projeto.</p>
+      <ul class="lst">
+        <li class="ck">Sua logo, seu telefone e seus dados em cada orçamento</li>
+        <li class="ck">Foto do projeto em 3D, peças, medidas e total</li>
+        <li class="ck">Formas de pagamento e prazo já preenchidos</li>
+        <li class="ck">Link para o cliente ver e aprovar pelo celular</li>
+      </ul>
+      <a class="btn btn-au js-cta" href="#planos">Quero mandar o meu</a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIS DO SIM -->
+<section class="sec" style="background:linear-gradient(180deg,transparent,var(--bg2) 15%,var(--bg2) 85%,transparent)">
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">Muito além do orçamento</span>
+      <h2>O cliente aprovou.<br><span class="au">O Marmorista Pro cuida do resto.</span></h2>
+      <p class="sub">O plano de corte, o desenho técnico e a ordem de produção saem do próprio projeto, com as medidas que você já colocou.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">1</div><h3>Orçamento aprovado</h3><p>O cliente aprova pelo link e a obra entra na sua lista.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Plano de corte</h3><p>As peças encaixadas na chapa, para sobrar menos pedra.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Desenho técnico</h3><p>Cada peça com as cotas, os recortes e os acabamentos.</p></div>
+      <div class="step rv"><div class="n">4</div><h3>Ordem de produção</h3><p>A folha da oficina: peças e medidas, sem nenhum valor.</p></div>
+    </div>
+    <p class="dd rv">E no dia a dia da marmoraria, no mesmo plano:</p>
+    <div class="mini">
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v10H3z"/><path d="M8 7v10M3 12h5"/></svg></div><div><h4>Retalhos</h4><p>Guarde as sobras e use no próximo serviço.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 1 0 0-6M22 21c0-3-2-5-5-5"/></svg></div><div><h4>Clientes</h4><p>Cada cliente com os projetos e o histórico.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div><div><h4>Obras</h4><p>Medição, produção e instalação de cada obra.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/></svg></div><div><h4>Pedras e preços</h4><p>Suas pedras com o seu preço, até pela foto da chapa.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21c0-4 3-6 7-6M16 14l2 2 4-4"/></svg></div><div><h4>Equipe</h4><p>Acesso para os funcionários, cada um no seu aparelho.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5l-1 4z"/><path d="M8 9h8M8 12h5"/></svg></div><div><h4>Pergunte à IA</h4><p>Tire dúvidas sobre o app a qualquer hora.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13 7l4 4"/></svg></div><div><h4>Montar do zero</h4><p>O formato que o cliente pediu, peça por peça.</p></div></div>
+      <div class="mi rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-12 7l-5 1 1-4a8 8 0 1 1 16-4z"/></svg></div><div><h4>Suporte no WhatsApp</h4><p>Gente de verdade para te ajudar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS (colocar depoimentos reais dos clientes) -->
+<section class="sec">
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">Quem usa, recomenda</span>
+      <h2>Marmorarias do Brasil inteiro<br>já <span class="au">orçam pelo app</span></h2>
+      <p class="sub">Trocaram o caderno, a planilha e o desenho à mão pelo Marmorista Pro. Veja o que elas contam.</p>
+    </div>
+    <div class="deps">
+      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: o que mudou depois do app, de preferência com um número, tipo "fechei 3 bancadas na primeira semana".]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
+      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: sobre o 3D e o cliente final vendo a pedra.]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
+      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: sobre a rapidez do orçamento no celular, na obra.]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
+      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: sobre o plano de corte, retalhos ou o suporte.]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA E PLANOS -->
+<section class="sec" id="planos" style="padding-top:20px">
+  <div class="w">
+    <div class="urg rv">
+      <span class="pill">Comece hoje</span>
+      <h2>Cada orçamento atrasado<br>é <span class="au">venda para o concorrente</span></h2>
+      <p class="sub">Faça o primeiro projeto em 3D hoje e mande para o cliente em poucos minutos.</p>
+      <div class="cks"><span class="ck">Acesso liberado na hora</span><span class="ck">Cancele quando quiser</span><span class="ck">Garantia de 7 dias</span></div>
+    </div>
+
+    <div class="hd rv" style="margin-bottom:40px"><h2>Planos</h2><p class="sub">Sem fidelidade. Pague com cartão ou Pix.</p></div>
+    <div class="plans">
+      <div class="plan top rv">
+        <span class="bdg">MAIS ESCOLHIDO</span>
+        <h3>PRO</h3>
+        <p class="ds">Para o dono que orça e vende.</p>
+        <div class="pr"><b>R$ 49,90</b><span>/30 dias</span></div>
+        <p class="eq">Menos de R$ 1,70 por dia.</p>
+        <ul>
+          <li class="ck">287 projetos prontos + montar do zero</li>
+          <li class="ck">Projeto em 3D com a pedra escolhida</li>
+          <li class="ck">Orçamento com a sua logo no WhatsApp</li>
+          <li class="ck">Link para o cliente aprovar</li>
+          <li class="ck">Plano de corte da chapa</li>
+          <li class="ck">Desenho técnico e ordem de produção</li>
+          <li class="ck">Retalhos, clientes e obras</li>
+          <li class="ck">Suas pedras e seus preços</li>
+          <li class="ck">1 celular + 1 computador</li>
+          <li class="ck">Suporte por WhatsApp</li>
+        </ul>
+        <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o PRO</a>
+      </div>
+      <div class="plan rv">
+        <h3>PRO Equipe</h3>
+        <p class="ds">Para a marmoraria com funcionários.</p>
+        <div class="pr"><b>R$ 79,90</b><span>/30 dias</span></div>
+        <p class="eq">Toda a equipe no mesmo app.</p>
+        <ul>
+          <li class="ck">Tudo do plano PRO</li>
+          <li class="ck">Aparelhos ilimitados</li>
+          <li class="ck">Acesso para os funcionários</li>
+          <li class="ck">Obras compartilhadas com a equipe</li>
+          <li class="ck">Ordem de produção para a oficina</li>
+          <li class="ck">Suporte por WhatsApp</li>
+        </ul>
+        <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o Equipe</a>
+      </div>
+    </div>
+    <p class="ps rv">A escolha da maioria das marmorarias que assinam.</p>
+
+    <div class="hd rv" style="margin:80px 0 0"><h2>Assinou? Em minutos <span class="au">você já está orçando</span></h2></div>
+    <div class="how" style="margin-top:40px">
+      <div class="step rv"><div class="n">1</div><h3>Você cria a conta</h3><p>Coloca o seu e-mail e escolhe o plano. Cartão ou Pix.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>O acesso libera na hora</h3><p>Abre no navegador do celular ou do computador. Nada para instalar.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Começa a orçar</h3><p>Escolhe um projeto, coloca a medida e manda o primeiro orçamento.</p></div>
+    </div>
+
+    <div class="gar rv">
+      <div class="sl"><span><b>7</b>DIAS</span></div>
+      <div><h3>Garantia de 7 dias</h3><p>Assine e use. Se não gostar, peça em até 7 dias depois do primeiro pagamento e devolvemos 100% do valor. Sem multa e sem fidelidade.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTAS -->
+<section class="sec" id="duvidas">
+  <div class="w">
+    <div class="hd rv"><h2>Perguntas frequentes</h2><p class="sub">O que os marmoristas mais perguntam antes de assinar.</p></div>
+    <div class="faq rv">
+      <details open><summary>Qual o melhor app para marmoraria?</summary><p>O que calcula do jeito que a sua marmoraria trabalha. Um bom app para marmoraria mostra o projeto em 3D, faz o orçamento pelo m², pelo metro linear ou pela chapa, monta o plano de corte e funciona no celular, na obra. O Marmorista Pro faz tudo isso por R$ 49,90 a cada 30 dias, sem fidelidade.</p></details>
+      <details><summary>Preciso instalar alguma coisa?</summary><p>Não. Ele abre no navegador do celular e do computador. Se quiser, dá para colocar o ícone na tela inicial do celular, como um aplicativo.</p></details>
+      <details><summary>Serve para o tipo de serviço que eu faço?</summary><p>São 287 projetos prontos em 26 categorias: bancadas reta, L e U, ilhas, balcões, lavatórios, cubas, escadas, soleiras, peitoris, nichos, churrasqueiras, lareiras e muito mais. E tem o "Montar do zero" para o formato que o cliente pedir.</p></details>
+      <details><summary>Posso usar as minhas pedras e os meus preços?</summary><p>Pode. Você cadastra as suas pedras com o seu preço, e até pela foto da chapa. O orçamento sai com os seus valores e a sua margem.</p></details>
+      <details><summary>Ele faz o plano de corte?</summary><p>Faz. As peças do projeto são encaixadas na chapa para sobrar menos pedra, e as sobras viram retalhos que você usa no próximo serviço.</p></details>
+      <details><summary>Funciona no celular?</summary><p>Funciona. Foi feito para o celular: dá para orçar na casa do cliente e mostrar o 3D na hora. No computador fica ainda maior.</p></details>
+      <details><summary>E se eu tiver dificuldade para usar?</summary><p>Tem o suporte por WhatsApp, o manual dentro do app e o "Pergunte à IA", que responde as dúvidas na hora.</p></details>
+      <details><summary>Meus funcionários podem usar?</summary><p>No plano PRO Equipe, sim: aparelhos ilimitados e acesso para cada funcionário.</p></details>
+      <details><summary>Quais formas de pagamento vocês aceitam?</summary><p>Cartão de crédito e Pix.</p></details>
+      <details><summary>Posso cancelar quando quiser?</summary><p>Pode. Não tem fidelidade nem multa. E nos primeiros 7 dias depois do primeiro pagamento, devolvemos 100% do valor se você pedir.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="sec" style="padding-top:20px">
+  <div class="w fin rv">
+    <h2>Pronto para fechar<br><span class="au">mais bancadas</span>?</h2>
+    <p class="sub">Faça o seu primeiro projeto em 3D ainda hoje. Se não gostar, a garantia de 7 dias devolve o seu dinheiro.</p>
+    <div class="cta">
+      <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o PRO · R$ 49,90</a>
+      <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o Equipe · R$ 79,90</a>
+    </div>
+    <p class="note">Acesso liberado na hora. Sem fidelidade.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <span>© 2026 Marmorista Pro. Todos os direitos reservados.</span>
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="https://marmoristapro.online">Entrar</a>
+      <a href="https://marmoristapro.online/planos">Termos e privacidade</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="stk" id="stk"><a class="btn btn-au js-cta" href="#planos">Quero assinar · R$ 49,90</a></div>
+
+<script>
+document.body.classList.remove('no-js');
+(function(){
+  // categorias e pedras
+  var C=[['bancadas','Bancadas'],['ilhas','Ilhas'],['balcoes','Balcões'],['gourmet','Gourmet'],['lavatorios','Lavatórios'],['cubas','Cubas'],['churras','Churrasqueiras'],['escadas','Escadas'],['lareiras','Lareiras'],['soleiras','Soleiras'],['peitoris','Peitoris'],['nichos','Nichos']];
+  var g=document.getElementById('cats');
+  C.forEach(function(c){var a=document.createElement('div');a.className='cat';var i=document.createElement('img');i.src='img/cat-'+c[0]+'.webp';i.alt=c[1];i.loading='lazy';var s=document.createElement('span');s.textContent=c[1];a.appendChild(i);a.appendChild(s);g.appendChild(a);});
+  var P=[['saogabriel','São Gabriel'],['calacattagold','Calacatta Gold'],['carrara','Carrara'],['tajmahal','Taj Mahal'],['pretofogo','Preto Fogo'],['verdeguatemala','Verde Guatemala'],['absoluto','Preto Absoluto'],['travertino','Travertino'],['quartzo','Quartzo'],['itaunas','Itaúnas'],['montblanc','Mont Blanc']];
+  var st=document.getElementById('stones');
+  P.forEach(function(p){var d=document.createElement('div');d.className='stone';var i=document.createElement('img');i.src='img/pedra-'+p[0]+'.jpg';i.alt=p[1];i.loading='lazy';d.appendChild(i);d.appendChild(document.createTextNode(p[1]));st.appendChild(d);});
+
+  // simulador
+  var f='reta',$=function(id){return document.getElementById(id)};
+  var brl=function(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0})};
+  var m2f=function(v){return v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' m²'};
+  var n=function(id){var v=parseFloat(String($(id).value).replace(',','.'));return v>0?v:0};
+  function calc(){
+    var p=n('pf')/100,sa=n('sa')/100,rb=n('rb')/100,pm=n('pm');
+    var lados=[n('c1')/100];if(f!=='reta')lados.push(n('c2')/100);if(f==='U')lados.push(n('c3')/100);
+    // tampo: os lados 2 e 3 descontam o canto; saia na frente, rodabanca nas paredes
+    var cantos=lados.length-1,tampo=0,fundo=0;
+    lados.forEach(function(L,i){tampo+=(i===0?L:Math.max(0,L-p))*p;fundo+=L;});
+    var frente=Math.max(0,fundo-2*cantos*p);
+    var aS=frente*sa,aR=fundo*rb,tot=tampo+aS+aR;
+    var h='';
+    h+='<div class="ln"><span>Tampo'+(lados.length>1?' ('+lados.length+' peças)':'')+'</span><b>'+m2f(tampo)+'</b></div>';
+    if(sa>0)h+='<div class="ln"><span>Saia '+(sa*100).toLocaleString('pt-BR')+' cm</span><b>'+m2f(aS)+'</b></div>';
+    if(rb>0)h+='<div class="ln"><span>Rodabanca '+(rb*100).toLocaleString('pt-BR')+' cm</span><b>'+m2f(aR)+'</b></div>';
+    $('pecas').innerHTML=h;
+    $('m2').textContent=m2f(tot);
+    $('vl').textContent=brl(tot*pm);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('#fmt button'),function(b){b.addEventListener('click',function(){
+    Array.prototype.forEach.call(document.querySelectorAll('#fmt button'),function(x){x.classList.remove('on')});
+    b.classList.add('on');f=b.getAttribute('data-f');$('l2').hidden=f==='reta';$('l3').hidden=f!=='U';calc();
+  })});
+  ['c1','c2','c3','pf','sa','rb','pm'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+
+  // orçamento de demonstração: abre o app (a página do cliente) depois que a página carregou
+  // /demo/ é uma cópia do app só para esta página (o app de verdade não muda); nada é gravado no banco
+  var DEMO_URL='/demo/?orc=demoMarmoristaProVendas2026';
+  // o iframe nasce aqui (e não no HTML) porque o script de UTMs mexe no src dos iframes que já estão na página
+  var dok=$('demo-ok'),dif=null;
+  function abre(){if(dif)return;dif=document.createElement('iframe');dif.title='Orçamento de demonstração do Marmorista Pro';dif.allow='fullscreen';
+    dif.addEventListener('load',function(){dif.classList.add('on');dif.parentNode.classList.add('on')});dif.src=DEMO_URL;document.querySelector('#demo .ph-in').appendChild(dif);}
+  if(document.readyState==='complete')setTimeout(abre,300);else window.addEventListener('load',function(){setTimeout(abre,300)});
+  window.addEventListener('message',function(e){if(e.origin!==location.origin)return;
+    if(e.data&&e.data.mpDemo==='aprovou'){dok.classList.add('on');setTimeout(function(){dok.classList.remove('on')},9000);}});
+
+  // revelar ao rolar
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    Array.prototype.forEach.call(els,function(e){io.observe(e)});
+  }else Array.prototype.forEach.call(els,function(e){e.classList.add('on')});
+
+  // topo e botão fixo
+  var nav=$('nav'),stk=$('stk'),pl=$('planos');
+  function sc(){var y=window.scrollY;nav.classList.toggle('sc',y>10);var r=pl.getBoundingClientRect();var dm=document.querySelector('#demo .ph').getBoundingClientRect();stk.classList.toggle('on',y>600&&!(r.top<window.innerHeight&&r.bottom>0)&&!(dm.top<window.innerHeight&&dm.bottom>80))}
+  window.addEventListener('scroll',sc,{passive:true});sc();
+
+  // passa as UTMs para os links do app
+  var q=location.search;
+  if(q)Array.prototype.forEach.call(document.querySelectorAll('a[href^="https://marmoristapro.online"]'),function(a){a.href=a.href+(a.href.indexOf('?')<0?q:'&'+q.slice(1))});
+})();
+</script>
+</body>
+</html>
