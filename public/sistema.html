@@ -78,10 +78,11 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 
 /* orçamento de demonstração: a página do cliente de verdade (o app), num iframe */
 .demo{position:relative;width:100%;max-width:1040px;margin:40px auto 0;display:grid;grid-template-columns:1fr 390px 1fr;gap:28px;align-items:center}
-.ph{position:relative;width:390px;height:780px;background:#0A0C0E;border:1px solid #2A3036;border-radius:46px;padding:11px;box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 0 1px rgba(245,184,0,.08),0 0 90px rgba(245,184,0,.1)}
+.ph{position:relative;width:390px;height:640px;transition:height .3s;background:#0A0C0E;border:1px solid #2A3036;border-radius:46px;padding:11px;box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 0 1px rgba(245,184,0,.08),0 0 90px rgba(245,184,0,.1)}
 .ph-in{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#0E1113}
 .ph-in iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}
 .ph-in iframe.on{opacity:1}
+.dm-host{position:absolute;inset:0}
 .ph-in.on .ph-ld{display:none}
 .ph-ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mu);font-size:14px}
 .spin{width:30px;height:30px;border:3px solid rgba(245,184,0,.2);border-top-color:var(--au);border-radius:50%;animation:sp 1s linear infinite}
@@ -99,7 +100,7 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
   .ph{order:-1}.tips{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:560px}
 }
 @media(max-width:480px){
-  .ph{width:calc(100% - 36px);height:min(640px,70vh);border-radius:34px;padding:7px}.ph-in{border-radius:28px}
+  .ph{width:calc(100% - 36px);height:600px;border-radius:34px;padding:7px}.ph-in{border-radius:28px}
   .tip{padding:12px;flex-direction:column;gap:8px}.tip span{font-size:12.5px}
 }
 /* recursos principais */
@@ -295,8 +296,8 @@ footer a:hover{color:var(--tx)}
 
     <div class="demo rv" id="demo">
       <div class="tips">
-        <div class="tip"><i>1</i><div><b>Arraste o 3D</b><span>Gire a bancada com o dedo ou com o mouse.</span></div></div>
-        <div class="tip"><i>2</i><div><b>Troque a pedra</b><span>São Gabriel, Café Imperial ou Quartzo. O 3D e o preço mudam na hora.</span></div></div>
+        <div class="tip"><i>1</i><div><b>Arraste o 3D</b><span>No celular, toque no 3D e gire com o dedo. No computador, arraste com o mouse.</span></div></div>
+        <div class="tip"><i>2</i><div><b>Troque a pedra</b><span>São Gabriel, Café Imperial ou Quartzo. O 3D muda na hora.</span></div></div>
       </div>
       <div class="ph">
         <div class="ph-in">
@@ -306,9 +307,9 @@ footer a:hover{color:var(--tx)}
       </div>
       <div class="tips">
         <div class="tip"><i>3</i><div><b>3 projetos num orçamento</b><span>Cozinha em L, pia com vão e lavatório.</span></div></div>
-        <div class="tip"><i>4</i><div><b>Medidas e peças</b><span>Ligue as medidas, separe as peças e aprove.</span></div></div>
+        <div class="tip"><i>4</i><div><b>Medidas e peças</b><span>Ligue as medidas, separe as peças e troque o fundo.</span></div></div>
       </div>
-      <p class="demo-cap">Este é o orçamento que o seu cliente recebe no WhatsApp. Pode mexer à vontade: é uma demonstração.</p>
+      <p class="demo-cap">É assim que o seu cliente vê o projeto pelo link do WhatsApp. Pode mexer à vontade: é uma demonstração.</p>
     </div>
 </section>
 
@@ -588,10 +589,17 @@ document.body.classList.remove('no-js');
   var DEMO_URL='/demo/?orc=demoMarmoristaProVendas2026';
   // o iframe nasce aqui (e não no HTML) porque o script de UTMs mexe no src dos iframes que já estão na página
   var dok=$('demo-ok'),dif=null;
-  function abre(){if(dif)return;dif=document.createElement('iframe');dif.title='Orçamento de demonstração do Marmorista Pro';dif.allow='fullscreen';
-    dif.addEventListener('load',function(){dif.classList.add('on');dif.parentNode.classList.add('on')});dif.src=DEMO_URL;document.querySelector('#demo .ph-in').appendChild(dif);}
+  function abre(){if(dif)return;
+    // o iframe fica dentro de um shadow DOM: o script de UTMs mexe no src de todo iframe da página (o orçamento carregava
+    // duas vezes e, sem src, ele punha a própria página de vendas dentro do iframe); lá dentro ele não enxerga
+    var box=document.querySelector('#demo .ph-in'),host=document.createElement('div');host.className='dm-host';
+    var sr=host.attachShadow?host.attachShadow({mode:'closed'}):host;
+    var st=document.createElement('style');st.textContent='iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}iframe.on{opacity:1}';sr.appendChild(st);
+    dif=document.createElement('iframe');dif.title='Orçamento de demonstração do Marmorista Pro';dif.allow='fullscreen';
+    dif.addEventListener('load',function(){dif.classList.add('on');box.classList.add('on')});dif.src=DEMO_URL;sr.appendChild(dif);box.appendChild(host);}
   if(document.readyState==='complete')setTimeout(abre,300);else window.addEventListener('load',function(){setTimeout(abre,300)});
   window.addEventListener('message',function(e){if(e.origin!==location.origin)return;
+    if(e.data&&e.data.mpDemo==='h'&&+e.data.h>200){var ph=document.querySelector('#demo .ph'),pd=window.innerWidth<=480?14:22;ph.style.height=Math.min(1400,+e.data.h)+pd+'px';return;}
     if(e.data&&e.data.mpDemo==='aprovou'){dok.classList.add('on');setTimeout(function(){dok.classList.remove('on')},9000);}});
 
   // revelar ao rolar
