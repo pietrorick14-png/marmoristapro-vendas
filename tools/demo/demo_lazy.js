@@ -19,5 +19,16 @@ function ui(){const c=K.cv,o=c&&c.o,it=o&&o.itens[c.it],b=$('#cv-body');if(!it||
  b.onclick=e=>{const x=e.target.closest('[data-dmst]');if(x){it.st=x.dataset.dmst;K.PUB.T[0].venda=tot(o);b.querySelectorAll('[data-dmst]').forEach(y=>y.setAttribute('aria-pressed',y===x));
    const t=b.querySelector('.cv-total b');if(t)t.textContent=brl(tot(o));K.pedra(it.st);avisa('pedra');return;}
   if(e.target.closest('[data-dmre]')){Object.assign(o,{status:'visto',aprovOp:null,aprovEm:null});K.renderClient();K.clientBuild(true);}};}
+/* dentro da página de vendas: quando a lista do orçamento chega ao fim (ou ao topo), a rolagem passa para a página
+   (roda do mouse e dedo, com embalo no fim do toque); no 3D o dedo e a roda continuam girando e dando zoom */
+(function(){if(parent===window)return;let P;try{P=parent.document&&parent;}catch(e){return;}if(!P)return;
+ const sc=()=>document.getElementById('cv-scroll'),fim=(el,d)=>d>0?el.scrollTop+el.clientHeight>=el.scrollHeight-2:el.scrollTop<=0,
+  fora=t=>!!(t&&t.closest&&t.closest('#cv-3d'));
+ addEventListener('wheel',e=>{const el=sc();if(!el||!el.contains(e.target)||fora(e.target))return;if(fim(el,e.deltaY))P.scrollBy(0,e.deltaY*(e.deltaMode===1?16:1));},{passive:true});
+ let y=null,x=0,v=0,t0=0;
+ addEventListener('touchstart',e=>{if(e.touches.length!==1){y=null;return;}y=e.touches[0].clientY;x=e.touches[0].clientX;v=0;t0=Date.now();},{passive:true});
+ addEventListener('touchmove',e=>{const el=sc(),T=e.touches[0];if(y==null||!el||!el.contains(e.target)||fora(e.target))return;const d=y-T.clientY,dx=x-T.clientX,now=Date.now();
+  y=T.clientY;x=T.clientX;if(d&&Math.abs(d)>=Math.abs(dx)&&fim(el,d)){P.scrollBy(0,d);v=d/Math.max(1,now-t0);}else v=0;t0=now;},{passive:true});
+ addEventListener('touchend',()=>{if(y!=null&&Math.abs(v)>.25)P.scrollBy({top:v*280,behavior:'smooth'});y=null;v=0;},{passive:true});})();
 return{fn,ui};};
 /*/LAZY:demo*/

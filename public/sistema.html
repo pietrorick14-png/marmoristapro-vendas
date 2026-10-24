@@ -99,7 +99,7 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
   .ph{order:-1}.tips{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:560px}
 }
 @media(max-width:480px){
-  .ph{width:100%;height:min(760px,80vh);border-radius:34px;padding:7px}.ph-in{border-radius:28px}
+  .ph{width:calc(100% - 36px);height:min(640px,70vh);border-radius:34px;padding:7px}.ph-in{border-radius:28px}
   .tip{padding:12px;flex-direction:column;gap:8px}.tip span{font-size:12.5px}
 }
 /* recursos principais */
@@ -148,6 +148,39 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .lst li{list-style:none}
 
 
+/* plano de corte e ordem de produção */
+.corte{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
+.ch-card{background:var(--s1);border:1px solid var(--ln);border-radius:22px;padding:20px}
+.ch-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.ch-top b{font-size:15px}.ch-top span{color:var(--mu);font-size:13px}
+.ch-ok{font-size:12px;font-weight:700;color:var(--ok);background:rgba(61,190,122,.12);padding:5px 10px;border-radius:999px}
+.ch-svg{width:100%;height:auto;display:block;border-radius:10px}
+.ch-svg .ct-num{fill:#fff;font-weight:800;paint-order:stroke;stroke:rgba(0,0,0,.8);stroke-width:1.3px;font-family:inherit}
+.ch-svg .ct-dm{fill:#FFE08A;font-weight:700;paint-order:stroke;stroke:rgba(0,0,0,.8);stroke-width:1px;font-family:ui-monospace,Consolas,monospace}
+.ch-svg .ct-rem{fill:#8FF0C4;font-weight:700;paint-order:stroke;stroke:rgba(0,0,0,.85);stroke-width:1px;font-family:ui-monospace,Consolas,monospace}
+.ch-leg{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--mu)}
+.ch-leg i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:6px}
+.ch-leg .p{background:rgba(245,184,0,.3);border:1.5px solid var(--au)}.ch-leg .s{border:1.5px dashed #5FE0A6}
+.ch-st{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.ch-st div{background:var(--bg);border:1px solid var(--ln);border-radius:12px;padding:12px;text-align:center}
+.ch-st b{display:block;white-space:nowrap;font-size:22px;color:var(--au2);letter-spacing:-.02em}.ch-st span{font-size:12px;color:var(--mu)}
+.ch-av{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.ch-av p{font-size:13px;padding:9px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--ln);color:#DCDAD3}
+.ch-av p b{color:#8FF0C4}
+.corte h3.t{font-size:22px;margin:4px 0 14px}
+.corte .lst{margin:0 0 26px}
+.op{background:#FBFAF7;color:#1B1B1B;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);font-size:13px}
+.op-h{background:#1B1F23;color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.op-h b{font-size:14px;letter-spacing:.04em}.op-h span{color:#F5B800;font-size:12px;font-weight:700}
+.op table{width:100%;border-collapse:collapse}
+.op th:last-child{text-align:right}.op th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#777;text-align:left;padding:10px 16px 6px}
+.op td{padding:8px 16px;border-top:1px solid #E6E2D8}
+.op td:first-child{width:34px;font-weight:800;color:#B88A00}.op td:last-child{text-align:right;font-family:ui-monospace,Consolas,monospace;font-weight:700;white-space:nowrap}
+.op .pj td{text-align:left!important;font-family:inherit!important;background:#F1EDE3;font-weight:800;color:#555;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
+.op-f{display:flex;flex-wrap:wrap;gap:6px;padding:12px 16px 16px;border-top:1px solid #E6E2D8}
+.op-f span{font-size:11.5px;font-weight:700;padding:5px 9px;border-radius:999px;background:#F1EDE3;color:#555}
+@media(max-width:900px){.corte{grid-template-columns:1fr}}
+@media(max-width:480px){.ch-card{padding:14px}.ch-st b{font-size:16px}.op td,.op th{padding-left:12px;padding-right:12px}}
 /* fluxo */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
 .step{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:24px 20px;position:relative}
@@ -341,6 +374,43 @@ footer a:hover{color:var(--tx)}
       </ul>
       <a class="btn btn-au js-cta" href="#planos">Quero mandar o meu</a>
     </div>
+  </div>
+</section>
+
+<!-- PLANO DE CORTE E ORDEM DE PRODUÇÃO (peças e chapa reais do app: cozinha em L + pia em Preto São Gabriel) -->
+<section class="sec" id="corte">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="tx-saogabriel" patternUnits="userSpaceOnUse" width="70" height="70"><image href="/assets/img/pedra-saogabriel-8fcbf4bb33.webp" width="70" height="70" preserveAspectRatio="none"></image></pattern><pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)"><rect width="6" height="6" fill="#1a1d20"/><line x1="0" y1="0" x2="0" y2="6" stroke="#2c3136" stroke-width="2"/></pattern></defs></svg>
+  <div class="w">
+    <div class="hd rv">
+      <span class="pill">Plano de corte e produção</span>
+      <h2>Aprovou? O plano de corte e<br>a <span class="au">ordem de produção saem na hora</span></h2>
+      <p class="sub">O app encaixa as peças de todos os projetos nas chapas, mostra quantas comprar e o que sobra. A oficina recebe tudo com medida e sem valor.</p>
+    </div>
+    <div class="corte">
+      <div class="ch-card rv">
+        <div class="ch-top"><div><b>Chapa 2 de 3</b> <span>· Preto São Gabriel · 280 × 250 cm</span></div><span class="ch-ok">80% usada</span></div>
+        <svg class="ch-svg" viewBox="-1 -1 282 252" role="img" aria-label="Chapa 2"><rect x="0" y="0" width="280" height="250" rx="2" fill="url(#tx-saogabriel)"></rect><rect x="0" y="0" width="280" height="250" rx="2" fill="#000" opacity="0.6"></rect><path d="M0 0H280V250H0Z M2 2V248H278V2Z" fill="url(#hatch)" fill-rule="evenodd" opacity=".9"></path><rect x="243" y="2.6" width="34.399999999999984" height="58.8" rx="1.2" fill="none" stroke="#5FE0A6" stroke-width=".9" stroke-dasharray="3 2"></rect><text x="260.2" y="33.37683" text-anchor="middle" class="ct-rem" font-size="3.9337999999999984">sobra 35,6×60</text><rect x="234.4" y="158.79999999999998" width="42.99999999999998" height="58.8" rx="1.2" fill="none" stroke="#5FE0A6" stroke-width=".9" stroke-dasharray="3 2"></rect><text x="255.9" y="189.909435" text-anchor="middle" class="ct-rem" font-size="4.884099999999998">sobra 44,2×60</text><rect x="144" y="219.2" width="133.4" height="28.19999999999998" rx="1.2" fill="none" stroke="#5FE0A6" stroke-width=".9" stroke-dasharray="3 2"></rect><text x="210.7" y="235.9775" text-anchor="middle" class="ct-rem" font-size="7.6499999999999995">sobra 134,6×29,4</text><rect x="111" y="209.2" width="31.399999999999988" height="38.199999999999974" rx="1.2" fill="none" stroke="#5FE0A6" stroke-width=".9" stroke-dasharray="3 2"></rect><text x="126.7" y="229.560805" text-anchor="middle" class="ct-rem" font-size="3.6022999999999987">sobra 32,6×39,4</text><rect x="2" y="2" width="240" height="60" fill="url(#tx-saogabriel)"></rect><rect x="2" y="2" width="240" height="60" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="122" y="31.4" text-anchor="middle" class="ct-num" font-size="12">1</text><text x="122" y="43.4" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">240×60</text><rect x="2" y="62.4" width="272.99999999999994" height="35" fill="url(#tx-saogabriel)"></rect><rect x="2" y="62.4" width="272.99999999999994" height="35" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="138.49999999999997" y="79.30000000000001" text-anchor="middle" class="ct-num" font-size="12">7</text><text x="138.49999999999997" y="91.30000000000001" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">273×35</text><rect x="2" y="97.8" width="157" height="60" fill="url(#tx-saogabriel)"></rect><rect x="2" y="97.8" width="157" height="60" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="80.5" y="127.2" text-anchor="middle" class="ct-num" font-size="12">16</text><text x="80.5" y="139.2" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">157×60</text><rect x="159.4" y="97.8" width="100" height="60" fill="url(#tx-saogabriel)"></rect><rect x="159.4" y="97.8" width="100" height="60" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="209.4" y="127.2" text-anchor="middle" class="ct-num" font-size="12">2</text><text x="209.4" y="139.2" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">100×60</text><rect x="259.8" y="97.8" width="11" height="52" fill="url(#tx-saogabriel)"></rect><rect x="259.8" y="97.8" width="11" height="52" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="265.3" y="125.1475" text-anchor="middle" class="ct-num" font-size="3.8499999999999996">23</text><rect x="2" y="158.2" width="141" height="50" fill="url(#tx-saogabriel)"></rect><rect x="2" y="158.2" width="141" height="50" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="72.5" y="182.6" text-anchor="middle" class="ct-num" font-size="12">19</text><text x="72.5" y="194.6" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">141×50</text><rect x="143.4" y="158.2" width="90" height="60" fill="url(#tx-saogabriel)"></rect><rect x="143.4" y="158.2" width="90" height="60" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="188.4" y="187.6" text-anchor="middle" class="ct-num" font-size="12">13</text><text x="188.4" y="199.6" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">90×60</text><rect x="2" y="208.6" width="108" height="34.999999999999986" fill="url(#tx-saogabriel)"></rect><rect x="2" y="208.6" width="108" height="34.999999999999986" fill="#F5B800" fill-opacity="0.13" stroke="#F5B800" stroke-width="0.8"></rect><text x="56" y="225.5" text-anchor="middle" class="ct-num" font-size="12">13</text><text x="56" y="237.5" text-anchor="middle" class="ct-dm" font-size="7.4399999999999995">108×35</text></svg>
+        <div class="ch-leg"><span><i class="p"></i>Peças do serviço</span><span><i class="s"></i>Sobra que vira retalho</span></div>
+        <div class="ch-st"><div><b>3</b><span>chapas</span></div><div><b>66%</b><span>aproveitamento</span></div><div><b>5,82 m²</b><span>sobra útil</span></div></div>
+        <div class="ch-av"><p>✓ Melhor encaixe possível: não existe jeito de fazer com menos chapas.</p><p>A sobra da chapa 3 <b>dá 52 filetes ou 27 soleiras</b>.</p></div>
+      </div>
+      <div class="rv">
+        <h3 class="t">Plano de corte</h3>
+        <ul class="lst">
+          <li class="ck">Peças de vários projetos da mesma pedra numa chapa só</li>
+          <li class="ck">Quantas chapas comprar e quanto vai aproveitar</li>
+          <li class="ck">A sobra já vira retalho, e o app diz o que dá para fazer com ela</li>
+          <li class="ck">Peça maior que a chapa? O app avisa e divide com emenda</li>
+          <li class="ck">Usa os retalhos que você já tem antes de abrir chapa nova</li>
+        </ul>
+        <div class="op">
+          <div class="op-h"><b>ORDEM DE PRODUÇÃO</b><span>#214 · Maria Oliveira</span></div>
+          <table><tr><th>Nº</th><th>Peça</th><th>cm</th></tr><tr class="pj"><td colspan="3">Cozinha em L</td></tr><tr><td>1</td><td>Tampo principal</td><td>240 × 60</td></tr><tr><td>2</td><td>Tampo lado esquerdo</td><td>100 × 60</td></tr><tr><td>7</td><td>Balcão alto</td><td>273 × 35</td></tr><tr><td>14</td><td>Montante</td><td>90 × 60</td></tr><tr class="pj"><td colspan="3">Pia com vão para fogão</td></tr><tr><td>16</td><td>Tampo da pia</td><td>157 × 60</td></tr><tr><td>17</td><td>Tampo depois do fogão</td><td>65,6 × 60</td></tr><tr><td>R</td><td>Rodabanca (2 partes, com emenda)</td><td>298,6 × 10</td></tr></table>
+          <div class="op-f"><span>Desenho de cima com as medidas</span><span>Fotos do 3D</span><span>QR code para a equipe</span><span>Arquivo para a máquina (DXF)</span><span>Sem nenhum valor</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="cen rv"><a class="btn btn-au js-cta" href="#planos">Quero o plano de corte</a></div>
   </div>
 </section>
 
