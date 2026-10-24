@@ -69,9 +69,10 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 @media(max-width:420px){.nav nav{gap:14px}.nav .btn{padding:9px 13px;font-size:13px}.nav .logo{font-size:15px;gap:8px}.nav .logo i{width:28px;height:28px}}
 
 /* hero */
-.hero{position:relative;padding:64px 0 0;text-align:center;overflow:hidden}
+.hero{position:relative;padding:28px 0 0;text-align:center;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto;height:720px;background:radial-gradient(ellipse 60% 55% at 50% 30%,rgba(245,184,0,.16),transparent 70%);pointer-events:none}
-.hero .w{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero .w{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+@media(max-width:600px){.hero{padding-top:18px}.hero .w{gap:14px}.demo{margin-top:16px}}
 .hero h1{font-size:clamp(36px,7vw,72px);font-weight:800;max-width:900px}
 .hero h1 span{background:linear-gradient(90deg,var(--au2),var(--au) 60%,#E09A00);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .sub{max-width:620px}
@@ -79,7 +80,7 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .hero .cks{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:center}
 
 /* orçamento de demonstração: a página do cliente de verdade (o app), num iframe */
-.demo{position:relative;width:100%;max-width:1040px;margin:40px auto 0;display:grid;grid-template-columns:1fr 390px 1fr;gap:28px;align-items:center}
+.demo{position:relative;width:100%;max-width:1040px;margin:28px auto 0;display:grid;grid-template-columns:1fr 390px 1fr;gap:28px;align-items:center}
 .ph{position:relative;width:390px;height:640px;transition:height .3s;background:#0A0C0E;border:1px solid #2A3036;border-radius:46px;padding:11px;box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 0 1px rgba(245,184,0,.08),0 0 90px rgba(245,184,0,.1)}
 .ph-in{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#0E1113}
 .ph-in iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}
@@ -292,7 +293,6 @@ footer a:hover{color:var(--tx)}
 <!-- HERO -->
 <section class="hero">
   <div class="w">
-    <span class="pill rv">287 projetos prontos em 26 categorias</span>
     <h1 class="rv">Mostre a bancada em 3D e <span>feche a venda na hora</span>.</h1>
     <p class="sub rv">Projeto em 3D, orçamento com a sua logo no WhatsApp, plano de corte da chapa e desenho técnico. Do primeiro contato até a obra, num app só.</p>
     <div class="cta rv">
