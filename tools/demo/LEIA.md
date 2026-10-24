@@ -14,3 +14,6 @@ Refazer (quando o app mudar muito):
 
 `V.json`: preço de cada projeto em cada pedra (tabela de preços da conta do Pietro, 24/10/2026, sem o desconto
 manual do #106). `itens.json`: os projetos dos orçamentos #106, #113 e #112.
+
+Teste de toque (celular simulado com toque de verdade e computador): `node tools/demo/teste-demo.cjs [endereço]`
+(padrão: http://localhost:8770/sistema.html; para o site no ar use https://aplicativo.marmoristapro.online/sistema).
