@@ -697,9 +697,9 @@ document.body.classList.remove('no-js');
          +'<button class="pg-opt" type="button" data-pg="pix12"><span><b>Pix · 12 meses</b><small>365 dias. Sai por '+P.anoMes+' por mês, pago uma vez só.</small></span><span><b>'+P.ano+'</b></span></button></div>'
          +'<p class="pg-dica">No cartão o mensal sai R$ 10 mais barato e renova sozinho.</p>':''):'')
      +'<div class="pg-trust"><span>🔒 Pagamento seguro pela Stripe</span><span>'+(outras?'Pix aprovado na hora':'Garantia de 7 dias · cancele quando quiser')+'</span></div>';}
-  function pgAbre(plano,de){plAtual=plano==='equipe'?'equipe':'pro';outras=false;foco=de||null;desenha();pg.hidden=false;
+  var pgT=0;function pgAbre(plano,de){clearTimeout(pgT);plAtual=plano==='equipe'?'equipe':'pro';outras=false;foco=de||null;desenha();pg.hidden=false;
     requestAnimationFrame(function(){pg.classList.add('on');var g=pgIn.querySelector('.pg-go');if(g)g.focus();});document.body.style.overflow='hidden';}
-  function pgFecha(){pg.classList.remove('on');document.body.style.overflow='';setTimeout(function(){pg.hidden=true;},200);if(foco)try{foco.focus();}catch(e){}}
+  function pgFecha(){pg.classList.remove('on');document.body.style.overflow='';clearTimeout(pgT);pgT=setTimeout(function(){pg.hidden=true;},200);if(foco)try{foco.focus();}catch(e){}}
   pg.addEventListener('click',function(e){if(e.target===pg){pgFecha();return;}var b=e.target.closest('[data-pg]');if(!b)return;var k=b.dataset.pg;
     if(k==='fechar'){pgFecha();return;}if(k==='outras'){outras=!outras;desenha();return;}if(k==='p-equipe'||k==='p-pro'){plAtual=k.slice(2);desenha();return;}
     if(k==='cartao')paga(plAtual,'cartao',b);else if(k==='anual')paga(plAtual+'_anual','cartao',b);else if(k==='pix1'||k==='pix12')paga(plAtual,k,b);});
