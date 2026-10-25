@@ -51,6 +51,8 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .ck{display:inline-flex;align-items:center;gap:8px;color:var(--mu);font-size:14px}
 .ck::before{content:"";width:18px;height:18px;border-radius:50%;background:rgba(245,184,0,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/11px no-repeat;flex:none}
 
+/* desempenho: as partes abaixo do topo só são desenhadas quando chegam perto da tela */
+main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
 /* revelar ao rolar */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:none}
