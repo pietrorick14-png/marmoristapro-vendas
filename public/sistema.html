@@ -509,7 +509,7 @@ footer a:hover{color:var(--tx)}
           <li class="ck">1 celular + 1 computador</li>
           <li class="ck">Suporte por WhatsApp</li>
         </ul>
-        <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o PRO</a>
+        <a class="btn btn-gh js-cta" href="#planos" data-plano="pro">Assinar o PRO</a>
       </div>
       <div class="plan top rv">
         <span class="bdg">MAIS ESCOLHIDO</span>
@@ -525,7 +525,7 @@ footer a:hover{color:var(--tx)}
           <li class="ck">Ordem de produção para a oficina</li>
           <li class="ck">Suporte por WhatsApp</li>
         </ul>
-        <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o Equipe</a>
+        <a class="btn btn-au js-cta" href="#planos" data-plano="equipe">Assinar o Equipe</a>
       </div>
     </div>
     <p class="ps rv">A escolha da maioria das marmorarias que assinam.</p>
@@ -569,8 +569,8 @@ footer a:hover{color:var(--tx)}
     <h2>Pronto para fechar<br><span class="au">mais bancadas</span>?</h2>
     <p class="sub">Faça o seu primeiro projeto em 3D ainda hoje. Se não gostar, a garantia de 7 dias devolve o seu dinheiro.</p>
     <div class="cta">
-      <a class="btn btn-au js-cta" href="https://marmoristapro.online">Assinar o Equipe · R$ 119,90</a>
-      <a class="btn btn-gh js-cta" href="https://marmoristapro.online">Assinar o PRO · R$ 89,90</a>
+      <a class="btn btn-au js-cta" href="#planos" data-plano="equipe">Assinar o Equipe · R$ 119,90</a>
+      <a class="btn btn-gh js-cta" href="#planos" data-plano="pro">Assinar o PRO · R$ 89,90</a>
     </div>
     <p class="note">Acesso liberado na hora. Sem fidelidade.</p>
   </div>
@@ -643,6 +643,17 @@ document.body.classList.remove('no-js');
     function pronto(){if(++ok<ims.length)return;oc.hidden=false;$('op').hidden=true;roda();}
     ims.forEach(function(im){im.loading='eager';if(im.complete&&im.naturalWidth)pronto();else{im.addEventListener('load',pronto);im.addEventListener('error',function(){ok=-99;})}});
     dots.forEach(function(d,k){d.addEventListener('click',function(){vai(k);roda();})});})();
+
+  // assinar: abre o pagamento da Stripe do plano (função compra-site). Depois de pagar, a pessoa volta no app e cria a senha
+  // (a conta é a do e-mail do pagamento). Sem resposta, cai no app para criar a conta e assinar por dentro.
+  var FN='https://srtwlmrhtivijkwjxqvn.supabase.co/functions/v1/compra-site',KEY='sb_publishable_o4VnbRkSpR6tPydMncy4mQ_J84Qlmcy';
+  Array.prototype.forEach.call(document.querySelectorAll('[data-plano]'),function(a){a.addEventListener('click',function(e){e.preventDefault();if(a.dataset.ab)return;
+    var t=a.textContent,qs=new URLSearchParams(location.search),utm={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=qs.get(k);if(v)utm[k]=v;});
+    a.dataset.ab='1';a.textContent='Abrindo o pagamento…';
+    var volta=function(){a.textContent=t;delete a.dataset.ab;};
+    fetch(FN,{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY},body:JSON.stringify({acao:'checkout',plano:a.dataset.plano,utm:utm})})
+      .then(function(r){return r.json();}).then(function(j){if(j&&j.url&&/^https:\/\/checkout\.stripe\.com\//.test(j.url)){location.href=j.url;setTimeout(volta,8000);}else{volta();location.href='https://marmoristapro.online/';}})
+      .catch(function(){volta();location.href='https://marmoristapro.online/';});});});
 
   // revelar ao rolar
   var els=document.querySelectorAll('.rv');
