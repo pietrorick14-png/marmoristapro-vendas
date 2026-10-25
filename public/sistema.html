@@ -194,6 +194,26 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .oc-dots button[aria-current="true"]{background:var(--au);width:26px;border-radius:6px}
 @media(max-width:900px){.corte{grid-template-columns:1fr}}
 @media(max-width:480px){.ch-card{padding:14px}.ch-st b{font-size:16px}.op td,.op th{padding-left:12px;padding-right:12px}}
+/* janela de pagamento (igual à do app, 26/10/2026): cartão na cara; Pix em "Outras formas de pagamento" (R$ 10 a mais) */
+.pg{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.72);opacity:0;pointer-events:none;transition:opacity .2s}
+.pg.on{opacity:1;pointer-events:auto}
+.pg-in{position:relative;width:100%;max-width:440px;max-height:calc(100vh - 32px);overflow:auto;display:flex;flex-direction:column;gap:14px;padding:22px 18px 18px;border-radius:24px;background:var(--s1);border:1px solid var(--ln);box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.pg-x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--s2);color:var(--tx);font-size:20px;cursor:pointer}
+.pg-sel{font-size:15px;color:var(--mu);padding-right:40px}.pg-sel b{color:var(--au)}
+.pg-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px 16px 16px;border-radius:18px;border:1.5px solid var(--au);background:rgba(245,184,0,.08)}
+.pg-card>em{position:absolute;top:-10px;left:16px;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#FFD35A,#E0A100);color:#1A1405}
+.pg-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.pg-h>b{font-size:16px}.pg-h span b{font-size:24px}.pg-h small{font-size:12px;color:var(--mu)}
+.pg-card p{margin:0;font-size:13.5px;line-height:1.45;color:#DCDAD3}
+.pg-go{width:100%;font-size:17px;padding:17px}
+.pg-anual{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--ln2);background:var(--bg);color:var(--tx);font:inherit;text-align:left;cursor:pointer}
+.pg-anual b{display:block;font-size:14.5px}.pg-anual small{color:var(--mu);font-size:12.5px}.pg-anual em{font-style:normal;font-size:11.5px;font-weight:800;color:#1A1400;background:var(--au);padding:4px 9px;border-radius:999px;white-space:nowrap}
+.pg-link{align-self:center;background:none;border:0;color:var(--mu);font:inherit;font-size:14px;font-weight:600;text-decoration:underline;cursor:pointer;padding:6px}
+.pg-opts{display:flex;flex-direction:column;gap:10px}
+.pg-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px;border-radius:14px;border:1px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit;text-align:left;cursor:pointer}
+.pg-opt b{display:block;font-size:15px}.pg-opt small{display:block;color:var(--mu);font-size:12.5px;line-height:1.4;margin-top:2px}.pg-opt>span:last-child b{font-size:17px;white-space:nowrap}
+.pg-dica{margin:0;font-size:12.5px;color:var(--mu);text-align:center}
+.pg-trust{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;color:var(--mu);text-align:center}
+.pg [data-ab]{opacity:.7;pointer-events:none}
 /* fluxo */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
 .step{background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:24px 20px;position:relative}
@@ -589,6 +609,7 @@ footer a:hover{color:var(--tx)}
   </div>
 </footer>
 
+<div class="pg" id="pg" role="dialog" aria-modal="true" aria-labelledby="pg-sel" hidden><div class="pg-in" id="pg-in"></div></div>
 <div class="stk" id="stk"><a class="btn btn-au js-cta" href="#planos">Quero assinar</a></div>
 
 <script>
@@ -644,16 +665,41 @@ document.body.classList.remove('no-js');
     ims.forEach(function(im){im.loading='eager';if(im.complete&&im.naturalWidth)pronto();else{im.addEventListener('load',pronto);im.addEventListener('error',function(){ok=-99;})}});
     dots.forEach(function(d,k){d.addEventListener('click',function(){vai(k);roda();})});})();
 
-  // assinar: abre o pagamento da Stripe do plano (função compra-site). Depois de pagar, a pessoa volta no app e cria a senha
-  // (a conta é a do e-mail do pagamento). Sem resposta, cai no app para criar a conta e assinar por dentro.
+  // assinar (26/10/2026, igual à janela de pagamento do app): o botão do plano abre a janela com o cartão na cara (mensal e
+  // "Ou anual") e "Outras formas de pagamento" com o Pix de 1 mês (R$ 10 a mais que o cartão) e o de 12 meses (preço do anual).
+  // Cada opção abre a Stripe pela função compra-site; depois de pagar, a pessoa volta no app e cria a senha (conta = e-mail do
+  // pagamento). Sem resposta, cai no app para criar a conta e assinar por dentro.
   var FN='https://srtwlmrhtivijkwjxqvn.supabase.co/functions/v1/compra-site',KEY='sb_publishable_o4VnbRkSpR6tPydMncy4mQ_J84Qlmcy';
-  Array.prototype.forEach.call(document.querySelectorAll('[data-plano]'),function(a){a.addEventListener('click',function(e){e.preventDefault();if(a.dataset.ab)return;
-    var t=a.textContent,qs=new URLSearchParams(location.search),utm={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=qs.get(k);if(v)utm[k]=v;});
-    a.dataset.ab='1';a.textContent='Abrindo o pagamento…';
-    var volta=function(){a.textContent=t;delete a.dataset.ab;};
-    fetch(FN,{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY},body:JSON.stringify({acao:'checkout',plano:a.dataset.plano,utm:utm})})
+  var PIX_ON=false; // Pix na janela: ligar só depois do stripe-webhook que soma os dias do Pix do site estar no ar
+  var PL={pro:{nome:'PRO individual',mes:'R$ 89,90',pixMes:'R$ 99,90',ano:'R$ 863',anoMes:'R$ 71,92',eco:'Economize R$ 215'},
+    equipe:{nome:'PRO Equipe',mes:'R$ 119,90',pixMes:'R$ 129,90',ano:'R$ 1.151',anoMes:'R$ 95,92',eco:'Economize R$ 287'}};
+  var pg=$('pg'),pgIn=$('pg-in'),outras=false,plAtual='pro',foco=null;
+  function paga(plano,metodo,b){if(b.dataset.ab)return;var t=b.innerHTML,qs=new URLSearchParams(location.search),utm={};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=qs.get(k);if(v)utm[k]=v;});
+    b.dataset.ab='1';b.innerHTML='Abrindo o pagamento…';var volta=function(){b.innerHTML=t;delete b.dataset.ab;};
+    fetch(FN,{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY},body:JSON.stringify({acao:'checkout',plano:plano,metodo:metodo,utm:utm})})
       .then(function(r){return r.json();}).then(function(j){if(j&&j.url&&/^https:\/\/checkout\.stripe\.com\//.test(j.url)){location.href=j.url;setTimeout(volta,8000);}else{volta();location.href='https://marmoristapro.online/';}})
-      .catch(function(){volta();location.href='https://marmoristapro.online/';});});});
+      .catch(function(){volta();location.href='https://marmoristapro.online/';});}
+  function desenha(){var P=PL[plAtual];
+    pgIn.innerHTML='<button class="pg-x" type="button" data-pg="fechar" aria-label="Fechar">×</button>'
+     +'<div class="pg-sel" id="pg-sel">Plano <b>'+P.nome+'</b></div>'
+     +'<div class="pg-card"><em>Melhor preço</em><div class="pg-h"><b>Cartão de crédito</b><span><b>'+P.mes+'</b><small>/mês</small></span></div>'
+     +'<p>Renova sozinho todo mês: você nunca perde o acesso. Cancele quando quiser.</p>'
+     +'<button class="btn btn-au pg-go" type="button" data-pg="cartao">Assinar com cartão · '+P.mes+'/mês</button>'
+     +'<button class="pg-anual" type="button" data-pg="anual"><span><b>Ou anual: '+P.ano+'</b><small>Sai por '+P.anoMes+'/mês</small></span><em>'+P.eco+'</em></button></div>'
+     +(PIX_ON?'<button class="pg-link" type="button" data-pg="outras" aria-expanded="'+outras+'">'+(outras?'Esconder as outras formas de pagamento':'Outras formas de pagamento')+'</button>'
+       +(outras?'<div class="pg-opts"><button class="pg-opt" type="button" data-pg="pix1"><span><b>Pix · 1 mês</b><small>30 dias. Não renova sozinho: todo mês você paga um Pix novo.</small></span><span><b>'+P.pixMes+'</b></span></button>'
+         +'<button class="pg-opt" type="button" data-pg="pix12"><span><b>Pix · 12 meses</b><small>365 dias. Sai por '+P.anoMes+' por mês, pago uma vez só.</small></span><span><b>'+P.ano+'</b></span></button></div>'
+         +'<p class="pg-dica">No cartão o mensal sai R$ 10 mais barato e renova sozinho.</p>':''):'')
+     +'<div class="pg-trust"><span>🔒 Pagamento seguro pela Stripe</span><span>'+(outras?'Pix aprovado na hora':'Garantia de 7 dias · cancele quando quiser')+'</span></div>';}
+  function abre(plano,de){plAtual=plano==='equipe'?'equipe':'pro';outras=false;foco=de||null;desenha();pg.hidden=false;
+    requestAnimationFrame(function(){pg.classList.add('on');var g=pgIn.querySelector('.pg-go');if(g)g.focus();});document.body.style.overflow='hidden';}
+  function fecha(){pg.classList.remove('on');document.body.style.overflow='';setTimeout(function(){pg.hidden=true;},200);if(foco)try{foco.focus();}catch(e){}}
+  pg.addEventListener('click',function(e){if(e.target===pg){fecha();return;}var b=e.target.closest('[data-pg]');if(!b)return;var k=b.dataset.pg;
+    if(k==='fechar'){fecha();return;}if(k==='outras'){outras=!outras;desenha();return;}
+    if(k==='cartao')paga(plAtual,'cartao',b);else if(k==='anual')paga(plAtual+'_anual','cartao',b);else if(k==='pix1'||k==='pix12')paga(plAtual,k,b);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pg.hidden)fecha();});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-plano]'),function(a){a.addEventListener('click',function(e){e.preventDefault();abre(a.dataset.plano,a);});});
 
   // revelar ao rolar
   var els=document.querySelectorAll('.rv');
