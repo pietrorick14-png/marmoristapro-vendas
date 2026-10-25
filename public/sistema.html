@@ -10,6 +10,7 @@
 <meta property="og:description" content="Mostre a bancada em 3D e mande o orçamento no WhatsApp antes do concorrente.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1113'/%3E%3Cpath d='M7 22V10l9 7 9-7v12' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/demo-poster-s.webp" imagesrcset="img/demo-poster-s.webp 400w, img/demo-poster.webp 560w" imagesizes="(max-width:480px) 90vw, 370px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
@@ -332,7 +333,7 @@ footer a:hover{color:var(--tx)}
       </div>
       <div class="ph">
         <div class="ph-in">
-          <img class="ph-poster" src="img/demo-poster.webp" alt="Orçamento em 3D com a cozinha em L, a pia com vão e o lavatório, e as pedras para escolher" width="560" height="921" decoding="async">
+          <img class="ph-poster" src="img/demo-poster-s.webp" srcset="img/demo-poster-s.webp 400w, img/demo-poster.webp 560w" sizes="(max-width:480px) 90vw, 370px" fetchpriority="high" alt="Orçamento em 3D com a cozinha em L, a pia com vão e o lavatório, e as pedras para escolher" width="560" height="921">
           <div class="ph-ld"><div class="spin"></div>Carregando o 3D…</div>
         </div>
         <div class="demo-ok" id="demo-ok"><span>Viu? O cliente aprova sozinho pelo link.</span><a class="btn btn-au js-cta" href="#planos">Quero o meu</a></div>
@@ -412,7 +413,7 @@ footer a:hover{color:var(--tx)}
 
 <!-- PLANO DE CORTE E ORDEM DE PRODUÇÃO (peças e chapa reais do app: cozinha em L + pia em Preto São Gabriel) -->
 <section class="sec" id="corte">
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="tx-saogabriel" patternUnits="userSpaceOnUse" width="70" height="70"><image href="/assets/img/pedra-saogabriel-8fcbf4bb33.webp" width="70" height="70" preserveAspectRatio="none"></image></pattern><pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)"><rect width="6" height="6" fill="#1a1d20"/><line x1="0" y1="0" x2="0" y2="6" stroke="#2c3136" stroke-width="2"/></pattern></defs></svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="tx-saogabriel" patternUnits="userSpaceOnUse" width="70" height="70"><image href="img/pedra-saogabriel.jpg" width="70" height="70" preserveAspectRatio="none"></image></pattern><pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)"><rect width="6" height="6" fill="#1a1d20"/><line x1="0" y1="0" x2="0" y2="6" stroke="#2c3136" stroke-width="2"/></pattern></defs></svg>
   <div class="w">
     <div class="hd rv">
       <span class="pill">Plano de corte e produção</span>
