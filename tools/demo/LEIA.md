@@ -17,3 +17,4 @@ manual do #106). `itens.json`: os projetos dos orçamentos #106, #113 e #112.
 
 Teste de toque (celular simulado com toque de verdade e computador): `node tools/demo/teste-demo.cjs [endereço]`
 (padrão: http://localhost:8770/sistema.html; para o site no ar use https://aplicativo.marmoristapro.online/sistema).
+4. Depois de copiar: `python tools/demo/preload.py` (pré-cargas no <head> da demonstração) e, se o visual do orçamento mudou, refazer a foto `public/img/demo-poster.webp` (aparece no lugar do 3D até a pessoa mexer na página).

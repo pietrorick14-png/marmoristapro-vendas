@@ -12,11 +12,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1113'/%3E%3Cpath d='M7 22V10l9 7 9-7v12' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- Utmify: rastreamento de UTMs e pixel (mesmos da página da VSL) -->
-<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
-<script>window.pixelId = "6a4750b8418bb67e9bf863db";</script>
-<script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer></script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+<!-- Utmify: rastreamento de UTMs e pixel (mesmos da página da VSL). Carregam no primeiro movimento ou 4 s depois de abrir,
+     para não pesar na abertura da página -->
+<script>window.pixelId="6a4750b8418bb67e9bf863db";(function(){var f=0,E=['pointerdown','touchstart','keydown','wheel','scroll','mousemove'];
+function go(){if(f)return;f=1;E.forEach(function(e){removeEventListener(e,go,true)});
+var a=document.createElement('script');a.src='https://cdn.utmify.com.br/scripts/utms/latest.js';a.async=true;a.setAttribute('data-utmify-prevent-xcod-sck','');a.setAttribute('data-utmify-prevent-subids','');document.head.appendChild(a);
+var b=document.createElement('script');b.src='https://cdn.utmify.com.br/scripts/pixel/pixel.js';b.async=true;document.head.appendChild(b);}
+E.forEach(function(e){addEventListener(e,go,{capture:true,passive:true})});addEventListener('load',function(){setTimeout(go,4000)});})();</script>
 <style>
 :root{
   --bg:#0B0D0F;--bg2:#101316;--s1:#15191C;--s2:#1C2125;--s3:#242A2F;
@@ -88,9 +91,12 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 .dm-host{position:absolute;inset:0}
 .dm-film{position:absolute;inset:11px;z-index:2;border-radius:36px;-webkit-tap-highlight-color:transparent}
 @media(max-width:480px){.dm-film{inset:7px;border-radius:28px}}
-.ph-in.on .ph-ld{display:none}
-.ph-ld{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mu);font-size:14px}
-.spin{width:30px;height:30px;border:3px solid rgba(245,184,0,.2);border-top-color:var(--au);border-radius:50%;animation:sp 1s linear infinite}
+.ph-in.on .ph-ld{display:none!important}
+.ph-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:inherit}
+.ph-in.on .ph-poster{visibility:hidden}
+.ph-ld{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:none;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(11,13,15,.85);border:1px solid var(--ln2);color:var(--tx);font-size:14px;font-weight:600;z-index:1;white-space:nowrap}
+.ph-in.carr .ph-ld{display:flex}
+.spin{width:18px;height:18px;border:3px solid rgba(245,184,0,.2);border-top-color:var(--au);border-radius:50%;animation:sp 1s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
 .tips{display:flex;flex-direction:column;gap:14px;text-align:left}
 .tip{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--s1);border:1px solid var(--ln);border-radius:16px}
@@ -235,17 +241,6 @@ h2{font-size:clamp(28px,4.6vw,46px);font-weight:800}
 @media(max-width:560px){.mini{grid-template-columns:1fr}}
 .dd{text-align:center;color:var(--mu);margin:44px 0 0;font-weight:600}
 
-/* depoimentos */
-.deps{columns:2;column-gap:16px}
-.dep{break-inside:avoid;margin-bottom:16px;background:var(--s1);border:1px solid var(--ln);border-radius:var(--r);padding:24px}
-.dep .stars{color:var(--au);letter-spacing:2px;margin-bottom:10px}
-.dep p{color:#DCDAD3}
-.dep .who{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:14px}
-.dep .who i{width:40px;height:40px;border-radius:50%;background:var(--s3);display:grid;place-items:center;font-style:normal;font-weight:800;color:var(--au2)}
-.dep .who span{color:var(--mu);font-size:12.5px;display:block}
-.dep.ph{border-style:dashed;border-color:var(--ln2)}
-@media(max-width:760px){.deps{columns:1}}
-
 /* oferta e planos */
 .urg{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding:56px 22px;border-radius:26px;background:radial-gradient(ellipse at top,rgba(245,184,0,.14),transparent 70%),var(--s1);border:1px solid var(--ln2);margin-bottom:64px}
 .urg .cks{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:center}
@@ -337,7 +332,8 @@ footer a:hover{color:var(--tx)}
       </div>
       <div class="ph">
         <div class="ph-in">
-          <div class="ph-ld"><div class="spin"></div>Abrindo o orçamento…</div>
+          <img class="ph-poster" src="img/demo-poster.webp" alt="Orçamento em 3D com a cozinha em L, a pia com vão e o lavatório, e as pedras para escolher" width="560" height="921" decoding="async">
+          <div class="ph-ld"><div class="spin"></div>Carregando o 3D…</div>
         </div>
         <div class="demo-ok" id="demo-ok"><span>Viu? O cliente aprova sozinho pelo link.</span><a class="btn btn-au js-cta" href="#planos">Quero o meu</a></div>
       </div>
@@ -441,7 +437,7 @@ footer a:hover{color:var(--tx)}
           <li class="ck">Usa os retalhos que você já tem antes de abrir chapa nova</li>
         </ul>
         <!-- carrossel com as páginas da ordem de produção (img/ordem-1..3.jpg, na ordem do Pietro); sem as fotos, fica a folha abaixo -->
-        <div class="oc" id="oc" hidden>
+        <div class="oc" id="oc">
           <div class="oc-v"><div class="oc-tr" id="oc-tr">
             <img src="img/ordem-1.jpg" alt="Ordem de produção: desenho, medidas, fotos do 3D e QR code" loading="lazy">
             <img src="img/ordem-2.jpg" alt="Ordem de produção: desenho de cima com as medidas" loading="lazy">
@@ -449,7 +445,7 @@ footer a:hover{color:var(--tx)}
           </div></div>
           <div class="oc-dots" id="oc-dots"><button type="button" aria-label="Página 1" aria-current="true"></button><button type="button" aria-label="Página 2"></button><button type="button" aria-label="Página 3"></button></div>
         </div>
-        <div class="op" id="op">
+        <div class="op" id="op" hidden>
           <div class="op-h"><b>ORDEM DE PRODUÇÃO</b><span>#214 · Maria Oliveira</span></div>
           <table><tr><th>Nº</th><th>Peça</th><th>cm</th></tr><tr class="pj"><td colspan="3">Cozinha em L</td></tr><tr><td>1</td><td>Tampo principal</td><td>240 × 60</td></tr><tr><td>2</td><td>Tampo lado esquerdo</td><td>100 × 60</td></tr><tr><td>7</td><td>Balcão alto</td><td>273 × 35</td></tr><tr><td>14</td><td>Montante</td><td>90 × 60</td></tr><tr class="pj"><td colspan="3">Pia com vão para fogão</td></tr><tr><td>16</td><td>Tampo da pia</td><td>157 × 60</td></tr><tr><td>17</td><td>Tampo depois do fogão</td><td>65,6 × 60</td></tr><tr><td>R</td><td>Rodabanca (2 partes, com emenda)</td><td>298,6 × 10</td></tr></table>
           <div class="op-f"><span>Desenho de cima com as medidas</span><span>Fotos do 3D</span><span>QR code para a equipe</span><span>Arquivo para a máquina (DXF)</span><span>Sem nenhum valor</span></div>
@@ -488,19 +484,13 @@ footer a:hover{color:var(--tx)}
   </div>
 </section>
 
-<!-- DEPOIMENTOS (colocar depoimentos reais dos clientes) -->
-<section class="sec">
+<!-- MARMORISTAS DO BRASIL (os depoimentos reais entram depois) -->
+<section class="sec" style="padding:56px 0">
   <div class="w">
-    <div class="hd rv">
+    <div class="hd rv" style="margin-bottom:0">
       <span class="pill">Quem usa, recomenda</span>
-      <h2>Marmorarias do Brasil inteiro<br>já <span class="au">orçam pelo app</span></h2>
-      <p class="sub">Trocaram o caderno, a planilha e o desenho à mão pelo Marmorista Pro. Veja o que elas contam.</p>
-    </div>
-    <div class="deps">
-      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: o que mudou depois do app, de preferência com um número, tipo "fechei 3 bancadas na primeira semana".]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
-      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: sobre o 3D e o cliente final vendo a pedra.]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
-      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: sobre a rapidez do orçamento no celular, na obra.]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
-      <div class="dep ph rv"><div class="stars">★★★★★</div><p>[Depoimento real de cliente aqui: sobre o plano de corte, retalhos ou o suporte.]</p><div class="who"><i>??</i><div><b>Nome do cliente</b><span>Marmoraria · Cidade/UF</span></div></div></div>
+      <h2>Marmoristas do Brasil inteiro<br>já <span class="au">orçam pelo app</span></h2>
+      <p class="sub">Trocaram o caderno, a planilha e o desenho à mão pelo Marmorista Pro.</p>
     </div>
   </div>
 </section>
@@ -624,7 +614,7 @@ document.body.classList.remove('no-js');
   // categorias e pedras
   var C=[['bancadas','Bancadas'],['ilhas','Ilhas'],['balcoes','Balcões'],['gourmet','Gourmet'],['lavatorios','Lavatórios'],['cubas','Cubas'],['churras','Churrasqueiras'],['escadas','Escadas'],['lareiras','Lareiras'],['soleiras','Soleiras'],['peitoris','Peitoris'],['nichos','Nichos']];
   var g=document.getElementById('cats');
-  C.forEach(function(c){var a=document.createElement('div');a.className='cat';var i=document.createElement('img');i.src='img/cat-'+c[0]+'.webp';i.alt=c[1];i.loading='lazy';var s=document.createElement('span');s.textContent=c[1];a.appendChild(i);a.appendChild(s);g.appendChild(a);});
+  C.forEach(function(c){var a=document.createElement('div');a.className='cat';var i=document.createElement('img');i.src='img/cat-'+c[0]+'-s.webp';i.width=300;i.height=225;i.alt=c[1];i.loading='lazy';var s=document.createElement('span');s.textContent=c[1];a.appendChild(i);a.appendChild(s);g.appendChild(a);});
   var P=[['saogabriel','São Gabriel'],['calacattagold','Calacatta Gold'],['carrara','Carrara'],['tajmahal','Taj Mahal'],['pretofogo','Preto Fogo'],['verdeguatemala','Verde Guatemala'],['absoluto','Preto Absoluto'],['travertino','Travertino'],['quartzo','Quartzo'],['itaunas','Itaúnas'],['montblanc','Mont Blanc']];
   var st=document.getElementById('stones');
   P.forEach(function(p){var d=document.createElement('div');d.className='stone';var i=document.createElement('img');i.src='img/pedra-'+p[0]+'.jpg';i.alt=p[1];i.loading='lazy';d.appendChild(i);d.appendChild(document.createTextNode(p[1]));st.appendChild(d);});
@@ -638,12 +628,15 @@ document.body.classList.remove('no-js');
   function abre(){if(dif)return;
     // o iframe fica dentro de um shadow DOM: o script de UTMs mexe no src de todo iframe da página (o orçamento carregava
     // duas vezes e, sem src, ele punha a própria página de vendas dentro do iframe); lá dentro ele não enxerga
-    var box=document.querySelector('#demo .ph-in'),host=document.createElement('div');host.className='dm-host';
+    var box=document.querySelector('#demo .ph-in'),host=document.createElement('div');host.className='dm-host';box.classList.add('carr');
     var sr=host.attachShadow?host.attachShadow({mode:'closed'}):host;
     var st=document.createElement('style');st.textContent='iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}iframe.on{opacity:1}';sr.appendChild(st);
     dif=document.createElement('iframe');dif.title='Orçamento de demonstração do Marmorista Pro';dif.allow='fullscreen';
     dif.addEventListener('load',function(){dif.classList.add('on');box.classList.add('on')});dif.src=DEMO_URL;sr.appendChild(dif);box.appendChild(host);}
-  if(document.readyState==='complete')setTimeout(abre,300);else window.addEventListener('load',function(){setTimeout(abre,300)});
+  // o 3D (o app inteiro) só baixa no primeiro movimento da pessoa: a página abre na hora com a foto do orçamento no lugar
+  var EV=['pointerdown','touchstart','keydown','wheel','scroll','mousemove'];
+  function primeiro(){EV.forEach(function(e){removeEventListener(e,primeiro,true)});abre();}
+  EV.forEach(function(e){addEventListener(e,primeiro,{capture:true,passive:true})});
   // celular: película da própria página por cima do orçamento. O navegador não passa a rolagem de dentro do iframe para a
   // página; com a película o dedo rola a página normal (lisa) e o toque é repassado para o botão/pedra que está embaixo.
   // Com o 3D ligado ('3d-on') a película sai e o dedo gira o projeto; '3d-off' (Pronto, tocou fora, rolou) volta.
@@ -666,8 +659,7 @@ document.body.classList.remove('no-js');
   (function(){var oc=$('oc'),tr=$('oc-tr');if(!oc)return;var ims=tr.querySelectorAll('img'),dots=$('oc-dots').querySelectorAll('button'),i=0,ok=0,t=null;
     function vai(n){i=(n+ims.length)%ims.length;tr.style.transform='translateX('+(-100*i)+'%)';dots.forEach(function(d,k){d.setAttribute('aria-current',k===i)});}
     function roda(){clearInterval(t);t=setInterval(function(){vai(i+1)},3000);}
-    function pronto(){if(++ok<ims.length)return;oc.hidden=false;$('op').hidden=true;roda();}
-    ims.forEach(function(im){im.loading='eager';if(im.complete&&im.naturalWidth)pronto();else{im.addEventListener('load',pronto);im.addEventListener('error',function(){ok=-99;})}});
+    roda();
     dots.forEach(function(d,k){d.addEventListener('click',function(){vai(k);roda();})});})();
 
   // assinar (26/10/2026, igual à janela de pagamento do app): o botão do plano abre a janela com o cartão na cara (mensal e
