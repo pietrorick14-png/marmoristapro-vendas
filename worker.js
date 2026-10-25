@@ -45,7 +45,8 @@ export default {
     // página de vendas do divulgador (26/10/2026): /ruan mostra a mesma /sistema; a página lê o caminho e manda o código do
     // divulgador na compra (compra-site -> metadata.divulg -> stripe-webhook liga a conta a ele e grava a comissão)
     const u = new URL(req.url);
-    if (DIVULG_PAGINAS.has(u.pathname.replace(/\/$/, ''))) return env.ASSETS.fetch(new Request(new URL('/sistema' + u.search, u), req));
+    if (u.pathname.length > 1 && u.pathname.endsWith('/') && DIVULG_PAGINAS.has(u.pathname.slice(0, -1))) return Response.redirect(u.origin + u.pathname.slice(0, -1) + u.search, 301); // /ruan/ -> /ruan (as fotos são relativas)
+    if (DIVULG_PAGINAS.has(u.pathname)) return env.ASSETS.fetch(new Request(new URL('/sistema' + u.search, u), req));
     return env.ASSETS.fetch(req);
   },
 };
