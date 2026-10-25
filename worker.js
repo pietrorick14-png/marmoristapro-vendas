@@ -29,6 +29,9 @@ const PAGINA = '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta na
   + '<body style="margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;box-sizing:border-box;background:#0E1113;color:#ddd;text-align:center;font:16px system-ui,sans-serif">'
   + '<div><h1 style="font-size:20px;margin:0 0 8px">Acesso indisponível</h1><p style="margin:0;opacity:.7">Não foi possível abrir esta página.</p></div></body></html>';
 
+// caminhos das páginas de divulgador (o código de cada um fica na sistema.html, em DIVULG)
+const DIVULG_PAGINAS = new Set(['/ruan']);
+
 export default {
   async fetch(req, env) {
     try {
@@ -39,6 +42,10 @@ export default {
         }
       }
     } catch (_) { /* qualquer erro: deixa passar */ }
+    // página de vendas do divulgador (26/10/2026): /ruan mostra a mesma /sistema; a página lê o caminho e manda o código do
+    // divulgador na compra (compra-site -> metadata.divulg -> stripe-webhook liga a conta a ele e grava a comissão)
+    const u = new URL(req.url);
+    if (DIVULG_PAGINAS.has(u.pathname.replace(/\/$/, ''))) return env.ASSETS.fetch(new Request(new URL('/sistema' + u.search, u), req));
     return env.ASSETS.fetch(req);
   },
 };

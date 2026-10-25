@@ -675,6 +675,8 @@ document.body.classList.remove('no-js');
   // Cada opção abre a Stripe pela função compra-site; depois de pagar, a pessoa volta no app e cria a senha (conta = e-mail do
   // pagamento). Sem resposta, cai no app para criar a conta e assinar por dentro.
   var FN='https://srtwlmrhtivijkwjxqvn.supabase.co/functions/v1/compra-site',KEY='sb_publishable_o4VnbRkSpR6tPydMncy4mQ_J84Qlmcy';
+  // página do divulgador (o worker serve esta mesma página em /ruan): o código vai na compra e a venda gera a comissão dele
+  var DIVULG=({'/ruan':'DZ69QK8'})[location.pathname.replace(/\/$/,'')]||null;
   var PIX_ON=true; // Pix na janela (o stripe-webhook soma os dias do Pix do site desde 26/10/2026, versão 17)
   var PL={pro:{nome:'PRO individual',mes:'R$ 89,90',pixMes:'R$ 99,90',ano:'R$ 863',anoMes:'R$ 71,92',eco:'Economize R$ 215'},
     equipe:{nome:'PRO Equipe',mes:'R$ 119,90',pixMes:'R$ 129,90',ano:'R$ 1.151',anoMes:'R$ 95,92',eco:'Economize R$ 287'}};
@@ -682,7 +684,7 @@ document.body.classList.remove('no-js');
   function paga(plano,metodo,b){if(b.dataset.ab)return;var t=b.innerHTML,qs=new URLSearchParams(location.search),utm={};
     ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=qs.get(k);if(v)utm[k]=v;});
     b.dataset.ab='1';b.innerHTML='Abrindo o pagamento…';var volta=function(){b.innerHTML=t;delete b.dataset.ab;};
-    fetch(FN,{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY},body:JSON.stringify({acao:'checkout',plano:plano,metodo:metodo,utm:utm})})
+    fetch(FN,{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY},body:JSON.stringify({acao:'checkout',plano:plano,metodo:metodo,utm:utm,divulg:DIVULG})})
       .then(function(r){return r.json();}).then(function(j){if(j&&j.url&&/^https:\/\/checkout\.stripe\.com\//.test(j.url)){location.href=j.url;setTimeout(volta,8000);}else{volta();location.href='https://marmoristapro.online/';}})
       .catch(function(){volta();location.href='https://marmoristapro.online/';});}
   function desenha(){var P=PL[plAtual];
