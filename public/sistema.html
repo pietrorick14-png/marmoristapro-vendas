@@ -670,7 +670,7 @@ document.body.classList.remove('no-js');
   // Cada opção abre a Stripe pela função compra-site; depois de pagar, a pessoa volta no app e cria a senha (conta = e-mail do
   // pagamento). Sem resposta, cai no app para criar a conta e assinar por dentro.
   var FN='https://srtwlmrhtivijkwjxqvn.supabase.co/functions/v1/compra-site',KEY='sb_publishable_o4VnbRkSpR6tPydMncy4mQ_J84Qlmcy';
-  var PIX_ON=false; // Pix na janela: ligar só depois do stripe-webhook que soma os dias do Pix do site estar no ar
+  var PIX_ON=true; // Pix na janela (o stripe-webhook soma os dias do Pix do site desde 26/10/2026, versão 17)
   var PL={pro:{nome:'PRO individual',mes:'R$ 89,90',pixMes:'R$ 99,90',ano:'R$ 863',anoMes:'R$ 71,92',eco:'Economize R$ 215'},
     equipe:{nome:'PRO Equipe',mes:'R$ 119,90',pixMes:'R$ 129,90',ano:'R$ 1.151',anoMes:'R$ 95,92',eco:'Economize R$ 287'}};
   var pg=$('pg'),pgIn=$('pg-in'),outras=false,plAtual='pro',foco=null;
