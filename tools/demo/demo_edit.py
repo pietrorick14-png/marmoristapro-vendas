@@ -27,8 +27,12 @@ assert line.count('let PUB=null;')==1
 rep(line,line.replace('let PUB=null;',"let PUB=null;const DEMO=/^demo/.test(PUB_T||'');/* orçamento de demonstração da página de vendas (LAZY:demo) */"))
 # 2) função proposta: na demonstração responde a parte sob demanda (nada vai ao banco)
 rep("async function propFn(b){const d=","async function propFn(b){if(DEMO)return lazy('demo').then(()=>lzSync('demo').fn(b));const d=")
-# 3) tela do cliente: escolha de pedra por projeto
-rep('<footer class="cv-foot">Proposta feita com Marmorista Pro</footer>`;}','<footer class="cv-foot">Proposta feita com Marmorista Pro</footer>`;if(DEMO&&LZM.demo)LZM.demo.ui();}')
+# 3) tela do cliente: escolha de pedra por projeto (a tela do cliente virou parte sob demanda LAZY:cv: o gancho vai pelo K)
+rep("LZK.cv=()=>({camOn,","LZK.cv=()=>({demoUi:()=>{if(DEMO&&LZM.demo)LZM.demo.ui();},camOn,")
+rep('<footer class="cv-foot">Proposta feita com Marmorista Pro</footer>`;','<footer class="cv-foot">Proposta feita com Marmorista Pro</footer>`;K.demoUi();')
+# 3b) abre no lavatório (3º projeto) e com o fundo escuro (pedidos do Pietro, 26/10/2026); o botão Fundo continua trocando
+rep("cv={o,op,sel:ppSel(o).slice(),it:0,D:null};","cv={o,op,sel:ppSel(o).slice(),it:DEMO?2:0,D:null};")
+rep("try{return localStorage.getItem('mpro.fundo')==='esc';}","try{const v=localStorage.getItem('mpro.fundo');return v==null?DEMO:v==='esc';}")
 # 4) só as fotos das 3 pedras são baixadas antes (o app baixa as 44, ~8 MB)
 rep("STONE_ORDER.forEach((id,i)=>setTimeout(()=>{const im=photoImg(id);","PEDRAS_DEMO.forEach((id,i)=>setTimeout(()=>{const im=photoImg(id);")
 rep("function photoImg(id){const u=STONE_PHOTO[id];if(!u)return null;","function photoImg(id){const u=STONE_PHOTO[id];if(!u||!"+js(PEDRAS)+".includes(id))return null;")

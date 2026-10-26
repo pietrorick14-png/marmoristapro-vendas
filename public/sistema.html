@@ -141,7 +141,8 @@ main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:au
 
 .note{font-size:12.5px;color:var(--mu2);margin-top:12px}
 /* categorias */
-.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cats{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+.cat.zero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:rgba(245,184,0,.07);border:1px dashed var(--au);color:var(--au2);text-decoration:none}.cat.zero b{font-size:34px;line-height:1}.cat.zero span{position:static!important;background:none!important;padding:0!important;color:var(--au2)!important;font-weight:700}
 .cat{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--ln);aspect-ratio:4/3;background:#000}
 .cat img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .cat:hover img{transform:scale(1.06)}
@@ -154,6 +155,7 @@ main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:au
 
 /* pedras */
 .stones{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.stone.mais{color:var(--au2);font-weight:700}.stone.mais .c{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;border:2px dashed var(--au);font-size:21px;font-weight:800;background:rgba(245,184,0,.08)}
 .stone{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;color:var(--mu);width:92px;text-align:center}
 .stone img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--s3);box-shadow:0 6px 20px rgba(0,0,0,.5)}
 
@@ -201,6 +203,7 @@ main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:au
 .oc-dots{display:flex;justify-content:center;gap:10px;margin-top:14px}
 .oc-dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--s3);cursor:pointer;padding:0}
 .oc-dots button[aria-current="true"]{background:var(--au);width:26px;border-radius:6px}
+.dp{max-width:340px}.dp .oc-v{aspect-ratio:480/812;background:#0b0d0f;touch-action:pan-y}.dp .oc-tr img{object-fit:cover;background:#0b0d0f}
 @media(max-width:900px){.corte{grid-template-columns:1fr}}
 @media(max-width:480px){.ch-card{padding:14px}.ch-st b{font-size:16px}.op td,.op th{padding-left:12px;padding-right:12px}}
 /* janela de pagamento (igual à do app, 26/10/2026): cartão na cara; Pix em "Outras formas de pagamento" (R$ 10 a mais) */
@@ -335,7 +338,7 @@ footer a:hover{color:var(--tx)}
       </div>
       <div class="ph">
         <div class="ph-in">
-          <img class="ph-poster" src="img/demo-poster-s.webp" srcset="img/demo-poster-s.webp 400w, img/demo-poster.webp 560w" sizes="(max-width:480px) 90vw, 370px" fetchpriority="high" alt="Orçamento em 3D com a cozinha em L, a pia com vão e o lavatório, e as pedras para escolher" width="560" height="921">
+          <img class="ph-poster" src="img/demo-poster-s.webp" srcset="img/demo-poster-s.webp 400w, img/demo-poster.webp 560w" sizes="(max-width:480px) 90vw, 370px" fetchpriority="high" alt="Orçamento em 3D do lavatório com cuba esculpida em quartzo branco, com as medidas, e as pedras para escolher" width="560" height="921">
           <div class="ph-ld"><div class="spin"></div>Carregando o 3D…</div>
         </div>
         <div class="demo-ok" id="demo-ok"><span>Viu? O cliente aprova sozinho pelo link.</span><a class="btn btn-au js-cta" href="#planos">Quero o meu</a></div>
@@ -357,7 +360,7 @@ footer a:hover{color:var(--tx)}
       <p class="sub">São 6 abas, cada uma cuida de uma parte da marmoraria. Escolha o projeto, coloque a medida e a pedra: o app monta as peças, o 3D e o preço.</p>
     </div>
     <div class="f4 abas">
-      <div class="fc ab rv"><div class="ab-h"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></div><div><small>Aba</small><h3>Projetos</h3></div></div><p class="ab-t">Escolha, mude a medida e veja em 3D</p><ul><li class="ck">287 projetos prontos em 26 categorias, ou monte do zero</li><li class="ck">Reta, L, U, ilha, balcão, cubas, frontão, saia e recortes</li><li class="ck">3D com a pedra escolhida, medidas e peças separadas</li><li class="ck">Desenho técnico e plano de corte da chapa</li></ul></div>
+      <div class="fc ab rv"><div class="ab-h"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></div><div><small>Aba</small><h3>Projetos</h3></div></div><p class="ab-t">Escolha, mude a medida e veja em 3D</p><ul><li class="ck">Modelos prontos em 27 categorias, ou monte do zero qualquer projeto sob medida</li><li class="ck">Reta, L, U, ilha, balcão, cubas, frontão, saia e recortes</li><li class="ck">3D com a pedra escolhida, medidas e peças separadas</li><li class="ck">Desenho técnico e plano de corte da chapa</li></ul></div>
       <div class="fc ab rv"><div class="ab-h"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><div><small>Aba</small><h3>Orçamentos</h3></div></div><p class="ab-t">Mande o preço antes do concorrente</p><ul><li class="ck">Vários projetos num orçamento só, com opções de pedra</li><li class="ck">Cobra pelo m², metro linear ou chapa, com a sua margem</li><li class="ck">Link no WhatsApp: o cliente vê o 3D e aprova sozinho</li><li class="ck">Acompanhe: enviado, visto pelo cliente, aprovado</li></ul></div>
       <div class="fc ab rv"><div class="ab-h"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div><div><small>Aba</small><h3>Obras</h3></div></div><p class="ab-t">Cada obra do começo ao fim</p><ul><li class="ck">Ficha da obra com os projetos e as medidas</li><li class="ck">Fotos de cada dia: o que foi feito e o que falta</li><li class="ck">Link para a equipe postar fotos, sem ver preço</li><li class="ck">Ordem de produção para a oficina</li></ul></div>
       <div class="fc ab rv"><div class="ab-h"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M14 6v12M14 12h7"/></svg></div><div><small>Aba</small><h3>Retalhos</h3></div></div><p class="ab-t">Sobra de pedra vira dinheiro</p><ul><li class="ck">Guarde cada sobra com a pedra e a medida</li><li class="ck">O plano de corte usa os retalhos antes da chapa nova</li><li class="ck">Quando o cliente aprova, o retalho fica reservado</li><li class="ck">Saiba o que tem no galpão sem ir até lá</li></ul></div>
@@ -372,9 +375,9 @@ footer a:hover{color:var(--tx)}
 <section class="sec">
   <div class="w">
     <div class="hd rv">
-      <span class="pill">Projetos prontos</span>
-      <h2>287 projetos em <span class="au">26 categorias</span></h2>
-      <p class="sub">É só escolher, mudar a medida e a pedra. Ou monte do zero, no formato que o cliente pediu.</p>
+      <span class="pill">Todas as categorias</span>
+      <h2>Qualquer projeto, <span class="au">sob medida</span></h2>
+      <p class="sub">Da pia ao túmulo: escolha um modelo pronto e mude a medida e a pedra, ou monte do zero qualquer tipo de projeto, do jeito que o cliente pediu.</p>
     </div>
     <div class="cats rv" id="cats"></div>
     <div class="chips rv">
@@ -387,9 +390,9 @@ footer a:hover{color:var(--tx)}
 <section class="sec" style="padding-top:20px">
   <div class="w">
     <div class="hd rv">
-      <span class="pill">Pedras de verdade</span>
+      <span class="pill">+40 pedras de verdade</span>
       <h2>O cliente vê <span class="au">a pedra que ele escolheu</span></h2>
-      <p class="sub">Granitos, mármores, quartzitos e quartzos com textura real no 3D. E você ainda cadastra as suas pela foto da chapa.</p>
+      <p class="sub">São mais de 40 pedras com textura real no 3D: granitos, mármores, quartzitos e quartzos. E não fica só nelas: você cadastra as pedras que vende pela foto da chapa.</p>
     </div>
     <div class="stones rv" id="stones"></div>
   </div>
@@ -487,13 +490,25 @@ footer a:hover{color:var(--tx)}
   </div>
 </section>
 
-<!-- MARMORISTAS DO BRASIL (os depoimentos reais entram depois) -->
-<section class="sec" style="padding:56px 0">
+<!-- DEPOIMENTOS (prints do WhatsApp com o link, o nome e a foto do cliente borrados) e GARANTIA, antes da oferta -->
+<section class="sec" style="padding:56px 0 20px">
   <div class="w">
-    <div class="hd rv" style="margin-bottom:0">
+    <div class="hd rv">
       <span class="pill">Quem usa, recomenda</span>
       <h2>Marmoristas do Brasil inteiro<br>já <span class="au">orçam pelo app</span></h2>
-      <p class="sub">Trocaram o caderno, a planilha e o desenho à mão pelo Marmorista Pro.</p>
+      <p class="sub">O que eles mandaram para a gente no WhatsApp.</p>
+    </div>
+    <div class="oc dp rv" id="dp">
+      <div class="oc-v"><div class="oc-tr" id="dp-tr">
+        <img src="img/dep-1.webp" alt="Depoimento no WhatsApp: o cliente recebeu o orçamento em 3D e respondeu Cara ficou top, demais" width="480" height="812" loading="lazy" decoding="async">
+        <img src="img/dep-2.webp" alt="Depoimento no WhatsApp: facilitou bastante pra fechar um trabalho que o cliente queria ver como ficaria o projeto dele" width="480" height="812" loading="lazy" decoding="async">
+        <img src="img/dep-3.webp" alt="Depoimento no WhatsApp: assinei o plano, gostei muito, bora pra cima" width="480" height="812" loading="lazy" decoding="async">
+      </div></div>
+      <div class="oc-dots" id="dp-dots"><button type="button" aria-label="Depoimento 1" aria-current="true"></button><button type="button" aria-label="Depoimento 2"></button><button type="button" aria-label="Depoimento 3"></button></div>
+    </div>
+    <div class="gar rv" style="margin-top:56px">
+      <div class="sl"><span><b>7</b>DIAS</span></div>
+      <div><h3>Garantia de 7 dias</h3><p>Assine e use. Se não gostar, peça em até 7 dias depois do primeiro pagamento e devolvemos 100% do valor. Sem multa e sem fidelidade.</p></div>
     </div>
   </div>
 </section>
@@ -516,7 +531,7 @@ footer a:hover{color:var(--tx)}
         <div class="pr"><b>R$ 89,90</b><span>/30 dias</span></div>
         <p class="eq">Cerca de R$ 3 por dia.</p>
         <ul>
-          <li class="ck">287 projetos prontos + montar do zero</li>
+          <li class="ck">Modelos prontos + qualquer projeto sob medida</li>
           <li class="ck">Projeto em 3D com a pedra escolhida</li>
           <li class="ck">Orçamento com a sua logo no WhatsApp</li>
           <li class="ck">Link para o cliente aprovar</li>
@@ -554,11 +569,6 @@ footer a:hover{color:var(--tx)}
       <div class="step rv"><div class="n">2</div><h3>O acesso libera na hora</h3><p>Abre no navegador do celular ou do computador. Nada para instalar.</p></div>
       <div class="step rv"><div class="n">3</div><h3>Começa a orçar</h3><p>Escolhe um projeto, coloca a medida e manda o primeiro orçamento.</p></div>
     </div>
-
-    <div class="gar rv">
-      <div class="sl"><span><b>7</b>DIAS</span></div>
-      <div><h3>Garantia de 7 dias</h3><p>Assine e use. Se não gostar, peça em até 7 dias depois do primeiro pagamento e devolvemos 100% do valor. Sem multa e sem fidelidade.</p></div>
-    </div>
   </div>
 </section>
 
@@ -569,7 +579,7 @@ footer a:hover{color:var(--tx)}
     <div class="faq rv">
       <details open><summary>Qual o melhor app para marmoraria?</summary><p>O que calcula do jeito que a sua marmoraria trabalha. Um bom app para marmoraria mostra o projeto em 3D, faz o orçamento pelo m², pelo metro linear ou pela chapa, monta o plano de corte e funciona no celular, na obra. O Marmorista Pro faz tudo isso por R$ 89,90 a cada 30 dias (PRO) ou R$ 119,90 com a equipe, sem fidelidade.</p></details>
       <details><summary>Preciso instalar alguma coisa?</summary><p>Não. Ele abre no navegador do celular e do computador. Se quiser, dá para colocar o ícone na tela inicial do celular, como um aplicativo.</p></details>
-      <details><summary>Serve para o tipo de serviço que eu faço?</summary><p>São 287 projetos prontos em 26 categorias: bancadas reta, L e U, ilhas, balcões, lavatórios, cubas, escadas, soleiras, peitoris, nichos, churrasqueiras, lareiras e muito mais. E tem o "Montar do zero" para o formato que o cliente pedir.</p></details>
+      <details><summary>Serve para o tipo de serviço que eu faço?</summary><p>Serve. Tem modelos prontos em 27 categorias: bancadas reta, L e U, ilhas, balcões, lavatórios, cubas, escadas, soleiras, peitoris, nichos, churrasqueiras, lareiras, túmulos e muito mais. E com o "Montar do zero" você faz qualquer tipo de projeto sob medida, no formato que o cliente pedir.</p></details>
       <details><summary>Posso usar as minhas pedras e os meus preços?</summary><p>Pode. Você cadastra as suas pedras com o seu preço, e até pela foto da chapa. O orçamento sai com os seus valores e a sua margem.</p></details>
       <details><summary>Ele faz o plano de corte?</summary><p>Faz. As peças do projeto são encaixadas na chapa para sobrar menos pedra, e as sobras viram retalhos que você usa no próximo serviço.</p></details>
       <details><summary>Funciona no celular?</summary><p>Funciona. Foi feito para o celular: dá para orçar na casa do cliente e mostrar o 3D na hora. No computador fica ainda maior.</p></details>
@@ -615,12 +625,14 @@ document.body.classList.remove('no-js');
 (function(){
   var $=function(id){return document.getElementById(id)};
   // categorias e pedras
-  var C=[['bancadas','Bancadas'],['ilhas','Ilhas'],['balcoes','Balcões'],['gourmet','Gourmet'],['lavatorios','Lavatórios'],['cubas','Cubas'],['churras','Churrasqueiras'],['escadas','Escadas'],['lareiras','Lareiras'],['soleiras','Soleiras'],['peitoris','Peitoris'],['nichos','Nichos']];
+  var C=[['bancadas','Bancadas e pias'],['ilhas','Ilhas e penínsulas'],['balcoes','Balcões comerciais'],['passa','Passa-prato'],['gourmet','Churrasqueira e gourmet'],['churras','Moldura de churrasqueira'],['lavatorios','Lavatórios'],['cubas','Cubas esculpidas'],['caixa','Lavatórios caixa e torre'],['canto','Lavatórios de canto'],['banheiras','Banheiras'],['nichos','Nichos'],['filetes','Filetes e baguetes'],['divisorias','Divisórias de sanitário'],['lavanderia','Lavanderia'],['escadas','Escadas'],['soleiras','Soleiras'],['peitoris','Peitoris'],['pingadeiras','Pingadeiras e capas'],['rodapes','Rodapés'],['pisos','Pisos'],['paineis','Painéis e revestimentos'],['lareiras','Lareiras'],['mesas','Tampos de mesa'],['prateleiras','Prateleiras'],['piscina','Bordas de piscina'],['tumulos','Túmulos e lápides']];
   var g=document.getElementById('cats');
   C.forEach(function(c){var a=document.createElement('div');a.className='cat';var i=document.createElement('img');i.src='img/cat-'+c[0]+'-s.webp';i.width=300;i.height=225;i.alt=c[1];i.loading='lazy';var s=document.createElement('span');s.textContent=c[1];a.appendChild(i);a.appendChild(s);g.appendChild(a);});
+  var z=document.createElement('div');z.className='cat zero';z.innerHTML='<b>+</b><span>Montar do zero</span>';g.appendChild(z);
   var P=[['saogabriel','São Gabriel'],['calacattagold','Calacatta Gold'],['carrara','Carrara'],['tajmahal','Taj Mahal'],['pretofogo','Preto Fogo'],['verdeguatemala','Verde Guatemala'],['absoluto','Preto Absoluto'],['travertino','Travertino'],['quartzo','Quartzo'],['itaunas','Itaúnas'],['montblanc','Mont Blanc']];
   var st=document.getElementById('stones');
   P.forEach(function(p){var d=document.createElement('div');d.className='stone';var i=document.createElement('img');i.src='img/pedra-'+p[0]+'.jpg';i.alt=p[1];i.loading='lazy';d.appendChild(i);d.appendChild(document.createTextNode(p[1]));st.appendChild(d);});
+  var mais=document.createElement('div');mais.className='stone mais';mais.innerHTML='<span class="c">+40</span>e as suas';st.appendChild(mais);
 
 
   // orçamento de demonstração: abre o app (a página do cliente) depois que a página carregou
@@ -664,6 +676,16 @@ document.body.classList.remove('no-js');
     function roda(){clearInterval(t);t=setInterval(function(){vai(i+1)},3000);}
     roda();
     dots.forEach(function(d,k){d.addEventListener('click',function(){vai(k);roda();})});})();
+  // depoimentos: passa sozinho a cada 4 s; arrastar para o lado também troca
+  (function(){var tr=$('dp-tr');if(!tr)return;var ims=tr.querySelectorAll('img'),dots=$('dp-dots').querySelectorAll('button'),i=0,t=null,x0=null;
+    function vai(n){i=(n+ims.length)%ims.length;tr.style.transform='translateX('+(-100*i)+'%)';dots.forEach(function(d,k){d.setAttribute('aria-current',k===i)});}
+    function roda(){clearInterval(t);t=setInterval(function(){vai(i+1)},4000);}
+    // as fotos baixam e o carrossel começa a passar só quando a pessoa chega perto dos depoimentos
+    function perto(){ims.forEach(function(im){im.loading='eager'});roda();}
+    if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();perto();}},{rootMargin:'400px 0px'});io.observe(tr);}else perto();
+    dots.forEach(function(d,k){d.addEventListener('click',function(){vai(k);roda();})});
+    tr.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    tr.addEventListener('touchend',function(e){if(x0==null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40){vai(i+(dx<0?1:-1));roda();}},{passive:true});})();
 
   // assinar (26/10/2026, igual à janela de pagamento do app): o botão do plano abre a janela com o cartão na cara (mensal e
   // "Ou anual") e "Outras formas de pagamento" com o Pix de 1 mês (R$ 10 a mais que o cartão) e o de 12 meses (preço do anual).
