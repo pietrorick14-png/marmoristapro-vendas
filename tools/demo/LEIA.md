@@ -23,3 +23,5 @@ Teste de toque (celular simulado com toque de verdade e computador): `node tools
 e as **Medidas ligadas**; no lavatório aparecem também frontão, saia e bracinho (nos outros projetos, só comprimento e largura).
 A tela do cliente virou parte sob demanda no app (`LAZY:cv`), então o `demo_edit.py` liga a demonstração pelo K (`demoUi`).
 Foto do lugar do 3D refeita com `poster2.cjs` (print da moldura no computador, 560 e 400 px).
+26/10/2026: o fundo segue a pedra (clara = fundo escuro, escura = fundo claro, pela cor `base` da pedra), ao abrir e ao trocar
+de projeto ou de pedra; o botão Fundo continua trocando na mão. A foto do lugar do 3D tem também versão AVIF (`poster2.cjs`).
