@@ -14,8 +14,12 @@
 <link rel="preload" as="font" type="font/woff2" href="/fonts/pjs-latin-v12.woff2" crossorigin>
 <!-- Utmify: rastreamento de UTMs e pixel (mesmos da página da VSL). Carregam no primeiro movimento ou 4 s depois de abrir,
      para não pesar na abertura da página -->
-<script>/* pixel do Utmify: a página principal usa o pixel próprio dela (27/10/2026); a do divulgador (/ruan) continua com o de antes */
-window.pixelId=/^\/ruan\/?$/.test(location.pathname)?"6a4750b8418bb67e9bf863db":"6ae0256e33931e7c1d2784b4";(function(){var f=0,E=['pointerdown','touchstart','keydown','wheel','scroll','mousemove'];
+<script>/* pixel do Utmify (o pixel do Utmify só aceita um código por página, então cada visitante fica com um):
+   /ruan = pixel do divulgador; /sistema = pixel novo (27/10/2026); /sistema?px=antigo = pixel antigo da oferta (28/10/2026,
+   teste do Pietro: uma campanha com cada pixel). A escolha fica guardada no aparelho (30 dias) para valer ao voltar sem o ?px. */
+window.pixelId=(function(){var PX={novo:"6ae0256e33931e7c1d2784b4",antigo:"6ae24228ffb58ba8702af325"};if(/^\/ruan\/?$/.test(location.pathname))return "6a4750b8418bb67e9bf863db";
+var q=(new URLSearchParams(location.search).get('px')||'').toLowerCase(),k=PX[q]?q:null;try{if(k)localStorage.setItem('mp.px',JSON.stringify({k:k,t:Date.now()}));else{var g=JSON.parse(localStorage.getItem('mp.px')||'null');if(g&&PX[g.k]&&Date.now()-g.t<2592e6)k=g.k;}}catch(e){}
+return PX[k||'novo'];})();(function(){var f=0,E=['pointerdown','touchstart','keydown','wheel','scroll','mousemove'];
 function go(){if(f)return;f=1;E.forEach(function(e){removeEventListener(e,go,true)});
 var a=document.createElement('script');a.src='https://cdn.utmify.com.br/scripts/utms/latest.js';a.async=true;a.setAttribute('data-utmify-prevent-xcod-sck','');a.setAttribute('data-utmify-prevent-subids','');document.head.appendChild(a);
 var b=document.createElement('script');b.src='https://cdn.utmify.com.br/scripts/pixel/pixel.js';b.async=true;document.head.appendChild(b);}
