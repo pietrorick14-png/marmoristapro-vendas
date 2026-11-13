@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Escolha o seu plano · Marmorista Pro</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0D0F">
+<link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/pjs-latin-v12.woff2" crossorigin>
+<!-- Utmify: mesmo pixel da VSL, pra manter o rastreio da mesma campanha ate o checkout -->
+<script>window.pixelId="6a4750b8418bb67e9bf863db";</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+<script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer></script>
+<link rel="dns-prefetch" href="https://cdn.utmify.com.br">
+<style>
+@font-face{font-family:"Plus Jakarta Sans";src:url(/fonts/pjs-latin-v12.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"PJS reserva";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Roboto");size-adjust:104.6%;ascent-override:99.24%;descent-override:21.22%;line-gap-override:0%}
+:root{
+  --bg:#0B0D0F;--bg2:#101316;--s1:#15191C;--s2:#1C2125;--s3:#242A2F;
+  --ln:rgba(255,255,255,.08);--ln2:rgba(245,184,0,.28);
+  --tx:#F4F1EA;--mu:#A4A7A5;--mu2:#7C807F;
+  --au:#F5B800;--au2:#FFD35A;--au3:#B88A00;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{min-height:100svh;background:var(--bg);color:var(--tx);font:16px/1.55 "Plus Jakarta Sans","PJS reserva",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px 40px;gap:28px}
+a{color:inherit;text-decoration:none}
+.w{width:100%;max-width:900px}
+.logo{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:18px}
+.logo b{color:var(--au)}
+h1{text-align:center;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.02em}
+.sub{text-align:center;color:var(--mu);font-size:14.5px;margin-top:-6px}
+.btn{display:inline-flex;width:100%;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:14px;font-weight:700;font-size:16px;transition:transform .15s,box-shadow .2s;cursor:pointer;border:0;font-family:inherit}
+.btn-au{background:linear-gradient(180deg,var(--au2),var(--au));color:#1A1400;box-shadow:0 8px 30px rgba(245,184,0,.25),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-au:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(245,184,0,.35)}
+.btn-gh{background:var(--s2);color:var(--tx);border:1px solid var(--ln)}
+.btn-gh:hover{background:var(--s3)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:620px){.plans{grid-template-columns:1fr}}
+.plan{background:linear-gradient(180deg,var(--s1),var(--bg2));border:1px solid var(--ln);border-radius:24px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;position:relative}
+.plan.top{border-color:var(--au);background:linear-gradient(180deg,rgba(245,184,0,.08),var(--s1) 40%);transform:scale(1.03);z-index:1;animation:gl 3.6s ease-in-out infinite}
+@keyframes gl{0%,100%{box-shadow:0 20px 60px rgba(245,184,0,.14),0 0 0 0 rgba(245,184,0,0)}50%{box-shadow:0 28px 90px rgba(245,184,0,.32),0 0 0 4px rgba(245,184,0,.2)}}
+@media(max-width:620px){.plan.top{transform:none}}
+.bdg{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#FFE08A,#F5B800 50%,#D99A00);color:#1A1400;font-size:12px;font-weight:800;padding:5px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 18px rgba(245,184,0,.3)}
+.plan h3{font-size:22px}
+.plan .ds{color:var(--mu);font-size:14px}
+.pg-badge{display:inline-block;padding:4px 10px;border-radius:999px;background:linear-gradient(135deg,#FFD35A,#E0A100);color:#1A1405;font-size:11px;font-weight:900;letter-spacing:.02em;align-self:flex-start}
+.pg-de{display:block;font-size:13px;font-weight:700;color:var(--mu);text-decoration:line-through;text-decoration-color:rgba(167,169,166,.7)}
+.pr{display:flex;align-items:baseline;gap:6px}
+.pr b{font-size:40px;letter-spacing:-.03em}
+.pr span{color:var(--mu)}
+.plan .eq{font-size:13px;font-weight:700;color:var(--au2)}
+.plan ul{display:flex;flex-direction:column;gap:8px;margin:2px 0 6px;flex:1;list-style:none}
+.plan ul li{display:flex;align-items:center;gap:8px;color:var(--mu);font-size:13.5px}
+.plan ul li::before{content:"";width:16px;height:16px;border-radius:50%;background:rgba(245,184,0,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5B800' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat;flex:none}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;color:var(--mu2);font-size:12.5px;text-align:center}
+.scarcity{display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;margin:14px auto 0;padding:11px 18px;border-radius:999px;background:linear-gradient(90deg,#8E0B1F,#C8102E);color:#fff;font-weight:800;font-size:13.5px;text-align:center}
+.lock{display:block;font-size:12.5px;font-weight:700;color:var(--au2);margin-top:-2px}
+
+/* janela de pagamento */
+.pg{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.72);opacity:0;pointer-events:none;transition:opacity .2s}
+.pg.on{opacity:1;pointer-events:auto}
+.pg[hidden]{display:none}
+.pg-seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pg-seg button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:11px 8px;border-radius:14px;border:1.5px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit;font-weight:800;font-size:14.5px;cursor:pointer}
+.pg-seg button small{font-weight:500;font-size:11.5px;color:var(--mu)}
+.pg-seg button[aria-pressed="true"]{border-color:var(--au);background:rgba(245,184,0,.1);color:var(--au2)}
+.pg-in{position:relative;width:100%;max-width:440px;max-height:calc(100vh - 32px);overflow:auto;display:flex;flex-direction:column;gap:14px;padding:22px 18px 18px;border-radius:24px;background:var(--s1);border:1px solid var(--ln);box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.pg-x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--s2);color:var(--tx);font-size:20px;cursor:pointer}
+.pg-sel{font-size:15px;color:var(--mu);padding-right:40px}.pg-sel b{color:var(--au)}
+.pg-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px 16px 16px;border-radius:18px;border:1.5px solid var(--au);background:rgba(245,184,0,.08)}
+.pg-card>em{position:absolute;top:-10px;left:16px;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#FFD35A,#E0A100);color:#1A1405}
+.pg-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.pg-h>b{font-size:16px}.pg-h span b{font-size:26px;color:var(--au2)}.pg-h small{font-size:12px;color:var(--mu)}
+.pg-card p{margin:0;font-size:13.5px;line-height:1.45;color:#DCDAD3}
+.pg-pix{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;border:1px solid var(--ln2);background:var(--bg2)}
+.pg-pix .pg-h>b{display:flex;align-items:center;gap:6px}
+.pg-go{width:100%;font-size:17px;padding:17px}
+.pg-anual{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--ln2);background:var(--bg);color:var(--tx);font:inherit;text-align:left;cursor:pointer}
+.pg-anual b{display:block;font-size:14.5px}.pg-anual small{color:var(--mu);font-size:12.5px}.pg-anual em{font-style:normal;font-size:11.5px;font-weight:800;color:#1A1400;background:var(--au);padding:4px 9px;border-radius:999px;white-space:nowrap}
+.pg-link{align-self:center;background:none;border:0;color:var(--mu);font:inherit;font-size:14px;font-weight:600;text-decoration:underline;cursor:pointer;padding:6px}
+.pg-opts{display:flex;flex-direction:column;gap:10px}
+.pg-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px;border-radius:14px;border:1px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit;text-align:left;cursor:pointer}
+.pg-opt b{display:block;font-size:15px}.pg-opt small{display:block;color:var(--mu);font-size:12.5px;line-height:1.4;margin-top:2px}.pg-opt>span:last-child b{font-size:17px;white-space:nowrap}
+.pg-trust{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;color:var(--mu);text-align:center}
+.pg [data-ab]{opacity:.7;pointer-events:none}
+</style>
+</head>
+<body>
+
+<div class="logo"><b>Marmorista</b> Pro</div>
+
+<div class="w">
+  <h1>Escolha o seu plano</h1>
+  <p class="sub">Black Friday: acesso liberado na hora. Cartão ou Pix.</p>
+  <div class="scarcity">⚠️ Restam apenas <b>6 últimos acessos</b> com o preço de Black Friday</div>
+</div>
+
+<div class="w plans">
+  <div class="plan">
+    <h3>PRO</h3>
+    <p class="ds">Para o dono que orça e vende sozinho. 1 celular + 1 computador.</p>
+    <span class="pg-badge">BLACK FRIDAY · 64% OFF</span>
+    <div class="pr"><small class="pg-de">R$ 249,90</small><b>R$ 89,90</b><span>/30 dias</span></div>
+    <span class="lock">🔒 Preço travado para sempre enquanto você continuar assinando</span>
+    <p class="eq">Menos de R$ 3 por dia</p>
+    <ul>
+      <li>Projetos prontos em 27 categorias + Montar do zero (qualquer medida)</li>
+      <li>Projeto em 3D realista com a pedra que você escolher</li>
+      <li>Orçamento com a sua logo, direto no WhatsApp</li>
+      <li>Link para o cliente aprovar de onde estiver</li>
+      <li>Tabela de preços, aprovação e agenda de entrega</li>
+      <li>Plano de corte da chapa — menos desperdício de pedra</li>
+      <li>Desenho técnico e ordem de produção para a oficina</li>
+      <li>Desenho do projeto em PDF para imprimir ou enviar</li>
+      <li>Controle de retalhos, clientes e obras</li>
+      <li>Suas pedras e seus preços, do seu jeito</li>
+      <li>Funciona no celular e no computador</li>
+      <li>Suporte por WhatsApp + "Pergunte à IA"</li>
+    </ul>
+    <button class="btn btn-gh" type="button" data-plano="pro">QUERO O PRO</button>
+  </div>
+  <div class="plan top">
+    <span class="bdg">🔥 MAIS ESCOLHIDO</span>
+    <h3>PRO Equipe</h3>
+    <p class="ds">Para a marmoraria que já tem equipe e quer vender mais, mais rápido.</p>
+    <span class="pg-badge">BLACK FRIDAY · 66% OFF</span>
+    <div class="pr"><small class="pg-de">R$ 349,90</small><b>R$ 119,90</b><span>/30 dias</span></div>
+    <span class="lock">🔒 Preço travado para sempre enquanto você continuar assinando</span>
+    <p class="eq">Toda a equipe no mesmo app, por menos de R$ 4 por dia</p>
+    <ul>
+      <li><b>Tudo do plano PRO</b> (projetos prontos, 3D, orçamento, corte, desenho técnico, tudo)</li>
+      <li>Aparelhos ilimitados — sem pagar por aparelho a mais</li>
+      <li>Acesso próprio para cada funcionário</li>
+      <li>Obras e projetos compartilhados com toda a equipe</li>
+      <li>Ordem de produção direto para a oficina, sem rodeio</li>
+      <li>Feito para marmoraria que já cresceu e precisa de controle</li>
+    </ul>
+    <button class="btn btn-au" type="button" data-plano="equipe">QUERO O EQUIPE</button>
+  </div>
+</div>
+
+<div class="trust"><span>🔒 Pagamento seguro pela Stripe</span><span>Garantia de 7 dias</span><span>Sem fidelidade</span></div>
+
+<div class="pg" id="pg" role="dialog" aria-modal="true" aria-labelledby="pg-sel" hidden><div class="pg-in" id="pg-in"></div></div>
+
+<script>
+(function(){
+  var FN='https://srtwlmrhtivijkwjxqvn.supabase.co/functions/v1/compra-site',KEY='sb_publishable_o4VnbRkSpR6tPydMncy4mQ_J84Qlmcy';
+  var PIX_ON=true;
+  var PL={pro:{nome:'PRO individual',mes:'R$ 89,90',mesDe:'R$ 249,90',desc:'64',pixMes:'R$ 99,90',ano:'R$ 863',anoMes:'R$ 71,92',eco:'Economize R$ 215'},
+    equipe:{nome:'PRO Equipe',mes:'R$ 119,90',mesDe:'R$ 349,90',desc:'66',pixMes:'R$ 129,90',ano:'R$ 1.151',anoMes:'R$ 95,92',eco:'Economize R$ 287'}};
+  var pg=document.getElementById('pg'),pgIn=document.getElementById('pg-in'),outras=false,plAtual='equipe',foco=null;
+  function paga(plano,metodo,b){if(b.dataset.ab)return;var t=b.innerHTML,qs=new URLSearchParams(location.search),utm={};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=qs.get(k);if(v)utm[k]=v;});
+    b.dataset.ab='1';b.innerHTML='Abrindo o pagamento…';var volta=function(){b.innerHTML=t;delete b.dataset.ab;};
+    fetch(FN,{method:'POST',headers:{'Content-Type':'application/json',apikey:KEY},body:JSON.stringify({acao:'checkout',plano:plano,metodo:metodo,utm:utm,divulg:null})})
+      .then(function(r){return r.json();}).then(function(j){if(j&&j.url&&/^https:\/\/checkout\.stripe\.com\//.test(j.url)){location.href=j.url;setTimeout(volta,8000);}else{volta();location.href='https://marmoristapro.online/';}})
+      .catch(function(){volta();location.href='https://marmoristapro.online/';});}
+  function desenha(){var P=PL[plAtual];
+    pgIn.innerHTML='<button class="pg-x" type="button" data-pg="fechar" aria-label="Fechar">×</button>'
+     +'<div class="pg-sel" id="pg-sel">Escolha o plano</div><div class="pg-seg" role="group" aria-label="Plano"><button type="button" data-pg="p-equipe" aria-pressed="'+(plAtual==='equipe')+'">PRO Equipe<small>Toda a equipe</small></button><button type="button" data-pg="p-pro" aria-pressed="'+(plAtual==='pro')+'">PRO individual<small>1 celular + 1 computador</small></button></div>'
+     +'<span class="pg-badge">BLACK FRIDAY · '+P.desc+'% OFF</span>'
+     +'<p style="margin:0;font-size:12.5px;color:#DCDAD3;text-align:center">Preco travado para sempre, nos proximos meses tambem, enquanto voce continuar assinando.</p>'
+     +'<div class="pg-card"><em>Melhor preço</em><div class="pg-h"><b>Cartão de crédito</b><span><small class="pg-de">'+P.mesDe+'</small><b>'+P.mes+'</b><small>/mês</small></span></div>'
+     +'<p>Renova sozinho todo mês: você nunca perde o acesso. Cancele quando quiser.</p>'
+     +'<button class="btn btn-au pg-go" type="button" data-pg="cartao">ASSINAR NO CARTÃO · '+P.mes+'/mês</button></div>'
+     +(PIX_ON?'<div class="pg-pix"><div class="pg-h"><b>💠 Pix</b><span><b>'+P.pixMes+'</b><small>/mês</small></span></div>'
+       +'<p>30 dias de acesso. Não renova sozinho: todo mês você paga um Pix novo. R$ 10 a mais que o cartão.</p>'
+       +'<button class="btn btn-gh pg-go" type="button" data-pg="pix1">ASSINAR NO PIX · '+P.pixMes+'/mês</button></div>':'')
+     +'<button class="pg-link" type="button" data-pg="outras" aria-expanded="'+outras+'">'+(outras?'Esconder o plano anual':'Prefere pagar o ano todo de uma vez? ('+P.eco+')')+'</button>'
+     +(outras?'<div class="pg-opts"><button class="pg-opt" type="button" data-pg="anual"><span><b>Anual no cartão</b><small>Renova sozinho todo ano · sai por '+P.anoMes+'/mês</small></span><span><b>'+P.ano+'</b></span></button>'
+       +'<button class="pg-opt" type="button" data-pg="pix12"><span><b>Anual no Pix</b><small>Pagamento único, 365 dias. Não renova sozinho.</small></span><span><b>'+P.ano+'</b></span></button></div>':'')
+     +'<div class="pg-trust"><span>🔒 Pagamento seguro pela Stripe</span><span>Garantia de 7 dias · cancele quando quiser</span></div>';}
+  function pgAbre(plano,de){plAtual=plano==='pro'?'pro':'equipe';outras=false;foco=de||null;desenha();pg.hidden=false;
+    requestAnimationFrame(function(){pg.classList.add('on');var g=pgIn.querySelector('.pg-go');if(g)g.focus();});document.body.style.overflow='hidden';}
+  function pgFecha(){pg.classList.remove('on');document.body.style.overflow='';setTimeout(function(){pg.hidden=true;},200);if(foco)try{foco.focus();}catch(e){}}
+  pg.addEventListener('click',function(e){if(e.target===pg){pgFecha();return;}var b=e.target.closest('[data-pg]');if(!b)return;var k=b.dataset.pg;
+    if(k==='fechar'){pgFecha();return;}if(k==='outras'){outras=!outras;desenha();return;}if(k==='p-equipe'||k==='p-pro'){plAtual=k.slice(2);desenha();return;}
+    if(k==='cartao')paga(plAtual,'cartao',b);else if(k==='anual')paga(plAtual+'_anual','cartao',b);else if(k==='pix1'||k==='pix12')paga(plAtual,k,b);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pg.hidden)pgFecha();});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-plano]'),function(b){b.addEventListener('click',function(){pgAbre(b.dataset.plano,b);});});
+  // chegando com ?plano=pro ou ?plano=equipe: abre direto, sem precisar clicar nos cards
+  var qp=new URLSearchParams(location.search).get('plano');if(qp)pgAbre(qp);
+})();
+</script>
+</body>
+</html>

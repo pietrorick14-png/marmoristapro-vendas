@@ -231,8 +231,12 @@ main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:au
 .pg-sel{font-size:15px;color:var(--mu);padding-right:40px}.pg-sel b{color:var(--au)}
 .pg-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px 16px 16px;border-radius:18px;border:1.5px solid var(--au);background:rgba(245,184,0,.08)}
 .pg-card>em{position:absolute;top:-10px;left:16px;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#FFD35A,#E0A100);color:#1A1405}
-.pg-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.pg-h>b{font-size:16px}.pg-h span b{font-size:24px}.pg-h small{font-size:12px;color:var(--mu)}
+.pg-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.pg-h>b{font-size:16px}.pg-h span b{font-size:26px;color:var(--au2)}.pg-h small{font-size:12px;color:var(--mu)}
+.pg-de{display:block;font-size:13px;font-weight:700;color:var(--mu);text-decoration:line-through;text-decoration-color:rgba(167,169,166,.7)}
+.pg-badge{display:inline-block;margin-bottom:8px;padding:4px 10px;border-radius:999px;background:linear-gradient(135deg,#FFD35A,#E0A100);color:#1A1405;font-size:11px;font-weight:900;letter-spacing:.02em}
 .pg-card p{margin:0;font-size:13.5px;line-height:1.45;color:#DCDAD3}
+.pg-pix{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;border:1px solid var(--ln2);background:var(--bg2)}
+.pg-pix .pg-h>b{display:flex;align-items:center;gap:6px}
 .pg-go{width:100%;font-size:17px;padding:17px}
 .pg-anual{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--ln2);background:var(--bg);color:var(--tx);font:inherit;text-align:left;cursor:pointer}
 .pg-anual b{display:block;font-size:14.5px}.pg-anual small{color:var(--mu);font-size:12.5px}.pg-anual em{font-style:normal;font-size:11.5px;font-weight:800;color:#1A1400;background:var(--au);padding:4px 9px;border-radius:999px;white-space:nowrap}
@@ -627,7 +631,8 @@ h2 .au,h3 .au,.hero h1 span{background:linear-gradient(100deg,#FFE7A0 0%,#F5B800
       <div class="plan rv">
         <h3>PRO</h3>
         <p class="ds">Para o dono que orça e vende.</p>
-        <div class="pr"><b>R$ 89,90</b><span>/30 dias</span></div>
+        <span class="pg-badge">BLACK FRIDAY · 64% OFF</span>
+        <div class="pr"><small class="pg-de">R$ 249,90</small><b>R$ 89,90</b><span>/30 dias</span></div>
         <p class="eq">Cerca de R$ 3 por dia.</p>
         <ul>
           <li class="ck">Modelos prontos + qualquer projeto sob medida</li>
@@ -647,7 +652,8 @@ h2 .au,h3 .au,.hero h1 span{background:linear-gradient(100deg,#FFE7A0 0%,#F5B800
         <span class="bdg">MAIS ESCOLHIDO</span>
         <h3>PRO Equipe</h3>
         <p class="ds">Para a marmoraria com funcionários.</p>
-        <div class="pr"><b>R$ 119,90</b><span>/30 dias</span></div>
+        <span class="pg-badge">BLACK FRIDAY · 66% OFF</span>
+        <div class="pr"><small class="pg-de">R$ 349,90</small><b>R$ 119,90</b><span>/30 dias</span></div>
         <p class="eq">Toda a equipe no mesmo app.</p>
         <ul>
           <li class="ck">Tudo do plano PRO</li>
@@ -795,8 +801,8 @@ document.body.classList.remove('no-js');
   // página do divulgador (o worker serve esta mesma página em /ruan): o código vai na compra e a venda gera a comissão dele
   var DIVULG=({'/ruan':'DZ69QK8'})[location.pathname.replace(/\/$/,'')]||null;
   var PIX_ON=true; // Pix na janela (o stripe-webhook soma os dias do Pix do site desde 26/10/2026, versão 17)
-  var PL={pro:{nome:'PRO individual',mes:'R$ 89,90',pixMes:'R$ 99,90',ano:'R$ 863',anoMes:'R$ 71,92',eco:'Economize R$ 215'},
-    equipe:{nome:'PRO Equipe',mes:'R$ 119,90',pixMes:'R$ 129,90',ano:'R$ 1.151',anoMes:'R$ 95,92',eco:'Economize R$ 287'}};
+  var PL={pro:{nome:'PRO individual',mes:'R$ 89,90',mesDe:'R$ 249,90',desc:'64',pixMes:'R$ 99,90',ano:'R$ 863',anoMes:'R$ 71,92',eco:'Economize R$ 215'},
+    equipe:{nome:'PRO Equipe',mes:'R$ 119,90',mesDe:'R$ 349,90',desc:'66',pixMes:'R$ 129,90',ano:'R$ 1.151',anoMes:'R$ 95,92',eco:'Economize R$ 287'}};
   var pg=$('pg'),pgIn=$('pg-in'),outras=false,plAtual='pro',foco=null;
   function paga(plano,metodo,b){if(b.dataset.ab)return;var t=b.innerHTML,qs=new URLSearchParams(location.search),utm={};
     ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=qs.get(k);if(v)utm[k]=v;});
@@ -807,15 +813,18 @@ document.body.classList.remove('no-js');
   function desenha(){var P=PL[plAtual];
     pgIn.innerHTML='<button class="pg-x" type="button" data-pg="fechar" aria-label="Fechar">×</button>'
      +'<div class="pg-sel" id="pg-sel">Escolha o plano</div><div class="pg-seg" role="group" aria-label="Plano"><button type="button" data-pg="p-equipe" aria-pressed="'+(plAtual==='equipe')+'">PRO Equipe<small>Toda a equipe</small></button><button type="button" data-pg="p-pro" aria-pressed="'+(plAtual==='pro')+'">PRO individual<small>1 celular + 1 computador</small></button></div>'
-     +'<div class="pg-card"><em>Melhor preço</em><div class="pg-h"><b>Cartão de crédito</b><span><b>'+P.mes+'</b><small>/mês</small></span></div>'
+     +'<span class="pg-badge">BLACK FRIDAY · '+P.desc+'% OFF</span>'
+     +'<div class="pg-card"><em>Melhor preço</em><div class="pg-h"><b>Cartão de crédito</b><span><small class="pg-de">'+P.mesDe+'</small><b>'+P.mes+'</b><small>/mês</small></span></div>'
      +'<p>Renova sozinho todo mês: você nunca perde o acesso. Cancele quando quiser.</p>'
      +'<button class="btn btn-au pg-go" type="button" data-pg="cartao">Assinar com cartão · '+P.mes+'/mês</button>'
      +'<button class="pg-anual" type="button" data-pg="anual"><span><b>Ou anual: '+P.ano+'</b><small>Sai por '+P.anoMes+'/mês</small></span><em>'+P.eco+'</em></button></div>'
-     +(PIX_ON?'<button class="pg-link" type="button" data-pg="outras" aria-expanded="'+outras+'">'+(outras?'Esconder as outras formas de pagamento':'Outras formas de pagamento')+'</button>'
-       +(outras?'<div class="pg-opts"><button class="pg-opt" type="button" data-pg="pix1"><span><b>Pix · 1 mês</b><small>30 dias. Não renova sozinho: todo mês você paga um Pix novo.</small></span><span><b>'+P.pixMes+'</b></span></button>'
-         +'<button class="pg-opt" type="button" data-pg="pix12"><span><b>Pix · 12 meses</b><small>365 dias. Sai por '+P.anoMes+' por mês, pago uma vez só.</small></span><span><b>'+P.ano+'</b></span></button></div>'
-         +'<p class="pg-dica">No cartão o mensal sai R$ 10 mais barato e renova sozinho.</p>':''):'')
-     +'<div class="pg-trust"><span>🔒 Pagamento seguro pela Stripe</span><span>'+(outras?'Pix aprovado na hora':'Garantia de 7 dias · cancele quando quiser')+'</span></div>';}
+     +(PIX_ON?'<div class="pg-pix"><div class="pg-h"><b>💠 Pix</b><span><b>'+P.pixMes+'</b><small>/mês</small></span></div>'
+       +'<p>30 dias de acesso. Não renova sozinho: todo mês você paga um Pix novo. R$ 10 a mais que o cartão.</p>'
+       +'<button class="btn btn-gh pg-go" type="button" data-pg="pix1">Pagar com Pix · '+P.pixMes+'</button></div>'
+       +'<button class="pg-link" type="button" data-pg="outras" aria-expanded="'+outras+'">'+(outras?'Esconder':'Pix de 12 meses / outras formas')+'</button>'
+       +(outras?'<div class="pg-opts"><button class="pg-opt" type="button" data-pg="pix12"><span><b>Pix · 12 meses</b><small>365 dias. Sai por '+P.anoMes+' por mês, pago uma vez só.</small></span><span><b>'+P.ano+'</b></span></button></div>':'')
+       :'')
+     +'<div class="pg-trust"><span>🔒 Pagamento seguro pela Stripe</span><span>Garantia de 7 dias · cancele quando quiser</span></div>';}
   var pgT=0;function pgAbre(plano,de){clearTimeout(pgT);plAtual=plano==='equipe'?'equipe':'pro';outras=false;foco=de||null;desenha();pg.hidden=false;
     requestAnimationFrame(function(){pg.classList.add('on');var g=pgIn.querySelector('.pg-go');if(g)g.focus();});document.body.style.overflow='hidden';}
   function pgFecha(){pg.classList.remove('on');document.body.style.overflow='';clearTimeout(pgT);pgT=setTimeout(function(){pg.hidden=true;},200);if(foco)try{foco.focus();}catch(e){}}
@@ -826,6 +835,8 @@ document.body.classList.remove('no-js');
   // todo botão de assinar abre a janela (só no clique; nunca sozinha): os dos planos já vêm com o plano; os outros (Assinar agora,
   // Quero assinar, Começar agora...) abrem no PRO Equipe, com a troca de plano no topo da janela
   Array.prototype.forEach.call(document.querySelectorAll('[data-plano], a.js-cta[href="#planos"]'),function(a){a.addEventListener('click',function(e){e.preventDefault();pgAbre(a.dataset.plano||'equipe',a);});});
+  // vindo da VSL com o botão "Assinar agora" (?planos=1 ou ?planos=pro/equipe): abre a janela de pagamento direto, sem esperar clique
+  (function(){var qp=new URLSearchParams(location.search).get('planos');if(qp)pgAbre(qp==='pro'?'pro':'equipe');})();
 
   // revelar ao rolar
   var els=document.querySelectorAll('.rv');
