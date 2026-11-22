@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /demo/
+Disallow: /escolhaseuplanomarmoristapro.html
+
+Sitemap: https://aplicativo.marmoristapro.online/sitemap.xml
