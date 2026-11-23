@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de Orçamento de Bancada de Granito (grátis) | Marmorista Pro</title>
+<meta name="description" content="Calcule o orçamento da bancada de granito ou quartzo: m² da pedra, saia, rodabanca, recortes de cuba e cooktop e perda de chapa. Grátis, direto no celular.">
+<link rel="canonical" href="https://aplicativo.marmoristapro.online/dicas/calculadora-orcamento-bancada-granito">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0B0D0F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Calculadora de Orçamento de Bancada de Granito (grátis) | Marmorista Pro">
+<meta property="og:description" content="Calcule o orçamento da bancada de granito ou quartzo: m² da pedra, saia, rodabanca, recortes de cuba e cooktop e perda de chapa. Grátis, direto no celular.">
+<meta property="og:url" content="https://aplicativo.marmoristapro.online/dicas/calculadora-orcamento-bancada-granito">
+<meta property="og:site_name" content="Marmorista Pro">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://aplicativo.marmoristapro.online/img/compartilhar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/pjs-latin-v12.woff2" crossorigin>
+<link rel="stylesheet" href="/dicas/estilo.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Marmorista Pro","item":"https://aplicativo.marmoristapro.online/sistema"},{"@type":"ListItem","position":2,"name":"Dicas para marmoraria","item":"https://aplicativo.marmoristapro.online/dicas/"},{"@type":"ListItem","position":3,"name":"Calculadora de orçamento de bancada de granito","item":"https://aplicativo.marmoristapro.online/dicas/calculadora-orcamento-bancada-granito"}]},{"@type":"Article","headline":"Calculadora de orçamento de bancada de granito","description":"Calcule o orçamento da bancada de granito ou quartzo: m² da pedra, saia, rodabanca, recortes de cuba e cooktop e perda de chapa. Grátis, direto no celular.","inLanguage":"pt-BR","datePublished":"2026-11-23","dateModified":"2026-11-23","mainEntityOfPage":"https://aplicativo.marmoristapro.online/dicas/calculadora-orcamento-bancada-granito","image":"https://aplicativo.marmoristapro.online/img/compartilhar.jpg","author":{"@type":"Organization","name":"Marmorista Pro","url":"https://aplicativo.marmoristapro.online/sistema"},"publisher":{"@type":"Organization","name":"Marmorista Pro","logo":{"@type":"ImageObject","url":"https://aplicativo.marmoristapro.online/img/apple-touch-icon.png"}}}]}</script>
+</head>
+<body>
+<header class="top"><div class="w">
+<a class="logo" href="/sistema"><img src="/img/apple-touch-icon.png" alt="" width="32" height="32">Marmorista <b>Pro</b></a>
+<a class="btn sm" href="/sistema?utm_source=google&amp;utm_medium=organico&amp;utm_campaign=dicas-calculadora-orcamento-bancada-granito">Conhecer o app</a>
+</div></header>
+<main class="w">
+<p class="migalha"><a href="/sistema">Marmorista Pro</a> › <a href="/dicas/">Dicas</a></p>
+<h1>Calculadora de orçamento de bancada de granito</h1>
+<p class="lead">Coloque as medidas da bancada e os seus preços. A calculadora soma a pedra em m², a saia, a rodabanca e os recortes, e já põe a perda de chapa.</p>
+<div class="box calc" id="calc">
+<h3 style="margin-top:0">1. Peças do tampo (em cm)</h3>
+<div id="pecas"></div>
+<button class="add" type="button" id="add">Adicionar peça</button>
+<p class="data" style="margin:8px 0 0">Bancada em L ou U: lance cada lado como uma peça e, no segundo lado, tire a profundidade do primeiro para o canto não contar duas vezes.</p>
+<h3>2. Preço da pedra</h3>
+<div class="g2"><div><label for="pm2">Preço do m² da pedra (R$)</label><input id="pm2" inputmode="decimal" value="450"></div>
+<div><label for="perda">Perda de chapa (%)</label><input id="perda" inputmode="decimal" value="15"></div></div>
+<h3>3. Saia (acabamento da frente)</h3>
+<div class="g2"><div><label for="sml">Metros de saia</label><input id="sml" inputmode="decimal" placeholder="automático"></div>
+<div><label for="sp">Preço do metro linear de saia (R$)</label><input id="sp" inputmode="decimal" value="60"></div></div>
+<h3>4. Rodabanca (contra a parede)</h3>
+<div class="g2"><div><label for="rml">Metros de rodabanca</label><input id="rml" inputmode="decimal" placeholder="automático"></div>
+<div><label for="rh">Altura da rodabanca (cm)</label><input id="rh" inputmode="decimal" value="10"></div></div>
+<h3>5. Recortes e serviço</h3>
+<div class="g2"><div><label for="nc">Recortes de cuba</label><input id="nc" inputmode="numeric" value="1"></div>
+<div><label for="pc">Preço de cada recorte de cuba (R$)</label><input id="pc" inputmode="decimal" value="80"></div>
+<div><label for="nk">Recortes de cooktop</label><input id="nk" inputmode="numeric" value="0"></div>
+<div><label for="pk">Preço de cada recorte de cooktop (R$)</label><input id="pk" inputmode="decimal" value="80"></div>
+<div><label for="inst">Instalação e frete (R$)</label><input id="inst" inputmode="decimal" value="0"></div></div>
+<h3>Resultado</h3>
+<div class="tab"><table class="res" id="res"></table></div>
+</div>
+<p class="data">Os preços que vêm preenchidos são só exemplo. Troque pelos da sua marmoraria e da pedra que o cliente escolheu.</p>
+
+<h2>Como a calculadora faz a conta</h2>
+<ol>
+<li><b>Área do tampo:</b> comprimento × profundidade de cada peça, somadas, em m².</li>
+<li><b>Rodabanca:</b> metros × altura, que também vira m² de pedra.</li>
+<li><b>Perda:</b> a área total é aumentada pela porcentagem de perda, porque a chapa nunca é aproveitada 100%.</li>
+<li><b>Saia:</b> cobrada por metro linear. Se você deixar em branco, ela usa a soma dos comprimentos das peças.</li>
+<li><b>Recortes e instalação:</b> somados por unidade no final.</li>
+</ol>
+<p>Quer entender cada parte com calma? Veja <a href="/dicas/como-fazer-orcamento-de-bancada-de-granito">como fazer orçamento de bancada de granito</a> e <a href="/dicas/como-calcular-metro-quadrado-de-granito">como calcular o metro quadrado de granito</a>.</p>
+<div class="cta"><p>No Marmorista Pro essa conta sai sozinha: você monta a bancada em 3D, ele calcula a pedra, a saia, a rodabanca e os recortes, e o cliente recebe o orçamento com a sua logo no WhatsApp.</p><a class="btn" href="/sistema?utm_source=google&amp;utm_medium=organico&amp;utm_campaign=dicas-calculadora-orcamento-bancada-granito">Ver o Marmorista Pro funcionando</a></div>
+</main>
+<footer><div class="w">
+<p><a href="/dicas/">Todas as dicas</a><a href="/sistema">O app Marmorista Pro</a><a href="https://marmoristapro.online">Entrar</a></p>
+<p>© 2026 Marmorista Pro. Os valores desta página são exemplos; use sempre os preços da sua região e da sua marmoraria.</p>
+</div></footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function n(v){v=String(v||'').replace(/\s/g,'').replace(',','.');var x=parseFloat(v);return isFinite(x)&&x>0?x:0}
+function brl(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function m(v){return v.toLocaleString('pt-BR',{maximumFractionDigits:2})}
+var box=$('pecas');
+function linha(c,p){var d=document.createElement('div');d.className='g3 peca';
+d.innerHTML='<div><label>Comprimento (cm)</label><input class="pc" inputmode="decimal"></div><div><label>Profundidade (cm)</label><input class="pp" inputmode="decimal"></div><button class="rm" type="button" aria-label="Tirar peça">×</button>';
+d.querySelector('.pc').value=c||'';d.querySelector('.pp').value=p||'';
+d.querySelector('.rm').addEventListener('click',function(){if(box.children.length>1){d.remove();conta()}});
+box.appendChild(d)}
+function conta(){
+var area=0,comp=0;
+box.querySelectorAll('.peca').forEach(function(d){var c=n(d.querySelector('.pc').value),p=n(d.querySelector('.pp').value);area+=c*p/1e4;comp+=c/100});
+var sml=$('sml').value.trim()?n($('sml').value):comp, rml=$('rml').value.trim()?n($('rml').value):comp;
+var rod=rml*n($('rh').value)/100, perda=n($('perda').value);
+var m2=(area+rod)*(1+perda/100), pm2=n($('pm2').value);
+var vPedra=m2*pm2, vSaia=sml*n($('sp').value), vRec=Math.round(n($('nc').value))*n($('pc').value)+Math.round(n($('nk').value))*n($('pk').value), vInst=n($('inst').value);
+var tot=vPedra+vSaia+vRec+vInst;
+$('res').innerHTML='<tr><td>Tampo</td><td>'+m(area)+' m²</td></tr>'+
+'<tr><td>Rodabanca</td><td>'+m(rod)+' m² ('+m(rml)+' m)</td></tr>'+
+'<tr><td>Pedra com '+m(perda)+'% de perda</td><td>'+m(m2)+' m² = '+brl(vPedra)+'</td></tr>'+
+'<tr><td>Saia</td><td>'+m(sml)+' m = '+brl(vSaia)+'</td></tr>'+
+'<tr><td>Recortes</td><td>'+brl(vRec)+'</td></tr>'+
+'<tr><td>Instalação e frete</td><td>'+brl(vInst)+'</td></tr>'+
+'<tr class="tot"><td>Total</td><td>'+brl(tot)+'</td></tr>'}
+linha(200,60);
+$('add').addEventListener('click',function(){linha('','');conta()});
+$('calc').addEventListener('input',conta);conta();
+})();
+</script>
+</body>
+</html>
