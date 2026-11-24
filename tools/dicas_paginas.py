@@ -581,3 +581,135 @@ pg('como-abrir-uma-marmoraria',
 ''',
  ['como-fazer-orcamento-de-bancada-de-granito','plano-de-corte-de-chapa-de-granito','tamanho-de-chapa-de-granito','calculadora-orcamento-bancada-granito'],
  'Modelo, local, máquinas, documentos, fornecedor, preço e clientes.')
+
+pg('escada-de-granito-medidas',
+ 'Escada de Granito: medidas do degrau, espelho, bocel e conta',
+ 'Escada de granito: medidas do degrau, espelho, bocel e como fazer a conta',
+ 'Medida de piso e espelho de escada de granito, fórmula de Blondel, quantos degraus vai numa escada, bocel, antiderrapante, qual granito usar e como calcular o m² da pedra.',
+ 'Escada boa de subir tem degrau na medida certa. Aqui está a conta que o marmorista faz na obra: quantos degraus, altura do espelho, profundidade do piso, bocel e quanto de pedra comprar.',
+ 6,
+ '''
+<h2>As partes da escada em pedra</h2>
+<ul>
+<li><b>Piso</b>: a peça onde se pisa (também chamada de degrau ou pisada).</li>
+<li><b>Espelho</b>: a peça em pé, entre um piso e outro. Escada "sem espelho" (vazada) só tem o piso.</li>
+<li><b>Bocel</b>: a frente do piso que avança um pouco sobre o espelho, normalmente com a quina boleada.</li>
+<li><b>Patamar</b>: o piso maior onde a escada faz a curva ou o descanso.</li>
+<li><b>Rodapé da escada</b>: a faixa de pedra na parede, acompanhando os degraus.</li>
+</ul>
+
+<h2>Medida do degrau: piso e espelho</h2>
+<p>A referência mais usada no Brasil é a da norma de acessibilidade (NBR 9050) para escadas de uso comum: <b>espelho de 16 a 18 cm</b> e <b>piso de 28 a 32 cm</b>. Para conferir se o degrau fica confortável, use a <b>fórmula de Blondel</b>:</p>
+<div class="box au"><b>2 × espelho + piso = 63 a 65 cm</b><br>Ex.: espelho de 17,5 cm e piso de 28 cm → 2 × 17,5 + 28 = 63 cm. Está dentro.</div>
+<p>Em casa, a escada às vezes sai fora disso por falta de espaço. Avise o cliente por escrito quando o degrau ficar alto ou curto demais. Confira também o código de obras da sua cidade e o projeto do arquiteto.</p>
+
+<h2>Quantos degraus vai numa escada</h2>
+<ol>
+<li><b>Meça a altura total</b>, do piso de baixo pronto até o piso de cima pronto (não do contrapiso). Ex.: 2,80 m.</li>
+<li><b>Divida pela altura de espelho que você quer</b>: 280 ÷ 17,5 = 16. São <b>16 espelhos</b>.</li>
+<li>Se der número quebrado, arredonde e divida de novo: 280 ÷ 16 = 17,5 cm cada espelho, todos iguais.</li>
+<li><b>Pisos = espelhos − 1</b> (o último "degrau" é o próprio piso de cima). Aqui: <b>15 pisos</b>.</li>
+<li><b>Comprimento da escada</b> = pisos × profundidade do piso: 15 × 28 = 4,20 m de projeção no chão.</li>
+</ol>
+<div class="tab"><table>
+<tr><th>Altura total</th><th>Espelhos</th><th>Espelho (cm)</th><th>Pisos</th></tr>
+<tr><td>1,00 m</td><td>6</td><td>16,7</td><td>5</td></tr>
+<tr><td>2,60 m</td><td>15</td><td>17,3</td><td>14</td></tr>
+<tr><td>2,80 m</td><td>16</td><td>17,5</td><td>15</td></tr>
+<tr><td>3,00 m</td><td>17</td><td>17,6</td><td>16</td></tr>
+</table></div>
+<p>Degrau com altura diferente dos outros é o que mais faz gente tropeçar. Se o contrapiso estiver torto, corrija na massa, não no tamanho do espelho.</p>
+
+<h2>Bocel e espessura da pedra</h2>
+<ul>
+<li>O bocel costuma avançar <b>de 1,5 a 3 cm</b> sobre o espelho. Some esse avanço na profundidade da peça do piso: piso de 28 cm + 2 cm de bocel = peça de 30 cm.</li>
+<li>Para o piso, a espessura mais vista é 2 cm. Em escada de uso pesado ou com bocel engrossado, cola-se uma tira embaixo da frente (fica com cara de 4 cm). Veja <a href="/dicas/espessura-de-granito-para-bancada">espessura do granito</a>.</li>
+<li>O espelho entra <b>entre</b> os pisos: a altura da peça do espelho é a altura do degrau menos a espessura do piso. Ex.: 17,5 − 2 = 15,5 cm.</li>
+</ul>
+
+<h2>Escada de granito escorrega?</h2>
+<p>Granito <b>polido</b> molhado escorrega, principalmente em área externa e escada de piscina. Opções que o marmorista oferece:</p>
+<ul>
+<li><b>Flameado ou apicoado</b>: superfície áspera, boa para área externa.</li>
+<li><b>Levigado</b>: fosco, menos liso que o polido.</li>
+<li><b>Frisos antiderrapantes</b> fresados no bocel, ou fita antiderrapante.</li>
+</ul>
+
+<h2>Qual granito usar na escada</h2>
+<p>As buscas mais comuns são por preto São Gabriel, branco Siena, verde Ubatuba e bege Bahia. Na escolha, pense em três coisas: <b>sujeira</b> (pedra clara mostra mais o pé sujo), <b>sol e água</b> (área externa pede acabamento áspero) e <b>emenda</b> (pedra com muito desenho esconde melhor as diferenças entre degraus). Mármore é mais macio e risca mais com a areia do sapato; em escada de muito uso, o granito costuma ser a escolha.</p>
+
+<h2>Como fazer a conta da pedra</h2>
+<p>Exemplo da escada de 2,80 m com 1,00 m de largura (medidas só para ilustrar):</p>
+<div class="tab"><table>
+<tr><th>Peça</th><th>Conta</th><th>m²</th></tr>
+<tr><td>15 pisos de 1,00 × 0,30 m</td><td>15 × 1,00 × 0,30</td><td>4,50</td></tr>
+<tr><td>16 espelhos de 1,00 × 0,155 m</td><td>16 × 1,00 × 0,155</td><td>2,48</td></tr>
+<tr><td><b>Total de pedra</b></td><td></td><td><b>6,98</b></td></tr>
+</table></div>
+<p>Depois some a <b>perda</b> de corte e o encaixe na chapa (veja <a href="/dicas/plano-de-corte-de-chapa-de-granito">plano de corte</a>), o bocel por metro linear (15 × 1,00 = 15 m) e a instalação. A conta do m² está em <a href="/dicas/como-calcular-metro-quadrado-de-granito">como calcular o metro quadrado de granito</a>.</p>
+
+<h2>Quanto custa uma escada de granito</h2>
+<p>Não existe preço único: muda com a pedra, o número de degraus, o bocel, o antiderrapante, o patamar e a cidade. Monte o preço assim: <b>m² de pedra (com perda) × preço da pedra + metro linear de bocel + rodapé + instalação</b>. Para o cliente comparar, mostre duas pedras no mesmo projeto.</p>
+''',
+ ['tipos-de-acabamento-de-borda-de-granito','soleira-e-peitoril-de-granito','como-calcular-metro-quadrado-de-granito','plano-de-corte-de-chapa-de-granito'],
+ 'Piso, espelho, Blondel, quantos degraus, bocel e conta da pedra.',
+ data='2026-11-24')
+
+pg('tipos-de-acabamento-de-borda-de-granito',
+ 'Tipos de Acabamento de Borda de Granito: reto, boleado, meia-cana, chanfrado',
+ 'Tipos de acabamento de borda de granito: reto, boleado, meia-cana, chanfrado e bisotê',
+ 'Os acabamentos de borda (filete) do granito: reto simples, reto engrossado, meio-boleado, boleado, meia-cana, chanfrado, bisotê, francesa e slim. Onde usar cada um e como cobrar por metro linear.',
+ 'A borda é a parte da pedra que o cliente mais vê e mais toca. Saber mostrar as opções, com nome e desenho, evita briga na entrega e ajuda a vender um acabamento melhor.',
+ 5,
+ '''
+<h2>Borda não é o mesmo que acabamento da superfície</h2>
+<p>Quando o cliente pergunta "qual o acabamento do granito", ele pode estar falando de duas coisas:</p>
+<ul>
+<li><b>Acabamento da superfície</b> (o tampo todo): polido (brilho), levigado (fosco), flameado ou apicoado (áspero, para área externa), escovado.</li>
+<li><b>Acabamento da borda</b> (o filete, a frente da peça): reto, boleado, chanfrado etc. É o assunto desta página.</li>
+</ul>
+
+<h2>Os tipos de borda</h2>
+<div class="tab"><table>
+<tr><th>Borda</th><th>Como é</th><th>Onde vai bem</th></tr>
+<tr><td><b>Reto simples</b></td><td>Frente reta e polida, quinas levemente quebradas</td><td>Bancada moderna, a mais pedida</td></tr>
+<tr><td><b>Reto engrossado</b> (duplo)</td><td>Cola uma tira embaixo da frente; a borda parece ter 4 cm ou mais</td><td>Cozinha, ilha, quem quer pedra "grossa" sem pagar chapa grossa</td></tr>
+<tr><td><b>Meio-boleado</b></td><td>Só a quina de cima arredondada</td><td>Banheiro, bancada com criança, peitoril</td></tr>
+<tr><td><b>Boleado</b> (inteiro)</td><td>Frente toda arredondada, em meia-lua</td><td>Soleira, degrau, bocel, mesa</td></tr>
+<tr><td><b>Boleado duplo</b></td><td>Boleado na peça engrossada (cima e baixo)</td><td>Mesa, balcão clássico</td></tr>
+<tr><td><b>Meia-cana</b></td><td>Perfil curvo feito com fresa de meia-cana</td><td>Peças clássicas, degrau, borda de piscina</td></tr>
+<tr><td><b>Chanfrado</b></td><td>Quina cortada em pequeno ângulo (45°)</td><td>Bancada reta que não pode ficar cortante</td></tr>
+<tr><td><b>Bisotê</b></td><td>Chanfro largo e inclinado na face de cima</td><td>Mesa, tampo de móvel</td></tr>
+<tr><td><b>Francesa</b> (perfil ogee)</td><td>Curva em "S" trabalhada</td><td>Estilo clássico, lavatório e mesa</td></tr>
+<tr><td><b>Slim</b></td><td>Borda bem fina, a pedra parece delicada</td><td>Projeto moderno, banheiro</td></tr>
+</table></div>
+<div class="box au"><b>Atenção aos nomes</b><br>Meia-cana, boleado e bisotê mudam de nome de região para região. Antes de fechar, mostre ao cliente o <b>desenho ou uma amostra</b> e escreva o nome no orçamento.</div>
+
+<h2>E a meia-esquadria?</h2>
+<p>Meia-esquadria não é desenho de borda: é o <b>encontro a 45°</b> do tampo com a saia, que dá a impressão de pedra maciça. Ela pode ser combinada com uma quina chanfrada ou levemente boleada. Veja <a href="/dicas/meia-esquadria-em-granito">meia-esquadria em granito</a> e <a href="/dicas/saia-de-granito">saia de granito</a>.</p>
+
+<h2>Qual o nome do acabamento da pia?</h2>
+<p>Em pia de cozinha, os mais vistos são o <b>reto simples</b> (com quina quebrada), o <b>reto engrossado</b> e a <b>saia em meia-esquadria</b>. Em pia de banheiro, entram também o meio-boleado e o slim. Pergunte ao cliente se a bancada vai ter saia e de qual altura, porque isso muda o acabamento da frente.</p>
+
+<h2>Como fazer a borda sem estragar a peça</h2>
+<ol>
+<li>Marque na peça quais lados levam acabamento (frente, laterais à vista). Lado encostado na parede fica reto bruto.</li>
+<li>Faça o perfil com a fresa ou o rebolo certo, sempre com água.</li>
+<li>Passe as lixas na sequência, da mais grossa para a mais fina, até o polimento igualar com o tampo.</li>
+<li>Em pedra escura, confira o brilho contra a luz: borda opaca aparece muito.</li>
+</ol>
+
+<h2>Como cobrar o acabamento de borda</h2>
+<p>O mais comum é cobrar <b>por metro linear</b> de borda trabalhada, com preço diferente para cada tipo (reto simples mais barato; francesa e boleado duplo mais caros). Exemplo só para ilustrar (use os seus valores):</p>
+<div class="tab"><table>
+<tr><th>Item</th><th>Conta</th><th>Valor</th></tr>
+<tr><td>Borda reta simples na frente</td><td>2,20 m × R$ 25,00</td><td>R$ 55,00</td></tr>
+<tr><td>Engrossamento da frente</td><td>2,20 m × R$ 45,00</td><td>R$ 99,00</td></tr>
+<tr><td>Lateral à vista</td><td>0,60 m × R$ 25,00</td><td>R$ 15,00</td></tr>
+<tr><td><b>Total da borda</b></td><td></td><td><b>R$ 169,00</b></td></tr>
+</table></div>
+<p>A pedra do engrossamento também entra na conta do m² ou do metro linear. O passo a passo do orçamento está em <a href="/dicas/como-fazer-orcamento-de-bancada-de-granito">como fazer orçamento de bancada de granito</a>.</p>
+''',
+ ['meia-esquadria-em-granito','saia-de-granito','escada-de-granito-medidas','como-fazer-orcamento-de-bancada-de-granito'],
+ 'Reto, engrossado, boleado, meia-cana, chanfrado, bisotê e como cobrar.',
+ data='2026-11-24')
