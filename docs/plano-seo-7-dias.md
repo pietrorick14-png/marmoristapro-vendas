@@ -11,12 +11,13 @@ nenhum número de mercado inventado como fato, "Leia também" ligando às outras
 Marque `[x]` no que ficar feito e anote no "Diário" no fim.
 
 ## Dia 1 — 24/11 (ter)
-- [ ] Pedir indexação das 9 que ficaram de 23/11: recorte-de-cooktop-no-granito, como-medir-bancada-de-granito,
+- [ ] (24/11: cota já esgotada no 1º pedido; passa para 25/11) Pedir indexação das 9 que ficaram de 23/11: recorte-de-cooktop-no-granito, como-medir-bancada-de-granito,
       tamanho-de-chapa-de-granito, como-instalar-bancada-de-granito, nicho-de-granito-para-banheiro,
       soleira-e-peitoril-de-granito, como-colar-granito, granito-ou-quartzo, como-abrir-uma-marmoraria; e `/dicas/`
-- [ ] Ligar o **IndexNow** (Bing, Yandex e outros): arquivo da chave em `public/<chave>.txt` e envio de todos os
+- [x] Ligar o **IndexNow** (Bing, Yandex e outros): arquivo da chave em `public/<chave>.txt` e envio de todos os
       endereços do sitemap para `https://api.indexnow.org/indexnow`. A partir daqui, toda página nova também vai pelo IndexNow.
-- [ ] Páginas novas (indexar no Dia 2): `escada-de-granito-medidas` (piso, espelho, bocel, conta de degraus),
+      Chave: `a6c8a437bade984fe167d4d1172b890d` (arquivo `public/a6c8a437bade984fe167d4d1172b890d.txt`).
+- [x] Páginas novas (indexar no Dia 2): `escada-de-granito-medidas` (piso, espelho, bocel, conta de degraus),
       `tipos-de-acabamento-de-borda-de-granito` (reto, boleado, meia-cana, chanfrado, bisotê, como cobrar)
 
 ## Dia 2 — 25/11 (qua)
@@ -56,3 +57,4 @@ Marque `[x]` no que ficar feito e anote no "Diário" no fim.
 ## Diário
 - 23/11: 14 páginas publicadas (f4a8d25), sitemap reenviado (21 páginas), indexação pedida de 5 (cuba esculpida,
   meia-esquadria, espessura, rodabanca, saia). Cota acabou na 6ª.
+- 24/11: 2 páginas publicadas (7649bc3): escada-de-granito-medidas e tipos-de-acabamento-de-borda-de-granito (pesquisa: autocompletar + "As pessoas também perguntam"; 375 px sem sobrar). IndexNow ligado: 23 endereços enviados, resposta 202. Sitemap reenviado (23 páginas). Indexação: 0 — "A cota foi excedida" já no 1º pedido (recorte-de-cooktop), às ~9h20. Ficam para 25/11: as 9 de 23/11 + /dicas/ + as 2 de hoje (12 no total, mais que a cota; prioridade nesta ordem). Relatório de Páginas ainda "em processamento".
