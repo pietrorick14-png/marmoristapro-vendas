@@ -713,3 +713,222 @@ pg('tipos-de-acabamento-de-borda-de-granito',
  ['meia-esquadria-em-granito','saia-de-granito','escada-de-granito-medidas','como-fazer-orcamento-de-bancada-de-granito'],
  'Reto, engrossado, boleado, meia-cana, chanfrado, bisotê e como cobrar.',
  data='2026-11-24')
+
+pg('como-polir-granito',
+ 'Como Polir Granito: lixas, passo a passo e como devolver o brilho',
+ 'Como polir granito: sequência de lixas, passo a passo e como devolver o brilho',
+ 'Como polir granito na marmoraria e na obra: sequência de lixas (grana 50 a 3000), lixadeira ou politriz com água, lustro final, granito preto, manual ou com furadeira, e o que fazer quando o brilho some.',
+ 'Polir é tirar os riscos da pedra em etapas, de lixa grossa para lixa fina, até a superfície refletir a luz. Quem pula etapa vê o risco aparecer depois, principalmente no granito preto.',
+ 6,
+ '''
+<h2>O que é usado para polir granito</h2>
+<ul>
+<li><b>Politriz ou lixadeira angular de velocidade variável</b> com alimentação de água (ou borrifador). Lixadeira de rotação fixa alta esquenta e mancha a pedra.</li>
+<li><b>Lixas diamantadas flexíveis (pads)</b> com velcro, em sequência de grana. Para o polimento a água, as mais usadas vão de 50 a 3000.</li>
+<li><b>Suporte (prato) de borracha</b> para o velcro.</li>
+<li><b>Pó ou pasta de polimento</b> e boina de feltro para o brilho final (opcional, dá o "lustro").</li>
+<li><b>Impermeabilizante</b> para depois, se a pedra for porosa.</li>
+<li>Óculos, máscara, protetor auricular e luva. Com água e máquina elétrica, use tomada com DR e extensão sem emenda no chão molhado.</li>
+</ul>
+
+<h2>Qual lixa se usa para polir granito (sequência)</h2>
+<p>Cada lixa tira o risco da anterior. Comece pela grana que corresponde ao estrago e não pule mais de uma etapa.</p>
+<div class="tab"><table>
+<tr><th>Grana</th><th>Para quê</th><th>Quando começar por ela</th></tr>
+<tr><td>50</td><td>Desbaste: tira dente de serra, degrau, lasca</td><td>Borda recém-cortada, emenda desnivelada</td></tr>
+<tr><td>100</td><td>Acerta o desbaste</td><td>Risco fundo, marca de disco</td></tr>
+<tr><td>200</td><td>Tira o risco da 100</td><td>Risco médio</td></tr>
+<tr><td>400</td><td>Começa a fechar a pedra</td><td>Pedra fosca, risco leve</td></tr>
+<tr><td>800</td><td>Superfície lisa, ainda fosca (levigado)</td><td>Só perdeu o brilho</td></tr>
+<tr><td>1500</td><td>Começa a refletir</td><td>Brilho fraco</td></tr>
+<tr><td>3000</td><td>Brilho final</td><td>Retoque de brilho</td></tr>
+</table></div>
+<div class="box au"><b>Os números mudam de marca para marca</b><br>Algumas linhas vão até 3000, outras terminam numa lixa "buff" preta. Siga a ordem que o fabricante das suas lixas indica.</div>
+
+<h2>Passo a passo do polimento</h2>
+<ol>
+<li><b>Limpe e olhe com luz rasante</b> (lanterna de lado). Marque com lápis o que precisa sair: risco, degrau de emenda, mancha de cola.</li>
+<li><b>Escolha a lixa de início</b> pela tabela. Borda cortada começa na 50; só perda de brilho começa na 800.</li>
+<li><b>Lixe com água sempre</b>, com a máquina em rotação baixa a média (siga a rotação que o fabricante das lixas indica), sem fazer força: o peso da máquina basta.</li>
+<li><b>Movimento em cruz</b>: passe num sentido e depois no outro, cobrindo toda a área. Não pare a máquina num ponto só, senão vira "panela" (afundado).</li>
+<li><b>Lave e seque entre uma lixa e outra</b>. Olhe na luz: se ainda tem risco da lixa anterior, volte uma etapa.</li>
+<li><b>Siga até a última grana</b> e, se quiser mais brilho, passe pó de polimento com boina de feltro.</li>
+<li><b>Lave bem</b>, deixe secar e aplique impermeabilizante se a pedra pedir (granito claro e poroso costuma pedir).</li>
+</ol>
+
+<h2>Como polir a borda (filete)</h2>
+<p>É onde o marmorista mais pole na obra: depois de um corte ou de um ajuste de recorte. Mantenha a máquina reta em relação à borda, quebre a quina com a lixa (sem deixar cortante) e iguale o brilho com o do tampo. Para os tipos de borda, veja <a href="/dicas/tipos-de-acabamento-de-borda-de-granito">acabamento de borda</a>.</p>
+
+<h2>Como polir granito manualmente ou com furadeira</h2>
+<ul>
+<li><b>À mão</b>: dá para fazer retoque pequeno (uma quina, um risquinho) com lixa d'água ou diamantada num taco de madeira, com água, seguindo a mesma sequência. Numa bancada inteira, à mão não iguala o brilho.</li>
+<li><b>Com furadeira</b>: existe adaptador de velcro, mas a furadeira não tem água e cansa o motor. Serve para retoque, não para tampo inteiro.</li>
+</ul>
+
+<h2>Granito preto (São Gabriel, Absoluto): cuidados</h2>
+<ul>
+<li>Preto mostra qualquer risco e qualquer diferença de brilho. Não pule lixa.</li>
+<li>Na última etapa, confira o reflexo com uma lâmpada: a imagem tem que sair nítida, sem "nuvem".</li>
+<li>Se a pedra foi resinada ou tingida na fábrica, polir fundo pode clarear a região. Teste num canto e confira com o fornecedor.</li>
+</ul>
+
+<h2>O que passar no granito para voltar o brilho</h2>
+<p>Depende do motivo da perda de brilho:</p>
+<div class="tab"><table>
+<tr><th>O cliente vê</th><th>Causa mais comum</th><th>O que fazer</th></tr>
+<tr><td>Fosco só onde se limpa</td><td>Produto ácido, sapólio, palha de aço</td><td>Polimento a partir da 800 ou 1500</td></tr>
+<tr><td>Mancha escura de óleo</td><td>Pedra porosa sem impermeabilizante</td><td>Tirar a mancha e impermeabilizar (polir não resolve)</td></tr>
+<tr><td>Risco que pega a unha</td><td>Panela, faca, areia</td><td>Começar na 200 ou 400</td></tr>
+<tr><td>Brilho apagado no geral</td><td>Desgaste natural</td><td>Lustro com pó de polimento</td></tr>
+</table></div>
+<p>"Cera" e lustra-móveis dão brilho por uns dias e depois deixam a pedra engordurada. Oriente o cliente a limpar com detergente neutro e pano macio.</p>
+
+<h2>Quanto cobrar pelo polimento</h2>
+<p>Polimento de tampo costuma ser cobrado por m² e o de borda por metro linear, com uma visita mínima. O preço muda com a grana de início (desbaste custa mais), a cor da pedra e o acesso. Monte o seu valor pelo tempo de máquina, o gasto de lixa e a ida até a obra. Para o restante do orçamento, veja <a href="/dicas/como-fazer-orcamento-de-bancada-de-granito">como fazer orçamento de bancada</a>.</p>
+''',
+ ['tipos-de-acabamento-de-borda-de-granito','como-colar-granito','granito-ou-quartzo','como-instalar-bancada-de-granito'],
+ 'Sequência de lixas, passo a passo, borda, preto e volta do brilho.',
+ data='2026-11-25')
+
+pg('bancada-de-churrasqueira-em-granito',
+ 'Bancada de Churrasqueira em Granito: medidas, altura e como orçar',
+ 'Bancada de churrasqueira em granito: medidas, altura, pia e como fazer o orçamento',
+ 'Medidas da bancada de churrasqueira em granito: altura, profundidade, comprimento, bancada em L, pia, cooktop, revestimento da churrasqueira com granito, qual pedra aguenta calor e como orçar.',
+ 'A bancada da área de churrasco é um dos pedidos que mais chegam na marmoraria. Tem tampo, pia, às vezes cooktop, revestimento da churrasqueira e muita peça pequena: medida errada aparece no orçamento.',
+ 6,
+ '''
+<h2>As peças de uma área de churrasco</h2>
+<ul>
+<li><b>Tampo da bancada</b> (reta, em L ou em U), muitas vezes com <b>pia</b> e às vezes com <b>cooktop</b>.</li>
+<li><b>Rodabanca</b> ou frontão na parede (veja <a href="/dicas/rodabanca-e-frontao">rodabanca e frontão</a>).</li>
+<li><b>Saia</b> na frente do tampo (veja <a href="/dicas/saia-de-granito">saia de granito</a>).</li>
+<li><b>Revestimento da churrasqueira</b>: a frente, a base de apoio do carvão e, às vezes, a coifa.</li>
+<li><b>Balcão de apoio</b> do outro lado, para servir.</li>
+</ul>
+
+<h2>Medidas mais vistas</h2>
+<p>Não há medida obrigatória. Estas faixas são as mais comuns em projetos de área gourmet e servem de ponto de partida:</p>
+<div class="tab"><table>
+<tr><th>Medida</th><th>Faixa comum</th><th>Observação</th></tr>
+<tr><td>Altura do tampo (pronto)</td><td>90 a 95 cm</td><td>Igual à bancada da cozinha; pessoa alta pede mais</td></tr>
+<tr><td>Profundidade do tampo</td><td>55 a 65 cm</td><td>Com pia, 60 cm é o mais visto</td></tr>
+<tr><td>Bancada livre ao lado da churrasqueira</td><td>60 a 80 cm ou mais</td><td>Lugar para tábua e travessa</td></tr>
+<tr><td>Balcão para sentar</td><td>105 a 110 cm de altura</td><td>Banqueta alta; avanço de 25 a 30 cm</td></tr>
+</table></div>
+<p>A altura da base do carvão depende do modelo da churrasqueira (pré-moldada ou de alvenaria): confira com o fabricante ou com o pedreiro antes de cortar o revestimento.</p>
+
+<h2>Qual a altura ideal da bancada da churrasqueira</h2>
+<p>Uma regra prática usada em cozinha é deixar o tampo uns <b>10 a 15 cm abaixo do cotovelo</b> de quem mais usa. Ex.: pessoa de 1,60 m costuma ficar bem com 85 a 90 cm; pessoa de 1,80 m, com 95 a 100 cm. Se o cliente não souber, use 90 cm e anote no orçamento.</p>
+
+<h2>Bancada em L com churrasqueira</h2>
+<ul>
+<li>A churrasqueira costuma ficar numa ponta ou no canto; a pia fica na outra perna do L, longe da brasa.</li>
+<li>No canto do L, decida a <b>emenda</b>: em 45° (diagonal) ou reta. Em pedra com veio, desenhe a emenda junto com o cliente.</li>
+<li>Peça de L inteira raramente cabe na chapa: confira o <a href="/dicas/tamanho-de-chapa-de-granito">tamanho da chapa</a> antes de prometer "sem emenda".</li>
+</ul>
+
+<h2>Pia e cooktop na bancada do churrasco</h2>
+<ul>
+<li><b>Pia</b>: cuba de embutir ou de sobrepor (veja <a href="/dicas/cuba-de-embutir-sobrepor-ou-apoio">qual cuba escolher</a>). Deixe a torneira longe da brasa.</li>
+<li><b>Cooktop</b>: o recorte segue o gabarito do fabricante; deixe pedra suficiente na frente e no fundo. Detalhes em <a href="/dicas/recorte-de-cooktop-no-granito">recorte de cooktop</a>.</li>
+</ul>
+
+<h2>Revestir a churrasqueira com granito</h2>
+<p>É comum revestir a frente e a base da churrasqueira pré-moldada ou de alvenaria com a mesma pedra da bancada.</p>
+<ol>
+<li><b>Por fora</b> (frente, laterais, testeira): granito colado com argamassa ou adesivo próprio para pedra e para calor. Confira com o fabricante a temperatura que o produto aguenta.</li>
+<li><b>Por dentro</b>, onde o fogo encosta: o mais visto é tijolo refratário. Pedra em contato direto com a brasa pode trincar por choque térmico; se o cliente pedir granito por dentro, avise o risco por escrito.</li>
+<li>Deixe uma <b>junta</b> entre a pedra e a parte que esquenta mais, para a pedra não forçar quando dilatar.</li>
+</ol>
+
+<h2>Qual granito usar na churrasqueira</h2>
+<ul>
+<li>Granito aguenta calor melhor que quartzo (o quartzo tem resina e pode manchar com calor; veja <a href="/dicas/granito-ou-quartzo">granito ou quartzo</a>).</li>
+<li>Pedra <b>escura</b> esconde fuligem e gordura; as buscas mais comuns são preto São Gabriel e verde Ubatuba.</li>
+<li>Pedra clara e porosa mancha com gordura: impermeabilize e avise o cliente.</li>
+</ul>
+
+<h2>Como fazer o orçamento</h2>
+<p>Exemplo de bancada em L de 2,50 m + 1,50 m com 60 cm de profundidade (medidas só para ilustrar):</p>
+<div class="tab"><table>
+<tr><th>Item</th><th>Conta</th><th>Quantidade</th></tr>
+<tr><td>Tampo em L</td><td>(2,50 + 1,50 − 0,60) × 0,60</td><td>2,04 m²</td></tr>
+<tr><td>Rodabanca 10 cm</td><td>(2,50 + 1,50) × 0,10</td><td>0,40 m²</td></tr>
+<tr><td>Saia na frente do L</td><td>(2,50 − 0,60) + (1,50 − 0,60) + 0,60 + 0,60 (cabeças)</td><td>4,00 m lineares</td></tr>
+<tr><td>Recorte de pia</td><td>1 unidade</td><td>1</td></tr>
+<tr><td>Revestimento da churrasqueira</td><td>medir peça a peça</td><td>conforme o modelo</td></tr>
+</table></div>
+<p>Depois some a perda de corte, o acabamento de borda, os recortes e a instalação. A conta passo a passo está em <a href="/dicas/como-calcular-metro-quadrado-de-granito">como calcular o m² de granito</a> e em <a href="/dicas/como-fazer-orcamento-de-bancada-de-granito">orçamento de bancada</a>.</p>
+''',
+ ['cuba-de-embutir-sobrepor-ou-apoio','recorte-de-cooktop-no-granito','como-medir-bancada-de-granito','rodabanca-e-frontao'],
+ 'Altura, profundidade, L, pia, revestimento da churrasqueira e orçamento.',
+ data='2026-11-25')
+
+pg('cuba-de-embutir-sobrepor-ou-apoio',
+ 'Cuba de Embutir, Sobrepor ou Apoio: qual a diferença e qual escolher',
+ 'Cuba de embutir, sobrepor, semi-encaixe ou apoio: qual a diferença e qual escolher',
+ 'Diferença entre cuba de embutir, de sobrepor, semi-encaixe, de apoio e esculpida: vantagens, desvantagens, qual vai melhor no banheiro e na cozinha, como fica o recorte no granito e como cobrar.',
+ 'Quando o cliente pergunta "qual cuba?", a resposta muda o recorte, o acabamento da pedra, a altura da bancada e o preço. Esta página ajuda o marmorista a explicar as opções e a fazer o recorte certo.',
+ 6,
+ '''
+<h2>Os tipos de cuba, em resumo</h2>
+<div class="tab"><table>
+<tr><th>Tipo</th><th>Como fica</th><th>Recorte na pedra</th></tr>
+<tr><td><b>Embutir</b> (sob o tampo)</td><td>Cuba presa por baixo; a borda da pedra fica à vista</td><td>Recorte com borda polida</td></tr>
+<tr><td><b>Sobrepor</b></td><td>A aba da cuba apoia em cima da pedra</td><td>Recorte bruto (a aba cobre)</td></tr>
+<tr><td><b>Semi-encaixe</b></td><td>Parte dentro da bancada, a frente para fora</td><td>Recorte aberto na borda da frente</td></tr>
+<tr><td><b>Apoio</b></td><td>A cuba fica inteira em cima da pedra</td><td>Só o furo da válvula (e da torneira, se sair da pedra)</td></tr>
+<tr><td><b>Esculpida</b></td><td>Feita da própria pedra</td><td>Montada na marmoraria</td></tr>
+</table></div>
+
+<h2>Qual a diferença entre cuba de embutir e de sobrepor</h2>
+<p>Na <b>de embutir</b>, a cuba fica embaixo da pedra e a água do tampo escorre direto para dentro: limpar é só puxar com o pano. Na <b>de sobrepor</b>, a aba da cuba fica por cima da pedra e forma um degrau onde a sujeira para.</p>
+<ul>
+<li><b>Embutir</b>: mais bonita e fácil de limpar; dá mais trabalho na marmoraria (recorte polido, fixação por baixo com cola e suporte).</li>
+<li><b>Sobrepor</b>: instalação mais rápida e troca fácil; o recorte não precisa de polimento porque a aba esconde.</li>
+</ul>
+
+<h2>Qual a desvantagem da cuba de sobrepor</h2>
+<ul>
+<li>A aba fica alta: água e sujeira acumulam no encontro com a pedra.</li>
+<li>O silicone em volta da aba escurece com o tempo e precisa ser trocado.</li>
+<li>Visual mais simples; em projeto de arquiteto, quase sempre pedem a de embutir.</li>
+</ul>
+
+<h2>Cuba de sobrepor pode ser embutida?</h2>
+<p>Em geral, não fica bem: a aba é feita para ficar à vista e, por baixo, atrapalha a fixação e a vedação. Alguns modelos de inox são vendidos como "embutir ou sobrepor": siga o que o fabricante diz para aquele modelo. Na dúvida, peça o gabarito ou a ficha técnica.</p>
+
+<h2>Qual a melhor cuba para cozinha</h2>
+<ul>
+<li>A mais pedida com granito é a <b>cuba de inox de embutir</b>: fácil de limpar e aguenta panela pesada.</li>
+<li>Cuba grande ou dupla pede bancada de uns 60 cm de profundidade e armário com vão compatível.</li>
+<li>Cozinha simples ou imóvel de aluguel: sobrepor resolve rápido e custa menos.</li>
+<li>Tanque de área de serviço segue a mesma lógica.</li>
+</ul>
+
+<h2>Qual o melhor tipo de cuba para o banheiro</h2>
+<ul>
+<li><b>Embutir</b>: bancada limpa e prática; a mais usada em banheiro social.</li>
+<li><b>Apoio</b>: visual de destaque em lavabo; a bancada costuma ficar mais baixa para compensar a altura da cuba.</li>
+<li><b>Semi-encaixe</b>: bancada estreita, banheiro pequeno.</li>
+<li><b>Esculpida</b>: peça única na pedra; veja <a href="/dicas/cuba-esculpida-em-granito">cuba esculpida em granito</a>.</li>
+</ul>
+
+<h2>A altura da bancada muda com a cuba</h2>
+<p>O que importa para quem usa é a altura da <b>borda da cuba</b>, não a da pedra. Com cuba de apoio, a borda sobe junto com a altura da cuba; por isso a bancada costuma ser montada mais baixa. Confirme a altura com o projeto e com o cliente antes de chumbar o suporte.</p>
+
+<h2>Como fazer o recorte no granito</h2>
+<ol>
+<li><b>Peça o gabarito</b> ou a ficha técnica da cuba. Medir a cuba com trena engana, principalmente a de louça.</li>
+<li><b>Embutir</b>: o recorte fica alguns milímetros para dentro da borda interna da cuba, a borda da pedra é polida e a cuba é colada por baixo com adesivo e presa com suporte.</li>
+<li><b>Sobrepor</b>: o recorte segue a linha indicada no gabarito, com folga para a cuba entrar sem forçar.</li>
+<li><b>Apoio</b>: só o furo da válvula (normalmente com serra-copo) e o da torneira, se ela sair da pedra.</li>
+<li>Deixe pedra suficiente na frente do recorte para a peça não quebrar no transporte. Veja também <a href="/dicas/como-instalar-bancada-de-granito">como instalar bancada</a>.</li>
+</ol>
+
+<h2>Como cobrar</h2>
+<p>O mais comum é cobrar o <b>recorte por unidade</b>, com preço diferente para cada tipo: o de embutir (polido) costuma custar mais que o de sobrepor (bruto) e que o furo da cuba de apoio. A cuba pode ser do cliente ou fornecida por você. Escreva no orçamento qual cuba e qual recorte estão inclusos. Para a conta completa, veja <a href="/dicas/como-fazer-orcamento-de-bancada-de-granito">orçamento de bancada</a>.</p>
+''',
+ ['cuba-esculpida-em-granito','recorte-de-cooktop-no-granito','bancada-de-churrasqueira-em-granito','como-instalar-bancada-de-granito'],
+ 'Embutir × sobrepor × semi-encaixe × apoio: qual escolher e como recortar.',
+ data='2026-11-25')
