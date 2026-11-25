@@ -11,7 +11,7 @@ nenhum número de mercado inventado como fato, "Leia também" ligando às outras
 Marque `[x]` no que ficar feito e anote no "Diário" no fim.
 
 ## Dia 1 — 24/11 (ter)
-- [ ] (24/11: cota já esgotada no 1º pedido; passa para 25/11) Pedir indexação das 9 que ficaram de 23/11: recorte-de-cooktop-no-granito, como-medir-bancada-de-granito,
+- [x] (feito em 25/11) Pedir indexação das 9 que ficaram de 23/11: recorte-de-cooktop-no-granito, como-medir-bancada-de-granito,
       tamanho-de-chapa-de-granito, como-instalar-bancada-de-granito, nicho-de-granito-para-banheiro,
       soleira-e-peitoril-de-granito, como-colar-granito, granito-ou-quartzo, como-abrir-uma-marmoraria; e `/dicas/`
 - [x] Ligar o **IndexNow** (Bing, Yandex e outros): arquivo da chave em `public/<chave>.txt` e envio de todos os
@@ -21,9 +21,9 @@ Marque `[x]` no que ficar feito e anote no "Diário" no fim.
       `tipos-de-acabamento-de-borda-de-granito` (reto, boleado, meia-cana, chanfrado, bisotê, como cobrar)
 
 ## Dia 2 — 25/11 (qua)
-- [ ] Indexar as páginas do Dia 1
-- [ ] Páginas: `como-polir-granito`, `bancada-de-churrasqueira-em-granito`, `cuba-de-embutir-sobrepor-ou-apoio`
-- [ ] Completar a cota com páginas antigas que ainda aparecem "O URL não está no Google"
+- [x] Indexar as páginas do Dia 1 (25/11: as 2 do Dia 1 + as 9 pendentes de 23/11)
+- [x] Páginas: `como-polir-granito`, `bancada-de-churrasqueira-em-granito`, `cuba-de-embutir-sobrepor-ou-apoio`
+- [x] Completar a cota com páginas antigas que ainda aparecem "O URL não está no Google"
 
 ## Dia 3 — 26/11 (qui)
 - [ ] Indexar as do Dia 2 (+ completar a cota)
@@ -58,3 +58,4 @@ Marque `[x]` no que ficar feito e anote no "Diário" no fim.
 - 23/11: 14 páginas publicadas (f4a8d25), sitemap reenviado (21 páginas), indexação pedida de 5 (cuba esculpida,
   meia-esquadria, espessura, rodabanca, saia). Cota acabou na 6ª.
 - 24/11: 2 páginas publicadas (7649bc3): escada-de-granito-medidas e tipos-de-acabamento-de-borda-de-granito (pesquisa: autocompletar + "As pessoas também perguntam"; 375 px sem sobrar). IndexNow ligado: 23 endereços enviados, resposta 202. Sitemap reenviado (23 páginas). Indexação: 0 — "A cota foi excedida" já no 1º pedido (recorte-de-cooktop), às ~9h20. Ficam para 25/11: as 9 de 23/11 + /dicas/ + as 2 de hoje (12 no total, mais que a cota; prioridade nesta ordem). Relatório de Páginas ainda "em processamento".
+- 25/11: 3 páginas publicadas (9245743): como-polir-granito, bancada-de-churrasqueira-em-granito, cuba-de-embutir-sobrepor-ou-apoio (pesquisa: autocompletar + "As pessoas também perguntam"; 390 px sem sobrar; as 3 dão 200). IndexNow: 3 novas + /dicas/ + sitemap, resposta 200. Sitemap reenviado (26 páginas). Indexação pedida de 11: recorte-de-cooktop, como-medir, tamanho-de-chapa, como-instalar, nicho, soleira, como-colar (já estava no Google), granito-ou-quartzo, como-abrir-uma-marmoraria, escada, tipos-de-acabamento-de-borda; cota excedida no 12º (como-polir). Já no Google pela inspeção: /dicas/, como-colar, plano-de-corte, calculadora, cuba-esculpida. Ficam para 26/11 (antes das do Dia 3): como-polir-granito, bancada-de-churrasqueira-em-granito, cuba-de-embutir-sobrepor-ou-apoio. Relatório de Páginas ainda "em processamento".
