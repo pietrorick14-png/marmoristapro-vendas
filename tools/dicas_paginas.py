@@ -932,3 +932,175 @@ pg('cuba-de-embutir-sobrepor-ou-apoio',
  ['cuba-esculpida-em-granito','recorte-de-cooktop-no-granito','bancada-de-churrasqueira-em-granito','como-instalar-bancada-de-granito'],
  'Embutir × sobrepor × semi-encaixe × apoio: qual escolher e como recortar.',
  data='2026-11-25')
+
+pg('como-cortar-granito-sem-lascar',
+ 'Como Cortar Granito Sem Lascar: disco, água, fita e passo a passo',
+ 'Como cortar granito sem lascar: disco, água, fita e passo a passo',
+ 'Como cortar granito sem lascar: disco diamantado certo, água na linha, fita crepe, apoio da chapa inteira e passadas. Por que a borda racha e o que fazer se lascar.',
+ 'A lasca na borda é o erro que mais custa tempo na marmoraria: a peça vai para o lixo e o cliente espera de novo. Quase sempre a causa é apoio, disco ou pressão, não a máquina.',
+ 5,
+ '''
+<h2>Por que o granito lasca</h2>
+<p>A lasca aparece quando a pedra não tem apoio por baixo, o disco aquece e perde o corte, ou a linha é feita com força demais de uma vez. Quase sempre é um destes problemas:</p>
+<table>
+<tr><th>O que aconteceu</th><th>Por que lasca</th></tr>
+<tr><td>Chapa apoiada só nas pontas</td><td>No meio ela cede e a pedra quebra perto do fim do corte</td></tr>
+<tr><td>Corte a seco</td><td>O disco esquenta, perde o corte e arranca pedaço</td></tr>
+<tr><td>Disco gasto ou de outro material</td><td>Morde de forma irregular e solta lasca na borda</td></tr>
+<tr><td>Passada única e forçada</td><td>A máquina trava e a pedra estala</td></tr>
+<tr><td>Linha sem fita</td><td>A borda de saída é a que mais racha</td></tr>
+</table>
+
+<h2>O que você precisa</h2>
+<ul>
+<li><b>Disco diamantado para granito</b> (disco de concreto ou de corte a seco não serve). O segmentado costuma cortar mais rápido; o contínuo deixa a borda mais lisa. Confira o que o fabricante indica.</li>
+<li><b>Água na linha de corte</b>, por mangueira ou gotejamento. Sem água o disco aquece e lasca.</li>
+<li><b>Fita crepe</b> sobre a linha: protege a superfície e segura a lasca.</li>
+<li><b>Apoio inteiro</b>: cavaletes ou espuma por baixo de toda a chapa, deixando livre a parte que vai cair.</li>
+<li><b>Grampos ou ventosas</b> para segurar a peça.</li>
+</ul>
+
+<h2>Passo a passo</h2>
+<ol>
+<li><b>Marque a linha</b> com lápis de cera sobre a fita crepe e confira a medida duas vezes.</li>
+<li><b>Apoie a chapa inteira</b>. A sobra precisa ficar livre, sem peso em cima.</li>
+<li><b>Ligue a água</b> antes de encostar o disco na pedra.</li>
+<li><b>Corte em duas ou três passadas</b>, com a máquina em velocidade constante e sem forçar. Deixe o disco trabalhar.</li>
+<li><b>Na última passada</b>, segure a sobra ou escore-a para ela não cair de repente e levar a borda junto.</li>
+<li><b>Em curva ou recorte interno</b>, faça cortes em tiras, aos poucos, e feche o arco no fim.</li>
+</ol>
+
+<h2>Se a borda lascar mesmo assim</h2>
+<ul>
+<li><b>Lasca pequena</b>: lixe com lixa diamantada grossa, depois a fina, e polia. Em geral some.</li>
+<li><b>Lasca grande</b>: a peça geralmente está perdida. Não tente esconder com cola ou massa, o cliente vê. Refaça a peça e avise o cliente antes.</li>
+<li><b>Canto do recorte</b>: arredonde os cantos para a trinca não começar ali (veja <a href="/dicas/recorte-de-cooktop-no-granito">recorte de cooktop</a>).</li>
+</ul>
+
+<h2>Cuidados na oficina</h2>
+<ul>
+<li>Corte em cima de espuma ou borracha, nunca direto no piso de cerâmica.</li>
+<li>Use óculos, luva e protetor de ouvido. Poeira de pedra faz mal ao pulmão: use máscara boa e aspiração.</li>
+<li>Recolha a água de corte em vez de deixar escorrer para o ralo.</li>
+</ul>
+
+<h2>Cobrança</h2>
+<p>Quem refaz peça por lasca paga duas vezes em material e tempo. Por isso vale cobrar com folga o corte de peça grande ou com curva, e incluir o desgaste do disco. Para a conta da chapa, veja <a href="/dicas/plano-de-corte-de-chapa-de-granito">plano de corte de chapa de granito</a>.</p>
+''',
+ ['recorte-de-cooktop-no-granito','plano-de-corte-de-chapa-de-granito','como-polir-granito','tamanho-de-chapa-de-granito'],
+ 'Disco certo, água, fita e apoio inteiro: cortar sem lascar e o que fazer se lascar.',
+ data='2026-11-26')
+
+pg('como-furar-granito',
+ 'Como Furar Granito: broca, serra-copo e passo a passo sem trincar',
+ 'Como furar granito: broca, serra-copo e passo a passo sem trincar',
+ 'Como furar granito para torneira, cuba, válvula ou parafuso: qual broca usar, velocidade, água, furo perto da borda e os erros que racham a pedra.',
+ 'Furo mal feito é uma das coisas que mais racham o granito depois de instalado. O furo certo começa pela broca certa, sem impacto e com água.',
+ 5,
+ '''
+<h2>Quando você precisa furar</h2>
+<ul>
+<li><b>Torneira de bancada</b>: o furo da torneira na pedra.</li>
+<li><b>Cuba de apoio</b> ou furo da válvula da cuba.</li>
+<li><b>Passagem de fio, tomada ou cano</b> por dentro da pedra.</li>
+<li><b>Fixação</b> de suporte, corrimão ou prateleira com parafuso.</li>
+</ul>
+
+<h2>Ferramentas</h2>
+<table>
+<tr><th>Ferramenta</th><th>Para que serve</th></tr>
+<tr><td>Serra-copo diamantada</td><td>Furos maiores e redondos: torneira, válvula da cuba, passagem de cano</td></tr>
+<tr><td>Broca diamantada</td><td>Furos pequenos, de fixação de parafuso, ou para começar um furo</td></tr>
+<tr><td>Furadeira com velocidade variável</td><td>Velocidade baixa e <b>sem modo de impacto</b> (martelo). O impacto quebra a pedra.</td></tr>
+<tr><td>Água</td><td>Refrigera a broca e leva o pó embora</td></tr>
+</table>
+
+<h2>Passo a passo</h2>
+<ol>
+<li><b>Marque o centro</b> com caneta. Para torneira, use o gabarito da torneira ou o que vier com a cuba.</li>
+<li><b>Cole fita crepe</b> sobre a marca: segura a broca no começo e evita lascar.</li>
+<li><b>Comece em velocidade baixa</b>, sem pressão, com água pingando sobre o furo.</li>
+<li><b>Mantenha a broca reta</b> e a pressão constante. Quem faz o corte é a broca, não a força.</li>
+<li><b>Tire a broca de vez em quando</b> para limpar a lama e deixar a água entrar.</li>
+<li><b>Ao atravessar</b>, diminua a pressão: é o momento em que o lado de baixo costuma lascar. Se o furo for passante, termine por baixo ou apoie uma tábua.</li>
+<li><b>Limpe e confira</b> se a torneira ou a peça encaixa antes de colar ou fixar.</li>
+</ol>
+
+<h2>Erros que lascam ou racham</h2>
+<table>
+<tr><th>Erro</th><th>O que acontece</th></tr>
+<tr><td>Furadeira com impacto</td><td>A pedra trinca em volta do furo</td></tr>
+<tr><td>Furar a seco</td><td>Esquenta, a broca perde o corte e a borda do furo queima</td></tr>
+<tr><td>Furo perto da borda ou de outro furo</td><td>Racha entre eles, principalmente na pedra fina</td></tr>
+<tr><td>Pressão forte no fim</td><td>Lasca do lado de saída</td></tr>
+</table>
+
+<h2>Furo perto da borda ou de canto</h2>
+<p>Quanto mais perto da borda ou de um canto, mais o furo enfraquece a pedra. Deixe pedra sobrando em volta. Se o projeto pedir furo muito perto, avise o cliente antes e confirme com o fabricante da torneira ou da cuba. Canto vivo com furo ao lado é onde mais trinca.</p>
+
+<h2>Fixar parafuso sem racha</h2>
+<p>Para suporte ou corrimão, faça o furo com broca diamantada pequena e use bucha química ou bucha própria para pedra. Não aperte bucha de expansão além do que ela pede: ela racha o granito. O diâmetro da broca é o que a bucha indicar.</p>
+
+<h2>Quando não furar</h2>
+<p>Se a pedra tem fissura, veio aberto ou já está lascada no lugar do furo, não fure ali. Avise o cliente e veja outra posição ou outra peça. Furar em cima de defeito é a causa de muita reclamação depois.</p>
+
+<h2>Cobrança</h2>
+<p>O furo costuma ser cobrado por unidade, com preço diferente para furo de torneira, de cuba e de parafuso. Escreva no orçamento quantos furos e de que tipo. Para o recorte da cuba, veja <a href="/dicas/cuba-de-embutir-sobrepor-ou-apoio">cuba de embutir, sobrepor ou apoio</a>.</p>
+''',
+ ['como-cortar-granito-sem-lascar','recorte-de-cooktop-no-granito','cuba-de-embutir-sobrepor-ou-apoio','como-instalar-bancada-de-granito'],
+ 'Broca certa, sem impacto e com água: furo para torneira, cuba ou parafuso sem trincar.',
+ data='2026-11-26')
+
+pg('ilha-de-cozinha-em-granito-medidas',
+ 'Ilha de Cozinha em Granito: medidas, altura, banqueta e espaço ao redor',
+ 'Ilha de cozinha em granito: medidas, altura, banqueta e espaço ao redor',
+ 'Medidas de ilha de cozinha em granito: altura do tampo e da banqueta, profundidade, espaço para circular, balanço para sentar, cuba e cooktop na ilha.',
+ 'A ilha é o destaque da cozinha e a peça que mais dá erro de medida, porque o cliente pensa no visual e esquece do espaço para andar e sentar. Confira estas medidas antes de cortar a pedra.',
+ 6,
+ '''
+<h2>Medidas de referência</h2>
+<p>São medidas usadas na prática, não normas obrigatórias. O que vale no fim é o projeto, o armário que já está no lugar e o uso do cliente.</p>
+<table>
+<tr><th>Item</th><th>Referência</th><th>Observação</th></tr>
+<tr><td>Altura do tampo</td><td>Em torno de 90 cm</td><td>Igual à bancada de trabalho. Se a ilha for só para comer, pode ser um pouco mais alta.</td></tr>
+<tr><td>Altura da banqueta</td><td>Em torno de 60 a 75 cm</td><td>Depende da altura do tampo: sentar e apoiar o braço tem que ficar confortável.</td></tr>
+<tr><td>Balanço para sentar</td><td>Costuma ser pelo menos 30 cm</td><td>É o que cabe a perna de quem senta. Balanço grande pede espessura ou reforço.</td></tr>
+<tr><td>Espaço para circular</td><td>Em torno de 90 cm a 1,20 m</td><td>Entre a ilha e a parede ou o armário. Mais espaço quando duas pessoas cozinham e passam ao mesmo tempo.</td></tr>
+<tr><td>Comprimento</td><td>Conforme a cozinha</td><td>Como referência, conte cerca de 60 cm de tampo por lugar sentado.</td></tr>
+</table>
+
+<h2>Ilha só com tampo, com cuba ou com cooktop</h2>
+<ul>
+<li><b>Só tampo</b>: mais simples. A pedra pode ter borda reta.</li>
+<li><b>Com cuba</b>: a ilha precisa de água e esgoto no lugar certo. Confirme o ponto antes de cortar. Veja <a href="/dicas/cuba-de-embutir-sobrepor-ou-apoio">cuba de embutir, sobrepor ou apoio</a>.</li>
+<li><b>Com cooktop</b>: sem parede atrás, a coifa precisa de instalação própria. Confirme com o cliente e com o fabricante.</li>
+</ul>
+
+<h2>Balanço: o ponto fraco</h2>
+<p>A parte da pedra que passa do armário (o balanço) é onde a ilha mais trinca. Quanto maior o balanço, mais espessura ou reforço embaixo. Confira a tabela em <a href="/dicas/espessura-de-granito-para-bancada">espessura de granito para bancada</a>.</p>
+
+<h2>Como medir, passo a passo</h2>
+<ol>
+<li>Meça o vão livre entre as paredes e as portas do lado da ilha.</li>
+<li>Marque no chão a área da ilha com fita crepe e veja com o cliente se a banqueta cabe. Peça para ele sentar ali de verdade.</li>
+<li>Anote a altura do tampo e confirme com o modelo da banqueta escolhida.</li>
+<li>Veja onde ficam tomadas, água e gás, se houver cuba ou cooktop.</li>
+<li>Passe a medida final ao gabarito e só então corte a pedra. Veja <a href="/dicas/como-medir-bancada-de-granito">como medir bancada de granito</a>.</li>
+</ol>
+
+<h2>A ilha na chapa</h2>
+<p>Ilha grande costuma consumir chapa inteira. Antes de cortar, veja se a peça cabe com a emenda longe da cuba e do cooktop. Veja <a href="/dicas/tamanho-de-chapa-de-granito">tamanho de chapa de granito</a>.</p>
+
+<h2>Erros comuns</h2>
+<ul>
+<li>Ilha colada no armário sem folga: a gaveta não abre.</li>
+<li>Banqueta sem espaço atrás de quem senta: a pessoa encosta na parede ou no fogão.</li>
+<li>Tampo alto ou baixo demais para o uso.</li>
+</ul>
+
+<h2>Cobrança</h2>
+<p>A ilha é cobrada pela pedra (pelo tamanho da peça), mais recortes e acabamento de borda. Escreva no orçamento a altura, a profundidade e se tem balanço. Para a conta completa, veja <a href="/dicas/como-fazer-orcamento-de-bancada-de-granito">orçamento de bancada de granito</a>.</p>
+''',
+ ['espessura-de-granito-para-bancada','como-medir-bancada-de-granito','como-instalar-bancada-de-granito','granito-ou-quartzo'],
+ 'Altura, banqueta, balanço e espaço para circular: medidas de ilha antes de cortar.',
+ data='2026-11-26')
