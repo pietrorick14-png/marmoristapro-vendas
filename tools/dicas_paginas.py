@@ -1104,3 +1104,178 @@ pg('ilha-de-cozinha-em-granito-medidas',
  ['espessura-de-granito-para-bancada','como-medir-bancada-de-granito','como-instalar-bancada-de-granito','granito-ou-quartzo'],
  'Altura, banqueta, balanço e espaço para circular: medidas de ilha antes de cortar.',
  data='2026-11-26')
+
+pg('como-tirar-mancha-de-granito',
+ 'Como Tirar Mancha de Granito: óleo, café, ferrugem e mancha escura',
+ 'Como tirar mancha de granito: o que usar em cada tipo e o que nunca passar',
+ 'Como tirar mancha de óleo, gordura, café, vinho, ferrugem e água do granito branco, claro ou preto, com compressa, passo a passo e cuidados para o marmorista orientar o cliente.',
+ 'A primeira pergunta não é "qual produto", é "mancha de quê". Óleo, bebida, ferrugem e umidade saem de jeitos diferentes, e o produto errado piora a pedra. Este guia serve para o marmorista atender o cliente com segurança.',
+ 6,
+ '''
+<h2>Antes de passar qualquer coisa</h2>
+<ul>
+<li><b>Pergunte o que caiu</b> na pedra e há quanto tempo.</li>
+<li><b>Pingue água ao lado da mancha.</b> Se a pedra escurece em poucos minutos, ela está absorvendo e sem proteção.</li>
+<li><b>Teste o produto num canto escondido</b> e espere secar antes de ir para a mancha.</li>
+<li><b>Tire foto antes.</b> Ajuda a comparar e a mostrar ao cliente o que melhorou.</li>
+</ul>
+
+<h2>Tabela rápida: mancha e o que tentar</h2>
+<div class="tab"><table>
+<tr><th>Mancha</th><th>Como costuma aparecer</th><th>O que tentar primeiro</th></tr>
+<tr><td>Óleo e gordura</td><td>Escura, com contorno marcado</td><td>Detergente neutro e, se ficar, compressa para pedra ou pó absorvente com solvente compatível</td></tr>
+<tr><td>Café, vinho, suco</td><td>Amarelada ou avermelhada</td><td>Água com detergente neutro; em pedra clara, compressa com água oxigenada, após teste</td></tr>
+<tr><td>Ferrugem</td><td>Laranja ou marrom, onde ficou metal</td><td>Removedor de ferrugem próprio para granito</td></tr>
+<tr><td>Água / umidade</td><td>Sombra escura perto da cuba ou da parede</td><td>Achar a origem da água e deixar secar</td></tr>
+<tr><td>Marca branca</td><td>Película esbranquiçada</td><td>Pode ser resíduo de sabão ou calcário: limpador próprio para pedra</td></tr>
+</table></div>
+
+<h2>Compressa (cataplasma), passo a passo</h2>
+<p>É o método que puxa para fora a mancha que entrou na pedra.</p>
+<ol>
+<li>Limpe a área com detergente neutro e deixe secar.</li>
+<li>Faça uma pasta com um pó absorvente branco (talco ou produto pronto de marmoraria) e o líquido indicado para a mancha, no ponto de pasta de dente.</li>
+<li>Cubra a mancha passando um pouco da borda, com poucos milímetros de espessura.</li>
+<li>Tampe com plástico filme, prenda com fita e faça alguns furinhos.</li>
+<li>Espere secar, em geral de um dia para o outro.</li>
+<li>Retire com espátula de plástico, limpe com pano úmido e espere secar para avaliar.</li>
+<li>Se clareou mas não saiu, repita. Mancha antiga costuma pedir mais de uma aplicação.</li>
+</ol>
+
+<h2>Granito branco, claro ou preto muda alguma coisa?</h2>
+<ul>
+<li><b>Branco e claro</b> (Itaúnas, Siena e parecidos): mancham de forma mais visível e podem ter minerais de ferro que oxidam. Escolha o produto com mais cuidado.</li>
+<li><b>Preto e escuro</b> (São Gabriel e parecidos): evite água oxigenada, abrasivo e produto forte, que podem deixar uma área clara ou fosca. Muitas "manchas" no preto são resíduo de produto por cima.</li>
+<li><b>Pedra resinada</b>: solvente pode atacar a resina. Confirme com o fornecedor da chapa.</li>
+</ul>
+
+<h2>O que nunca passar</h2>
+<ul>
+<li>Ácido muriático, limpa-pedra ácido ou removedor de ferrugem de uso geral.</li>
+<li>Água sanitária e cloro como limpeza de rotina.</li>
+<li>Palha de aço (solta ferro e mancha mais) e saponáceo abrasivo.</li>
+<li>Mistura de produtos: além de estragar a pedra, pode soltar gás perigoso.</li>
+</ul>
+
+<h2>Quando a mancha não sai</h2>
+<p>Algumas marcas são da própria pedra (veios, concentração de minerais) ou oxidação que vem de dentro. Umidade que sobe da argamassa ou entra por rejunte falho volta enquanto a causa não for resolvida. Nesses casos, explique ao cliente, avalie polir de novo (veja <a href="/dicas/como-polir-granito">como polir granito</a>) ou trocar a peça. Não prometa que sai.</p>
+
+<h2>Como evitar na próxima</h2>
+<p>Secar o que cair, não apoiar lata ou palha de aço sobre a pedra e proteger com <a href="/dicas/impermeabilizante-para-granito">impermeabilizante para granito</a>. Entregue essas orientações por escrito junto com a bancada: evita reclamação.</p>
+''',
+ ['impermeabilizante-para-granito','como-polir-granito','granito-ou-quartzo','como-instalar-bancada-de-granito'],
+ 'Óleo, café, ferrugem e umidade: o que tentar em cada mancha e o que nunca passar.',
+ data='2026-11-27')
+
+pg('impermeabilizante-para-granito',
+ 'Impermeabilizante para Granito: qual usar, como aplicar e de quanto em quanto tempo',
+ 'Impermeabilizante para granito: qual usar, como aplicar e quando refazer',
+ 'Precisa impermeabilizar granito? Tipos de impermeabilizante, teste da gota d\'água, aplicação passo a passo em pedra branca e preta e como oferecer o serviço na marmoraria.',
+ 'O impermeabilizante reduz a absorção da pedra e dá tempo de limpar antes de manchar. Ele não deixa o granito à prova de tudo, e isso precisa ficar claro para o cliente.',
+ 5,
+ '''
+<h2>Todo granito precisa?</h2>
+<p>Depende da pedra. Cada granito absorve de um jeito, e as pedras claras costumam pedir mais atenção. Faça o <b>teste da gota</b>:</p>
+<ol>
+<li>Com a pedra limpa e seca, pingue um pouco de água.</li>
+<li>Observe por alguns minutos.</li>
+<li>Se escureceu rápido, ela absorve e vale proteger. Se a gota ficou por cima sem marcar, absorve pouco ou já está protegida.</li>
+</ol>
+
+<h2>Tipos de produto</h2>
+<div class="tab"><table>
+<tr><th>Tipo</th><th>Como age</th><th>Quando faz sentido</th></tr>
+<tr><td>Hidrofugante</td><td>Penetra e repele água</td><td>Áreas molhadas com pouca gordura, como banheiro</td></tr>
+<tr><td>Hidro e óleo-repelente</td><td>Penetra e repele água e óleo</td><td>Bancada de cozinha e área gourmet</td></tr>
+<tr><td>Formador de película ou cera</td><td>Fica por cima da pedra</td><td>Pode riscar, descascar ou amarelar; use só se o fabricante indicar para aquele local</td></tr>
+</table></div>
+<p>Leia o rótulo: se serve para granito, se pode em superfície que encosta em alimento, se pode em área externa e se muda o tom da pedra (alguns realçam a cor, o chamado efeito molhado).</p>
+
+<h2>Como aplicar, passo a passo</h2>
+<p>A ordem geral é esta, mas <b>o prazo e o número de demãos são os do fabricante</b>.</p>
+<ol>
+<li>Limpe a pedra e tire pó, gordura, cola e cera.</li>
+<li>Espere secar bem. Pedra recém-lavada ou recém-assentada ainda guarda umidade.</li>
+<li>Teste num canto para ver se muda a cor.</li>
+<li>Aplique uma camada fina e uniforme com pano limpo ou pincel macio.</li>
+<li>Deixe penetrar pelo tempo do rótulo.</li>
+<li><b>Retire todo o excesso</b> antes de secar, senão fica manchado e pegajoso.</li>
+<li>Repita se o fabricante pedir e respeite o tempo de cura antes de liberar o uso.</li>
+<li>Refaça o teste da gota.</li>
+</ol>
+
+<h2>Antes de instalar ou depois?</h2>
+<ul>
+<li>Muitos marmoristas aplicam na oficina, com a peça seca, incluindo as bordas e os recortes da cuba.</li>
+<li>Depois de instalar, faça um retoque nas emendas e nos pontos que foram lixados.</li>
+<li>Não aplique antes de colar peças se o produto atrapalhar a aderência: veja <a href="/dicas/como-colar-granito">como colar granito</a>.</li>
+</ul>
+
+<h2>Branco e preto</h2>
+<p>No granito branco ou claro, a proteção ajuda a evitar mancha de óleo, café e vinho. No preto, muitas pedras absorvem pouco: se a gota não entra, o produto pode ficar por cima e deixar marcas. Teste sempre.</p>
+
+<h2>De quanto em quanto tempo refazer</h2>
+<p>Não existe um prazo único. Varia com a pedra, o produto, o uso e a limpeza. Siga o rótulo e repita o teste da gota de tempos em tempos: voltou a escurecer, está na hora.</p>
+
+<h2>Como oferecer e cobrar</h2>
+<p>Coloque como item separado no orçamento, calculado por m² ou por peça, somando produto e tempo. Escreva o que ele faz e o que não faz: reduz manchas, mas não protege contra risco, pancada, calor ou produto ácido. Se a mancha já está lá, trate antes (veja <a href="/dicas/como-tirar-mancha-de-granito">como tirar mancha de granito</a>).</p>
+''',
+ ['como-tirar-mancha-de-granito','granito-ou-quartzo','como-polir-granito','como-fazer-orcamento-de-bancada-de-granito'],
+ 'Teste da gota, tipos de produto, aplicação e quando refazer a proteção da pedra.',
+ data='2026-11-27')
+
+pg('bancada-de-banheiro-medidas',
+ 'Bancada de Banheiro: medidas, altura e profundidade para cada tipo de cuba',
+ 'Bancada de banheiro: medidas, altura e profundidade para cada tipo de cuba',
+ 'Medidas de bancada de banheiro em granito: altura com cuba de apoio, sobrepor, embutir e esculpida, profundidade, duas cubas, bancada acessível, rodabanca e saia.',
+ 'No banheiro, a altura certa depende da cuba. A mesma pedra a 90 cm fica ótima com cuba de embutir e alta demais com cuba de apoio. Defina a cuba antes de medir.',
+ 5,
+ '''
+<h2>Altura conforme a cuba</h2>
+<p>O que importa é a altura em que a pessoa lava as mãos, ou seja, a <b>borda da cuba</b>. Os valores abaixo são referências de uso, não regra.</p>
+<div class="tab"><table>
+<tr><th>Tipo de cuba</th><th>Altura do tampo (referência)</th><th>Conta</th></tr>
+<tr><td>De embutir (por baixo)</td><td>85 a 90 cm</td><td>A borda é o próprio tampo</td></tr>
+<tr><td>Esculpida na pedra</td><td>85 a 90 cm</td><td>A borda é o próprio tampo</td></tr>
+<tr><td>Semi-encaixe ou sobrepor</td><td>Em torno de 80 a 85 cm</td><td>Desconte o que a cuba sobe acima da pedra</td></tr>
+<tr><td>De apoio</td><td>Em torno de 70 a 80 cm</td><td>Altura da borda menos a altura da cuba</td></tr>
+</table></div>
+<p><b>Exemplo:</b> o cliente quer a borda a 90 cm e escolheu cuba de apoio de 14 cm. O tampo fica a 90 − 14 = 76 cm do piso pronto.</p>
+
+<h2>Profundidade e comprimento</h2>
+<ul>
+<li><b>Profundidade</b>: de 45 a 60 cm é o mais comum. Em lavabo pequeno, pode ser menor, desde que a cuba e a torneira caibam.</li>
+<li><b>Comprimento</b>: é o do vão. Deixe pedra sobrando dos dois lados da cuba para apoiar objetos e não enfraquecer o recorte.</li>
+<li><b>Duas cubas</b>: a partir de uns 1,20 m já dá para estudar; com 1,40 m ou mais fica mais confortável. Confira a largura das cubas e o espaço entre os centros.</li>
+</ul>
+
+<h2>Bancada acessível (PCD)</h2>
+<p>Para banheiro acessível, a norma ABNT NBR 9050 trata do lavatório: a referência é a face de cima entre <b>78 e 80 cm</b> e vão livre embaixo de cerca de <b>73 cm</b>, sem armário ou saia alta atrapalhando a cadeira. Confira a versão atual da norma e o projeto do responsável técnico, principalmente em comércio e obra pública.</p>
+
+<h2>Rodabanca, saia e espessura</h2>
+<ul>
+<li><b>Rodabanca</b>: de 7 a 10 cm é bastante usada; protege a parede atrás. Veja <a href="/dicas/rodabanca-e-frontao">rodabanca e frontão</a>.</li>
+<li><b>Saia</b>: de 4 cm para dar aparência de pedra grossa até 15 ou 20 cm para esconder a cuba. Veja <a href="/dicas/saia-de-granito">saia de granito</a>.</li>
+<li><b>Espessura</b>: 2 cm é comum; bancada comprida ou solta pede apoio ou mão francesa. Veja <a href="/dicas/espessura-de-granito-para-bancada">espessura de granito</a>.</li>
+</ul>
+
+<h2>Como medir, passo a passo</h2>
+<ol>
+<li>Meça a largura do vão em três pontos (fundo, meio e frente). Parede raramente está no esquadro.</li>
+<li>Confirme o piso: se ainda vai assentar, some a espessura.</li>
+<li>Peça o modelo da cuba e da torneira, com a folha de medidas do fabricante.</li>
+<li>Marque o centro da cuba conforme o ponto de esgoto.</li>
+<li>Veja se a torneira é de mesa ou de parede e se o bico alcança o meio da cuba.</li>
+<li>Confira porta, box e vaso: a bancada não pode bater nem apertar a passagem.</li>
+</ol>
+
+<h2>Erros comuns</h2>
+<ul>
+<li>Instalar o tampo a 90 cm e só depois colocar cuba de apoio.</li>
+<li>Furo de torneira de mesa sem espaço entre a cuba e a rodabanca.</li>
+<li>Gaveta do armário batendo no sifão ou no fundo da cuba.</li>
+</ul>
+''',
+ ['cuba-de-embutir-sobrepor-ou-apoio','cuba-esculpida-em-granito','rodabanca-e-frontao','como-medir-bancada-de-granito'],
+ 'Altura por tipo de cuba, profundidade, duas cubas e bancada acessível.',
+ data='2026-11-27')
