@@ -35,8 +35,8 @@ Marque `[x]` no que ficar feito e anote no "Diário" no fim.
       `bancada-de-banheiro-medidas`
 
 ## Dia 5 — 28/11 (sáb)
-- [ ] Indexar as do Dia 4 (+ completar a cota)
-- [ ] Páginas: `quanto-cobrar-instalacao-de-bancada-de-granito`, `mao-francesa-para-bancada-de-granito`,
+- [x] (pedido em 27/11) Indexar as do Dia 4 (+ completar a cota: em 28/11 a cota já estava esgotada no 1º pedido)
+- [x] Páginas: `quanto-cobrar-instalacao-de-bancada-de-granito`, `mao-francesa-para-bancada-de-granito`,
       `como-transportar-chapa-de-granito`
 
 ## Dia 6 — 29/11 (dom)
@@ -61,3 +61,4 @@ Marque `[x]` no que ficar feito e anote no "Diário" no fim.
 - 25/11: 3 páginas publicadas (9245743): como-polir-granito, bancada-de-churrasqueira-em-granito, cuba-de-embutir-sobrepor-ou-apoio (pesquisa: autocompletar + "As pessoas também perguntam"; 390 px sem sobrar; as 3 dão 200). IndexNow: 3 novas + /dicas/ + sitemap, resposta 200. Sitemap reenviado (26 páginas). Indexação pedida de 11: recorte-de-cooktop, como-medir, tamanho-de-chapa, como-instalar, nicho, soleira, como-colar (já estava no Google), granito-ou-quartzo, como-abrir-uma-marmoraria, escada, tipos-de-acabamento-de-borda; cota excedida no 12º (como-polir). Já no Google pela inspeção: /dicas/, como-colar, plano-de-corte, calculadora, cuba-esculpida. Ficam para 26/11 (antes das do Dia 3): como-polir-granito, bancada-de-churrasqueira-em-granito, cuba-de-embutir-sobrepor-ou-apoio. Relatório de Páginas ainda "em processamento".
 - 26/11: 3 páginas publicadas (9045b58): como-cortar-granito-sem-lascar, como-furar-granito, ilha-de-cozinha-em-granito-medidas. A execução parou no limite semanal de uso antes da indexação e do diário (completado em 27/11).
 - 27/11: 3 páginas publicadas (fd4f8e4): como-tirar-mancha-de-granito, impermeabilizante-para-granito, bancada-de-banheiro-medidas (pesquisa: autocompletar; 390 px sem sobrar; as 3 dão 200). IndexNow: as 3 de hoje + as 3 de 26/11 + /dicas/, resposta 200. Sitemap reenviado (32 páginas). Indexação pedida de 9: como-polir, churrasqueira, cuba-de-embutir, como-cortar, como-furar, ilha, mancha, impermeabilizante, bancada-de-banheiro; cota excedida no 10º (como-medir). Pela inspeção, 20 endereços de /dicas/ já estão no Google (19 páginas + o índice). Fica para 28/11: como-medir-bancada-de-granito ("rastreada, mas não indexada"; se continuar assim, pedir de novo) e completar a cota com o que não estiver no Google.
+- 28/11: 3 páginas publicadas (5126f4d): quanto-cobrar-instalacao-de-bancada-de-granito, mao-francesa-para-bancada-de-granito, como-transportar-chapa-de-granito (pesquisa: autocompletar + "As pessoas também perguntam"; 390 px sem sobrar; as 3 dão 200). IndexNow: as 3 + /dicas/ + sitemap, resposta 200. Sitemap reenviado (35 endereços). Indexação: 0 — "A cota foi excedida" já no 1º pedido (como-medir), como em 24/11 (a cota parece contar 24 h a partir do uso da véspera). Ficam para 29/11, nesta ordem: como-medir-bancada-de-granito, as 3 de hoje, depois as 3 do Dia 6 e o que aparecer "O URL não está no Google".
