@@ -1279,3 +1279,184 @@ pg('bancada-de-banheiro-medidas',
  ['cuba-de-embutir-sobrepor-ou-apoio','cuba-esculpida-em-granito','rodabanca-e-frontao','como-medir-bancada-de-granito'],
  'Altura por tipo de cuba, profundidade, duas cubas e bancada acessível.',
  data='2026-11-27')
+
+pg('quanto-cobrar-instalacao-de-bancada-de-granito',
+ 'Quanto Cobrar pela Instalação de Bancada de Granito: jeitos de cobrar e exemplo de conta',
+ 'Quanto cobrar pela instalação de bancada de granito',
+ 'Como o marmorista cobra a instalação de bancada e pia de granito: por metro linear, por peça ou por dia; o que entra no preço (deslocamento, ajudante, cola, recortes na obra) e uma conta de exemplo.',
+ 'Instalação mal cobrada come o lucro da pedra. O preço sai do seu custo de equipe, tempo e deslocamento, não do valor que o vizinho cobra. Abaixo, os jeitos de cobrar e uma conta de exemplo.',
+ 5,
+ '''
+<h2>Instalação inclusa ou à parte?</h2>
+<p>As duas formas existem. O importante é o orçamento dizer com clareza. Se a instalação está inclusa, ela tem que estar somada no preço da pedra; se está à parte, escreva "instalação não inclusa" para o cliente não descobrir na hora da entrega.</p>
+<div class="box au"><b>Dica:</b> quando o cliente compara orçamentos, um preço "com instalação" e outro "sem" parecem iguais, mas não são. Separe a linha da instalação para ele ver o que está pagando.</div>
+
+<h2>Jeitos de cobrar</h2>
+<div class="tab"><table>
+<tr><th>Jeito</th><th>Quando usar</th><th>Cuidado</th></tr>
+<tr><td>Por metro linear de bancada</td><td>Cozinha e banheiro comuns</td><td>Bancada pequena com muito recorte dá o mesmo trabalho de uma grande</td></tr>
+<tr><td>Por peça</td><td>Soleira, peitoril, lavatório, nicho</td><td>Defina um valor mínimo por visita</td></tr>
+<tr><td>Por dia da equipe (diária)</td><td>Obra grande, escada, revestimento</td><td>Combine antes quantos dias e o que acontece se a obra não estiver pronta</td></tr>
+<tr><td>Valor fechado</td><td>Obra que você mediu e conhece</td><td>Liste o que não está incluso</td></tr>
+</table></div>
+
+<h2>O que entra no preço</h2>
+<ol>
+<li><b>Equipe</b>: quantas pessoas e quantas horas. Bancada grande ou ilha pede mais gente só para carregar.</li>
+<li><b>Deslocamento</b>: combustível, pedágio, tempo de estrada. Obra longe pede taxa à parte.</li>
+<li><b>Material</b>: cola, massa, silicone, mão francesa, cantoneira, chumbador.</li>
+<li><b>Serviço na obra</b>: recorte de ajuste, furo de torneira feito no lugar, rasgo na parede para embutir a pedra.</li>
+<li><b>Acesso</b>: escada sem elevador, andar alto, peça que precisa subir por fora com corda.</li>
+<li><b>Volta</b>: se a obra não estiver pronta (parede torta, armário errado), a segunda visita é cobrada.</li>
+</ol>
+
+<h2>Conta de exemplo</h2>
+<p>Valores só para ilustrar. Use o seu custo: o que você paga de diária, combustível e material.</p>
+<div class="tab"><table>
+<tr><th>Item</th><th>Conta</th><th>Valor</th></tr>
+<tr><td>Equipe (2 pessoas, meio dia)</td><td>2 × R$ 100,00</td><td>R$ 200,00</td></tr>
+<tr><td>Deslocamento</td><td>30 km ida e volta</td><td>R$ 40,00</td></tr>
+<tr><td>Cola, silicone e mão francesa</td><td></td><td>R$ 60,00</td></tr>
+<tr><td>Margem do serviço</td><td>30% sobre R$ 300,00</td><td>R$ 90,00</td></tr>
+<tr><td><b>Instalação</b></td><td></td><td><b>R$ 390,00</b></td></tr>
+</table></div>
+<p>Se essa cozinha tem 3,20 m de bancada, dá cerca de R$ 122,00 por metro linear. Na próxima cozinha parecida, você já tem a sua referência.</p>
+
+<h2>O que combinar antes da instalação</h2>
+<ul>
+<li>Armário ou base de alvenaria pronta, nivelada e firme.</li>
+<li>Pontos de água e esgoto no lugar certo da cuba.</li>
+<li>Parede com reboco pronto (rodabanca colada em parede sem reboco descola).</li>
+<li>Quem retira a pedra velha e quem leva o entulho.</li>
+<li>Quem liga a torneira e o sifão (muitas marmorarias não fazem hidráulica).</li>
+</ul>
+
+<h2>Perguntas comuns</h2>
+<p><b>Qual o valor para assentar bancada de granito?</b> Não existe tabela única: varia por cidade, tamanho e acesso. Faça a conta pelo seu custo, como no exemplo acima, e confira se o resultado faz sentido na sua região.</p>
+<p><b>Quanto custa a mão de obra para instalar uma pia de cozinha?</b> Pela mesma conta: equipe, deslocamento, material e margem. Pia com cuba de embutir colada na obra leva mais tempo que bancada com cuba de sobrepor.</p>
+<p><b>Instalar pia de mármore custa o mesmo que de granito?</b> O trabalho é parecido, mas o mármore risca e mancha com mais facilidade; muitos marmoristas cobram um pouco mais pelo cuidado a mais.</p>
+''',
+ ['como-instalar-bancada-de-granito','mao-francesa-para-bancada-de-granito','como-colar-granito','como-medir-bancada-de-granito'],
+ 'Por metro, por peça ou por dia, o que entra no preço e uma conta de exemplo.',
+ data='2026-11-28')
+
+pg('mao-francesa-para-bancada-de-granito',
+ 'Mão Francesa para Bancada de Granito: tamanho, distância e quantas usar',
+ 'Mão francesa para bancada de granito: tamanho, distância e quantas usar',
+ 'Quando a bancada de granito precisa de mão francesa, qual tamanho escolher (30, 40, 50, 60 cm), distância entre elas, mão francesa invisível ou reforçada e como instalar.',
+ 'Bancada de granito sem armário embaixo fica presa na parede e na mão francesa. Escolher o tamanho e a distância certos é o que evita a pedra trincar ou o suporte entortar com o tempo.',
+ 5,
+ '''
+<h2>Quando precisa de mão francesa</h2>
+<ul>
+<li>Bancada solta na parede, sem armário ou mureta embaixo (lavatório, área de serviço, bancada de apoio).</li>
+<li>Bancada comprida em que o armário não chega até a ponta.</li>
+<li>Balcão ou ilha com parte em balanço para banquetas.</li>
+<li>Prateleira de pedra e nicho de apoio.</li>
+</ul>
+<p>Se a bancada vai em cima de armário firme ou de alvenaria em toda a extensão, normalmente não precisa.</p>
+
+<h2>Qual tamanho escolher</h2>
+<p>A mão francesa é vendida pelo tamanho do braço que fica embaixo da pedra (30, 40, 50, 60 cm...). Uma referência bastante usada é o braço ter <b>pelo menos dois terços da profundidade</b> da bancada, sem passar da frente.</p>
+<div class="tab"><table>
+<tr><th>Profundidade da bancada</th><th>Braço da mão francesa (referência)</th></tr>
+<tr><td>40 cm</td><td>30 cm</td></tr>
+<tr><td>50 cm</td><td>35 a 40 cm</td></tr>
+<tr><td>60 cm</td><td>40 a 50 cm</td></tr>
+<tr><td>70 cm ou mais</td><td>50 a 60 cm, de preferência reforçada</td></tr>
+</table></div>
+<p>A carga que cada modelo aguenta muda de fabricante para fabricante: <b>confira a carga na embalagem</b> e lembre que o peso é a pedra mais o que vai em cima (cuba cheia, objetos, gente encostando).</p>
+
+<h2>Distância entre elas e quantas usar</h2>
+<ol>
+<li>Coloque uma perto de cada ponta, a uns 10 a 15 cm da parede lateral ou da ponta solta.</li>
+<li>Entre elas, a distância mais vista fica entre 60 e 80 cm. Pedra mais fina ou mais peso em cima pede mais perto.</li>
+<li>Ponha uma de cada lado da cuba: o recorte enfraquece a pedra justamente ali.</li>
+<li>Conte: bancada de 1,80 m com uma em cada ponta e distância de até 80 cm = 3 mãos francesas.</li>
+</ol>
+
+<h2>Tipos</h2>
+<ul>
+<li><b>Comum (triângulo aparente)</b>: mais barata e forte; fica à vista embaixo da bancada.</li>
+<li><b>Reforçada</b>: chapa mais grossa ou com mais travas, para bancada funda, pedra pesada ou balcão.</li>
+<li><b>Invisível</b>: barra que entra na parede ou fica escondida sob a pedra. Pede parede firme (tijolo maciço ou concreto) e furação bem feita; em parede de drywall, só com reforço previsto.</li>
+<li><b>Cantoneira em L ou barra chata</b>: apoio contínuo junto da parede, ajuda junto com a mão francesa.</li>
+</ul>
+
+<h2>Como instalar, passo a passo</h2>
+<ol>
+<li>Marque a altura da bancada na parede com nível, descontando a espessura da pedra.</li>
+<li>Marque a posição de cada mão francesa e confira se não cai em cima de cano (use detector ou o projeto hidráulico).</li>
+<li>Fure com a broca certa para a parede e use bucha e parafuso do tamanho indicado pelo fabricante. Em parede fraca, use chumbador químico.</li>
+<li>Confira com o nível se todas ficaram na mesma altura.</li>
+<li>Assente a pedra com cola ou silicone sobre a mão francesa e cole a parte de trás na parede ou no rasgo.</li>
+</ol>
+
+<h2>Erros comuns</h2>
+<ul>
+<li>Mão francesa curta em bancada funda: a frente da pedra fica sem apoio e trinca no recorte.</li>
+<li>Parafuso só no reboco: com o tempo a mão francesa desce.</li>
+<li>Esquecer a mão francesa no orçamento: ela é material e mão de obra a mais.</li>
+</ul>
+''',
+ ['espessura-de-granito-para-bancada','como-instalar-bancada-de-granito','bancada-de-banheiro-medidas','quanto-cobrar-instalacao-de-bancada-de-granito'],
+ 'Tamanho pelo fundo da bancada, distância, invisível ou reforçada e instalação.',
+ data='2026-11-28')
+
+pg('como-transportar-chapa-de-granito',
+ 'Como Transportar Chapa e Bancada de Granito sem Quebrar',
+ 'Como transportar chapa e bancada de granito sem quebrar',
+ 'Passo a passo para carregar e transportar chapa e bancada de granito: sempre em pé, cavalete em A, cinta, ventosa e carrinho, como proteger o recorte da cuba e subir escada.',
+ 'Muita pedra que quebra não quebra na máquina, quebra no caminho. Chapa e bancada viajam em pé, apoiadas e amarradas. Deitada, a pedra trinca com o próprio peso.',
+ 5,
+ '''
+<h2>Regra principal: sempre em pé</h2>
+<p>Pedra aguenta bem o peso quando está em pé e muito mal deitada, apoiada só nas pontas. Por isso chapa, bancada, soleira e peitoril viajam <b>na vertical</b>, com o lado comprido embaixo, levemente inclinadas contra um apoio.</p>
+<div class="box au"><b>Exemplo:</b> bancada de 2,40 m com recorte de cuba carregada deitada por duas pessoas costuma trincar no canto do recorte. A mesma bancada carregada em pé, de lado, chega inteira.</div>
+
+<h2>Equipamentos que ajudam</h2>
+<div class="tab"><table>
+<tr><th>Equipamento</th><th>Para quê</th></tr>
+<tr><td>Cavalete em A</td><td>Apoiar as chapas em pé, dos dois lados, no caminhão e na marmoraria</td></tr>
+<tr><td>Cinta com catraca</td><td>Prender as peças no cavalete para não balançarem</td></tr>
+<tr><td>Ventosa</td><td>Segurar e carregar peças lisas com mais firmeza</td></tr>
+<tr><td>Carrinho para chapa</td><td>Levar a peça em pé do caminhão até a obra</td></tr>
+<tr><td>Manta, papelão ou borracha</td><td>Proteger o polimento e as quinas</td></tr>
+<tr><td>Sarrafo de madeira</td><td>Reforçar peça com recorte durante o transporte</td></tr>
+</table></div>
+
+<h2>Passo a passo no caminhão</h2>
+<ol>
+<li>Coloque borracha ou madeira no pé do cavalete, para a pedra não apoiar no metal.</li>
+<li>Carregue as peças em pé, com leve inclinação contra o cavalete, distribuindo dos dois lados para equilibrar.</li>
+<li>Peças polidas: face com face, com manta ou papelão no meio.</li>
+<li>Amarre com cinta na altura do meio das peças e confira o aperto antes de sair.</li>
+<li>Peças menores (soleira, rodabanca) vão presas no meio, nunca soltas no fundo.</li>
+<li>Dirija devagar em lombada e buraco: o tranco é o que mais trinca.</li>
+</ol>
+
+<h2>Bancada com recorte</h2>
+<ul>
+<li>O canto do recorte de cuba ou cooktop é o ponto fraco. Prenda um sarrafo de madeira por baixo atravessando o recorte, só para o transporte.</li>
+<li>Se der, deixe uma "ponte" no recorte (um pedaço sem cortar) e termine o recorte na obra.</li>
+<li>Bancada em L grande viaja em duas peças e é colada na obra (veja <a href="/dicas/como-colar-granito">como colar granito</a>).</li>
+</ul>
+
+<h2>Na obra: escada e corredor</h2>
+<ol>
+<li>Meça antes portas, corredores, curvas de escada e elevador (veja <a href="/dicas/como-medir-bancada-de-granito">como medir</a>). Peça que não passa vira emenda.</li>
+<li>Tire a pedra do caminhão em pé, com uma pessoa em cada ponta e mais uma no meio se a peça for longa.</li>
+<li>Na escada, mantenha a peça em pé, de lado; quem vai embaixo controla o peso.</li>
+<li>Apoie no chão sempre sobre madeira ou papelão, nunca na quina.</li>
+</ol>
+
+<h2>Segurança da equipe</h2>
+<ul>
+<li>Luva, bota com biqueira e coluna reta ao levantar.</li>
+<li>Peso maior do que a equipe aguenta com folga = mais gente ou equipamento. Uma chapa inteira pesa centenas de quilos (veja <a href="/dicas/tamanho-de-chapa-de-granito">tamanho de chapa</a>).</li>
+<li>Ninguém fica do lado para onde a chapa pode tombar ao soltar a cinta.</li>
+</ul>
+''',
+ ['tamanho-de-chapa-de-granito','como-instalar-bancada-de-granito','como-medir-bancada-de-granito','como-cortar-granito-sem-lascar'],
+ 'Sempre em pé, cavalete, cinta, ventosa, recorte protegido e escada.',
+ data='2026-11-28')
